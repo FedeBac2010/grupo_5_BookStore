@@ -1,4 +1,4 @@
-# grupo_5_BookStore
+# Grupo_5_BookStore
 ## Tematica del sitio
 Venta de libros digitales y fisicos.
 
