@@ -1,5 +1,5 @@
 # grupo_5_BookStore
-##Tematica del sitio
+## Tematica del sitio
 Venta de libros digitales y fisicos.
 
 ### Publico Objetivo
@@ -22,4 +22,5 @@ Elegido principalmente por su carrito de compras.
 https://www.traslospasos.com.ar/
 Elegido por su diseño en las categorias.
 
-# URL del Repositorio : https://github.com/FedeBac2010/grupo_5_Proyecto.git
+# URL del Repositorio
+https://github.com/FedeBac2010/grupo_5_Proyecto.git
