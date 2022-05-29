@@ -6,16 +6,16 @@ Venta de libros digitales y fisicos.
 Jovenes y familias interesadas en adquirir de forma sencilla y rápida libros.
 
 ## Integrantes
-### Andrea
+#### Andrea
 
-### Daiana
+#### Daiana
 
-### Federico: 
+#### Federico: 
 Hola soy Fede Bacigalupi, soy de Posadas-Misiones,Argentina, soy estudiante y apasionado por las computadoras y los deportes.
 
-### Rodrigo
+#### Rodrigo
 
-### Tatiana
+#### Tatiana
 
 ## Sitios de Referencia
 * https://www.wordbookstores.com/
