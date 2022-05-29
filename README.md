@@ -6,16 +6,17 @@ Venta de libros digitales y fisicos.
 Jovenes y familias interesadas en adquirir de forma sencilla y rápida libros.
 
 ## Equipo de Desarrollo
-### Andrea
 
-### Daiana
+### Andrea:
+
+### Daiana:
 
 ### Federico: 
 Hola soy Fede, soy de Posadas-Misiones,Argentina, soy estudiante y apasionado por las computadoras y los deportes.
 
-### Rodrigo
+### Rodrigo:
 
-### Tatiana
+### Tatiana:
 
 ## Sitios de Referencia
 * https://www.wordbookstores.com/
@@ -27,5 +28,5 @@ Elegido principalmente por su carrito de compras.
 * https://www.traslospasos.com.ar/
 Elegido por su diseño en las categorias.
 
-# URL del Repositorio
+## URL del Repositorio
 https://github.com/FedeBac2010/grupo_5_BookStore.git
