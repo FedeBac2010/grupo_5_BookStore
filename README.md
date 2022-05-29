@@ -5,17 +5,17 @@ Venta de libros digitales y fisicos.
 #### Publico Objetivo
 Jovenes y familias interesadas en adquirir de forma sencilla y rápida libros.
 
-## Integrantes
-#### Andrea
+## Equipo de Desarrollo
+### Andrea
 
-#### Daiana
+### Daiana
 
-#### Federico: 
-Hola soy Fede Bacigalupi, soy de Posadas-Misiones,Argentina, soy estudiante y apasionado por las computadoras y los deportes.
+### Federico: 
+Hola soy Fede, soy de Posadas-Misiones,Argentina, soy estudiante y apasionado por las computadoras y los deportes.
 
-#### Rodrigo
+### Rodrigo
 
-#### Tatiana
+### Tatiana
 
 ## Sitios de Referencia
 * https://www.wordbookstores.com/
