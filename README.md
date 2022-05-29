@@ -23,4 +23,4 @@ Elegido principalmente por su carrito de compras.
 Elegido por su diseño en las categorias.
 
 # URL del Repositorio
-[https://github.com/FedeBac2010/grupo_5_Proyecto.git](https://github.com/FedeBac2010/grupo_5_BookStore.git)
+https://github.com/FedeBac2010/grupo_5_BookStore.git
