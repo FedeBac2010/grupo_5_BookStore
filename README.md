@@ -17,6 +17,7 @@ Hola soy Fede, soy de Posadas-Misiones,Argentina, soy estudiante y apasionado po
 ### Rodrigo:
 
 ### Tatiana:
+Buenas! Soy Tachan, vivo en Bariloche, Argentina y soy docente de inglés e informática. Soy muy curiosa, siempre dispuesta a aprender cosas nuevas!
 
 ## Sitios de Referencia
 * https://www.wordbookstores.com/
