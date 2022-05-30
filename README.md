@@ -15,7 +15,7 @@ Jovenes y familias interesadas en adquirir de forma sencilla y rápida libros.
 Hola soy Fede, soy de Posadas-Misiones,Argentina, soy estudiante y apasionado por las computadoras y los deportes.
 
 ### Rodrigo:
-
+Me presento, Rodrigo, actualmente vivo en Posadas, Misiones, Argentina. Soy estudiante de ciencias economicas, pero ultimamente siento una atraccion por todo lo relacionado a la informatica y por suerte tengo la oportunidad de profundizar mucho mas sobre dicho tema. 
 ### Tatiana:
 Buenas! Soy Tachan, vivo en Bariloche, Argentina y soy docente de inglés e informática. Soy muy curiosa, siempre dispuesta a aprender cosas nuevas!
 
