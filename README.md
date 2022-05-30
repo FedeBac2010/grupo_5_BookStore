@@ -1,8 +1,8 @@
 # Grupo_5_BookStore
-## Tematica del sitio
-Venta de libros digitales y fisicos.
+## Temática del sitio
+Venta de libros digitales y físicos.
 
-#### Publico Objetivo
+### Público Objetivo
 Personas apasionadas por la lectura que deseen adquirir libros de forma sencilla y rápida.
 
 ## Equipo de Desarrollo
@@ -10,7 +10,7 @@ Personas apasionadas por la lectura que deseen adquirir libros de forma sencilla
 ### Andrea:
 
 ### Daiana:
-Hola! Soy Daiana. Soy de Buenos Aires, Argentina. Soy estudiante y baterista. Me gusta la música primero que nada, tambien me gusta la Filosofía y filosofar con la gente, me gusta conversar sobre temas controversiales. La tecnologia y los robots llamaron mi atencion estos ultimos años. Si! Los robots me encantan, quisiera vivir 100 años mas para poder ver ese futuro!  
+Hola! Soy Daiana. Soy de Buenos Aires, Argentina. Soy estudiante y baterista. Me gusta la música primero que nada, tambien me gusta la Filosofía y filosofar con la gente, me gusta conversar sobre temas controversiales. La tecnología y los robots llamaron mi atención estos ultimos años. Si! Los robots me encantan, quisiera vivir 100 años mas para poder ver ese futuro!  
 
 ### Federico: 
 Hola soy Fede, soy de Posadas-Misiones,Argentina, soy estudiante y apasionado por las computadoras y los deportes.
