@@ -8,6 +8,7 @@ Personas apasionadas por la lectura que deseen adquirir libros de forma sencilla
 ## Equipo de Desarrollo
 
 ### Andrea:
+Hola soy Andi. Vivo en Rosario, Santa Fe. Soy Contadora Pública en un Laboratorio. Me apasiona la moda, el diseño y la creatividad. ME genera mucha curiosidad y entusiasmo este mundo de la programación. Espero aprender mucho!!
 
 ### Daiana:
 Hola! Soy Daiana. Soy de Buenos Aires, Argentina. Soy estudiante y baterista. Me gusta la música primero que nada, tambien me gusta la Filosofía y filosofar con la gente, me gusta conversar sobre temas controversiales. La tecnología y los robots llamaron mi atención estos ultimos años. Si! Los robots me encantan, quisiera vivir 100 años mas para poder ver ese futuro!  
