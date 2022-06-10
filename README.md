@@ -33,3 +33,6 @@ Elegido por su diseño en las categorias.
 
 ## URL del Repositorio
 https://github.com/FedeBac2010/grupo_5_BookStore.git
+
+## URL del Tablero de trabajo
+https://trello.com/invite/b/7mO8fRsY/723dc7d005dc0c0736eb3d716e743dec/dh-bookstore
