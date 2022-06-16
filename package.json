@@ -1,0 +1,22 @@
+{
+  "name": "grupo_5_bookstore",
+  "version": "1.0.0",
+  "description": "Venta de libros digitales y físicos.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FedeBac2010/grupo_5_BookStore.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FedeBac2010/grupo_5_BookStore/issues"
+  },
+  "homepage": "https://github.com/FedeBac2010/grupo_5_BookStore#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
