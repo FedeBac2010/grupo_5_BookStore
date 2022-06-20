@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Gentium Book Basic', serif;
+}
+
+body{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23a3a3a3' fill-opacity='0.1'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.logo-bookstore{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    margin: 10px;
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: 100%;
+}
+
+.logo-bookstore img {
+    width: 120px;
+    border: 1px solid #917443;
+    border-radius: 20%;
+    padding: 10px;
+    background-color: rgb(255 255 255 /0.9);
+
+}
+
+section{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+
+}
+
+section .imgBx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+section .imgBx:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(425deg,#3c9b96, #2d3c4b );
+    z-index: 1;
+    mix-blend-mode: screen;
+}
+
+
+section .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ajusta la imagen */
+
+}
+
+
+section .contentBx{        /* UBICAMOS TODO EL RECUADRO DE LOGIN EN EL CENTRO DERECHO */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    
+}
+
+section .contentBx .formBx {
+    width: 50%;
+}
+
+section .contentBx .formBx h2 {
+    color: #607d8b;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #3c9b96;
+    display: inline-block;
+    letter-spacing: 1px ;
+}
+
+
+section .contentBx .formBx .inputBx{
+    margin-bottom: 20px;
+}
+
+section .contentBx .formBx .inputBx span{
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #607d8b;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1px;
+
+}
+
+section .contentBx .formBx .inputBx input {
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid #607d8b;
+    letter-spacing: 1px;
+    color: #607d8b;
+    background: #fff;
+    border-radius:30px ;
+
+}
+
+section .contentBx .formBx .inputBx input[type="submit"]{
+    background: #3c9b96;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+section .contentBx .formBx .inputBx input[type="submit"]:hover{
+    background: #2d3c4b;
+}
+
+section .contentBx .formBx .remember {
+    margin-bottom: 10px;
+    color: #607d8b;
+    font-weight:400 ;
+    font-size: 14px;
+}
+
+section .contentBx .formBx .inputBx p{
+    color: #607d8b;
+}
+
+section .contentBx .formBx .inputBx p a{
+    color: #3c9b96;
+}
+
+section .contentBx .formBx h3{
+    color: #607d8b;
+    text-align: center;
+    margin: 80px 0 10px;
+    font-weight: 500;
+}
+
+section .contentBx .formBx .sci{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+section .contentBx .formBx .sci li{
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #3c9b96;
+    border-radius: 50%;
+    margin: 0 7px;
+    cursor: pointer;
+}
+
+section .contentBx .formBx .sci li:hover{
+    background: #2d3c4b;
+
+}
+
+section .contentBx .formBx .sci li i{
+    transform: scale(1.5);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    section .imgBx{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    section .contentBx{
+        display: flex;
+        justify-content:center ;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    section .contentBx .formBx{
+        width: 100%;
+        padding: 40px;
+        background: rgb(255 255 255 /0.9);
+        margin: 50px;
+    }
+
+    section .contentBx .formBx h3{
+        color: #607d8b;
+        text-align: center;
+        margin: 30px 0 10px;
+        font-weight: 500;
+    }
+
+}

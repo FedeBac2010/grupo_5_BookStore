@@ -4,117 +4,70 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
+    
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+
+      <!-- FONT AWESOME -->
     <script
       src="https://kit.fontawesome.com/0442526d0c.js"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
+
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="/css/styles.css" />
 
     <title>Book Store</title>
   </head>
   <body>
+    <!-- HEADER -->
     <header>
-      <div class="top-header">
-        <div class="logo-bookStore">
-          <img src="/img/logo.jpg" alt="Logo Book Store" />
-        </div>
-
-        <div class="input-text">
-          <input type="text" placeholder="Buscar productos, marcas" />
-          <i class="fa fa-search"></i>
-        </div>
-
-        <div class="burger-menu">
-          <i class="fa fa-bars burger"></i>
-        </div>
-
-        <div class="carrito">
-          <i class="fa-solid fa-basket-shopping"></i>
-        </div>
+      <div class="header-container">
+          <!-- LOGO -->
+          <div class="logo-bookstore">
+          <a href="/"><img src="/img/logo.jpg" alt="Logo Book Store" /></a>
+          </div>
       </div>
+      </header>
+<!-- Centro del body -->
+  <main>
+    <div class="main-container">
+      
+        <div class="card card-ebooks">
+          <h2>E-books</h2>
+        </div>
+      
+      
+        <div class="card card-Impresos">
+          <h2>Fisicos</h2>
+        </div>
+      
+    </div>
 
-      <nav>
-        <ul>
-          <li>
-            <a href="#">Inicio</a>
-          </li>
-          <li>
-            <a href="#">Productos</a>
-          </li>
-          <li>
-            <a href="#">Ofertas</a>
-          </li>
-          <li>
-            <a href="#">Giftcards</a>
-          </li>
-          <li>
-            <a href="#">Contacto</a>
-          </li>
-        </ul>
 
-        <ul>
-          <li>
-            <a href="/register">Creá tu cuenta</a>
-            <i class="fa-solid fa-id-card"></i>
-          </li>
-          <li>
-            <a href="/login">Ingresá</a>
-            <i class="fa-solid fa-right-to-bracket"></i>
-          </li>
-          <li>
-            <a href="#"> Mis compras </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <section>
-      <div class="carrusel">
-        <img class="slider-item" src="/img/carrusel1.jpg" />
+
+  </main>
+<!-- Footer -->
+  <footer>
+      <div class="social">
+      <div class="contacto">
+        <p>Contacto</p>
       </div>
-    </section>
-
-    <main>
-      <section class="ebooks-impresos">
-        <div class="ebooks"><h3>E-Books</h3></div>
-        <div class="Impresos"><h3>Impresos</h3></div>
-      </section>
-
-      <section class="categorias">
-        <h3 class="titulo">Nuestras Categorías</h3>
-        <div class="ficcion">Ficcion</div>
-        <div class="no-ficcion">No ficcion</div>
-        <div class="infantiles">Infantiles</div>
-      </section>
-    </main>
-    <footer>
-      <div class="contenido-footer">
-        <i class="fa-solid fa-credit-card"></i>
-        <p>Paga con tarjeta o en efectivo</p>
-        <p>
-          Con Book Store Cash, tenés cuotas sin interés con tarjeta o efectivo
-          en puntos de pago. ¡Y siempre es seguro!
-        </p>
-
-        <i class="fa-solid fa-gift"></i>
-        <p>Envio gratis desde $3.500</p>
-        <p>
-          Solo por estar registrad@ en BookStore tenés envíos gratis en miles de
-          productos. Es un beneficio de Mercado Puntos.
-        </p>
-
-        <i class="fa-solid fa-user-shield"></i>
-        <p>Seguridad de principio a fin</p>
-        <p>
-          ¿No te gusta? ¡Devolvelo! En BookStore, no hay nada que no puedas
-          hacer, porque estás siempre protegid@.
-        </p>
+      <div class="links">
+          <a href="#">
+              <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#">
+              <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
       </div>
-    </footer>
+    </div>
+  
+  </footer>
   </body>
 </html>

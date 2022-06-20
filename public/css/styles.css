@@ -1,138 +1,162 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:'Gentium Book Basic', serif;
 }
+
 
 body{
-    font-family: 'Roboto', sans-serif;
     font-size: 12px;
-}
-    
-
-.logo-bookStore img{
-        width: 100px;
-        
-     }
-
-.burger-menu{
-      color: #03264C;
-      font-size: 20px
-
-      }
-
-.carrito{
-    color: #03264C;
-    font-size: 20px;
-
+    background-color: #fff;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23a3a3a3' fill-opacity='0.1'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
-.contenido-footer{
-    text-align: center;
-    line-height: 15px;
+.header-container{
+    background-color: #f5c36e;
+    display: flex;
+    justify-content: center;
 }
-      
 
 
-@media (min-width: 361px){
-    header{
-        display: flex;
-        max-width: 480px;
-    }
-    }
-    header div.top-header{
-        display: flex;
-        flex: wrap;
-        margin:5px;
-        width: 85%;
-        justify-content: space-between;
-    }
-
-    div.input-text{
-        display: flex;
-        width: 40%;
-        margin-top:20px;
-        margin-left: 10px
-    }
-
-    input{
-        display: flex;
-        width: 100%;
-        height: 20px
-    }
-
-    .fa-search{
-        margin-left: 5px;
-        margin-top: 5px
-    }
-    
-
-    div.burger-menu{
-        display: flex;
-        margin-top:20px
-    
-       
-    }
-
-    .carrito{
-        display: flex;
-        margin-top:20px
-        
-    }
-
-    nav{
-        display:none
-    
-    }
-
-    .slider-item{
-        width:480px
-    }
-
-    .ebooks-impresos{
-        display: flex;
-        justify-content: space-around;
-        margin:80px
-    }
-
-    .categorias{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        margin:30px
-    }
-
-    .titulo{
-        width:100%;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    
-   div.contenido-footer{
-        width:400px;
-        padding:10px;
-        text-align: center;
-        margin-left: 20px
-    
-
-    }
-
-
-
-    
-
-
-    
-
-    
-
+.logo-bookstore{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
    
+    margin: 10px;
+    position: relative;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    border-radius: 100%;
+}
+
+.logo-bookstore img {
+    width: 120px;
+    border: 1px solid #917443;
+    border-radius: 20%;
+    padding: 10px;
+    background: #fff;
+
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10%;
+}
+
+.card{
+    width: 400px;
+    height: 450px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 25px;
+    cursor: pointer;
+    margin: 10px 15px;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.474);
+
+}
+
+.card h2{
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: left;
+}
+
+.card-ebooks{
+    background-image: url(/img/ebooks-card.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.card-Impresos{
+    background-image: url(/img/fisicos-cardjpg.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.card:hover{
+    transform: translateY(-20px);
+}
+
+
+/* .E-books {
+    display: flex;
+    border: solid black 3px;
+    padding-top: 50%;
+    padding-bottom: 50%;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin: 1%;
+}
 
 
 
+.Impresos {
+    display: flex;
+    border: solid black 3px;
+    padding-top: 50%;
+    padding-bottom: 50%;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin: 1%;
+} */
+
+
+/* .social {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 80%;
+    border-top: solid black 2px;
+}
+
+.social p {
+    margin-top: 10%;
+}
+
+.social div {
+    margin: 10%;
+}
+ */
+/* Footer */
+
+footer{
+    background-color: #2d3c4b;
+    padding: 1em 0;
+    text-align: center;
+    border-top: 3px solid black 2px;
     
 
+}
+
+footer div.social{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 50px;
+}
+footer div p{
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f5c36e;
+    text-align: center;
+    font-weight: bold;
+}
 
 
+footer div.links a{
+    margin: 0 30px;
+}
 
-
+footer div.links a i{
+    font-size: 1.5rem;
+    color: #f5c36e;
+}
