@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FONT AWESOME -->
+    <script
+      src="https://kit.fontawesome.com/0442526d0c.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="/css/register.css" />
+    <title>Inicia Sesion</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Registration</div>
+      <form action="">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Nombre Completo</span>
+            <input type="text" placeholder="Nombre" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Usuario</span>
+            <input type="text" placeholder="Usuario" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Email" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Numero de Telefono</span>
+            <input type="text" placeholder="Numero de Tel" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Contraseña</span>
+            <input type="password" placeholder="Password" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Confirmar contraseña</span>
+            <input type="text" placeholder="confirm password" required />
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Genero</span>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="gender">Masculino</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender">Femenino</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span class="gender">Prefiero no decirlo</span>
+            </label>
+          </div>
+          <div class="button">
+            <input type="submit" value="Register"/>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

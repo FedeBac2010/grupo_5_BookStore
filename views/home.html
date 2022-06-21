@@ -12,25 +12,60 @@
     
 
       <!-- FONT AWESOME -->
-    <script
-      src="https://kit.fontawesome.com/0442526d0c.js"
-      crossorigin="anonymous"></script>
+        <script
+          src="https://kit.fontawesome.com/0442526d0c.js"
+          crossorigin="anonymous"></script>
 
       <!-- Custom CSS -->
-      <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="stylesheet" href="/css/styles.css" />
+
 
     <title>Book Store</title>
   </head>
   <body>
     <!-- HEADER -->
-    <header>
+    <header class="header">
       <div class="header-container">
           <!-- LOGO -->
           <div class="logo-bookstore">
           <a href="/"><img src="/img/logo.jpg" alt="Logo Book Store" /></a>
           </div>
+          <!-- BARRA DE BUSQUEDA -->
+          <form action="" class="search-form">
+            <input type="search" name="" placeholder="Busque aqui..." id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+          </form>
+          <!-- ICONOS -->
+          <div class="icons">
+            <div id="search-btn" class="fas fa-search"></div>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="/login"id="login-btn" class="fas fa-user"></a>
+          </div>
       </div>
-      </header>
+        <!-- NAVEGACION -->
+      <div class="header-container-2">
+        <nav class="navbar">
+          <a href="/">home</a>
+          <a href="#lanzamientos">lanzamientos</a>
+          <a href="#plataforma">plataforma</a>
+          <a href="#categorias">categorias</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- BOTTOM NAVBAR -->
+
+      <nav class="bottom-navbar">
+        <a href="/" class="fas fa-home"></a>
+        <a href="#destacados" class="fas fa-tags"></a>
+        <a href="#plataforma" class="fa-solid fa-laptop-file"></a>
+        <a href="#categorias" class="fa-solid fa-swatchbook"></a>
+      </nav>
+    
+
+
+
 <!-- Centro del body -->
   <main>
     <div class="main-container">
@@ -69,5 +104,13 @@
     </div>
   
   </footer>
+
+  <!-- SCROLL REVEAL -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+  <!-- CUSTOM JS -->
+    <script src="js/script.js"></script>
+
+
   </body>
 </html>

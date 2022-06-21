@@ -3,8 +3,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family:'Gentium Book Basic', serif;
+    text-decoration: none;
+    text-transform: capitalize; /* Esto muestra un texto con la primera letra de cada palabra en mayúsculas. */
+    transition: all .2s linear;
+    transition: width none;
 }
 
+/* BODY */
 
 body{
     font-size: 12px;
@@ -13,26 +18,25 @@ body{
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23a3a3a3' fill-opacity='0.1'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
 }
+
+/* HEADER 1 */
 
 .header-container{
-    background-color: #f5c36e;
+    background: #fff;
+    padding: 1.5rem;
     display: flex;
-    justify-content: center;
-}
+    align-items: center;
+    justify-content: space-between;
 
+}
 
 .logo-bookstore{
     display: flex;
     justify-content: center;
-    padding: 10px 0;
-   
-    margin: 10px;
-    position: relative;
-    top: 0;
-    right: 0;
-    z-index: 0;
-    border-radius: 100%;
 }
 
 .logo-bookstore img {
@@ -41,23 +45,121 @@ body{
     border-radius: 20%;
     padding: 10px;
     background: #fff;
+}
+
+.search-form{
+    width: 30rem;
+    height: 3rem;
+    border: 2px solid black;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+.search-form input{
+    font-size: 1rem;
+    padding: 0 1.2rem;
+    height: 100%;
+    width: 100%;
+    text-transform: none;
+    border: none;
+}
+
+.search-form label{
+    font-size: 1.2rem;
+    padding-right: 0.5rem;
+    color: black;
+    cursor: pointer;
+}
+
+.search-form label:hover{
+    color: #f5c36e;
 
 }
+
+.icons div,
+.icons a{
+    font-size: 1.5rem;
+    margin-left:1.5rem ;
+    color: black;
+    cursor: pointer;
+}
+
+.icons div:hover,
+.icons a:hover{
+    color: #f5c36e;
+}
+
+#search-btn{
+    display: none;
+}
+
+/* HEADER 2 */
+
+.header-container-2{
+    background-color: #f5c36e;
+}
+
+.navbar{
+    text-align: center;
+}
+
+.navbar a{
+    color: #fff;
+    display: inline-block;
+    padding: 0.9rem;
+    font-size: 1.5rem;
+}
+
+.navbar a:hover{
+    border-bottom: 3px solid #2d3c4b;
+}
+
+.navbar a:hover{
+    background: #f5c36e;
+}
+
+/* NAVBAR */
+
+.bottom-navbar{
+    text-align: center;
+    background: #f5c36e;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: none;
+}
+
+.bottom-navbar a{
+    font-size: 2rem;
+    padding: 1rem 3rem;
+    color: #fff;
+    
+}
+
+.bottom-navbar a:hover{
+    background-color: #2d3c4b;
+
+}
+
+/* Cuerpo del Body */
 
 .main-container {
     display: flex;
     justify-content: space-between;
-    margin: 10%;
+    margin: 4% 10%;
 }
 
 .card{
-    width: 400px;
-    height: 450px;
+    width: 500px;
+    height: 500px;
     display: inline-block;
     border-radius: 10px;
     padding: 15px 25px;
     cursor: pointer;
-    margin: 10px 15px;
+    margin: 10px 20px;
     background-position: center;
     background-size: cover;
     transition: transform 0.5s;
@@ -88,54 +190,14 @@ body{
     transform: translateY(-20px);
 }
 
-
-/* .E-books {
-    display: flex;
-    border: solid black 3px;
-    padding-top: 50%;
-    padding-bottom: 50%;
-    padding-left: 15%;
-    padding-right: 15%;
-    margin: 1%;
-}
-
-
-
-.Impresos {
-    display: flex;
-    border: solid black 3px;
-    padding-top: 50%;
-    padding-bottom: 50%;
-    padding-left: 15%;
-    padding-right: 15%;
-    margin: 1%;
-} */
-
-
-/* .social {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 80%;
-    border-top: solid black 2px;
-}
-
-.social p {
-    margin-top: 10%;
-}
-
-.social div {
-    margin: 10%;
-}
- */
 /* Footer */
 
 footer{
+    margin-top: auto;
     background-color: #2d3c4b;
     padding: 1em 0;
     text-align: center;
     border-top: 3px solid black 2px;
-    
-
 }
 
 footer div.social{
@@ -146,7 +208,7 @@ footer div.social{
 footer div p{
     font-size: 20px;
     margin-bottom: 20px;
-    color: #f5c36e;
+    color: #fff;
     text-align: center;
     font-weight: bold;
 }
@@ -158,5 +220,114 @@ footer div.links a{
 
 footer div.links a i{
     font-size: 1.5rem;
+    color: #fff;
+}
+
+footer div.links a i:hover,
+footer p:hover{
     color: #f5c36e;
+}
+
+
+/* TABLETS LARGE */
+@media(max-width:991px){
+
+    html{
+        font-size: 80%;
+    }
+
+    .header-container{
+        padding: 2rem;
+    }
+
+}
+
+/* TABLETS */
+@media(max-width:768px){
+
+    .header-container-2{
+        display: none;
+    }
+
+    .bottom-navbar{
+        display:block ;
+    }
+
+    #search-btn{
+        display:inline-block;
+    }
+
+    .header-container{
+        box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.59);
+        position: relative;
+    }
+
+    .header-container .search-form{
+        position: absolute;
+        top: -115%; right: 2rem;
+        width: 90% ;
+        box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.59);
+    }
+
+    .header .header-container .search-form.active{
+        top: 115%;
+    }
+
+    .main-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+    }
+    .main-container div{
+        width: 90%;
+        height: 250px;
+        padding: 15px;
+    }
+
+    footer{
+        display: none;
+    }
+}
+
+/* MOBILE */
+@media(max-width:450px){
+
+    html{
+        font-size: 65%;
+    }
+    
+
+    .main-container{
+        display: grid;
+        grid-template-columns: 1fr ;
+    }
+
+    .main-container div{
+        width: 100%;
+        height: 200px;
+        margin-bottom: 15px;
+        }
+
+    .main-container div h2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(67, 86, 105, 0.8);
+        border: 3px solid black;
+        border-radius: 2em;
+        margin-top: 20%;
+        
+    }
+
+    .main-container div h2:hover{
+        background-color: #f5c36e;
+        
+    }
+
+    .card:hover {
+        filter: sepia(60%);;
+        transform: translateY(-0px);
+    }
+
+
 }
