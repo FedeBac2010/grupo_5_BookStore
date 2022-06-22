@@ -9,6 +9,11 @@ body{
 }
 
 /* LOGO */
+.header-container{
+    background: #fff;
+    padding: 1.5rem;
+}
+
 .logo-bookstore{
     display: flex;
     justify-content: center;
@@ -20,11 +25,29 @@ body{
     border-radius: 20%;
     padding: 10px;
     background: #fff;
+    margin: 10px;
 }
 
+/* HEADER 2 */
 
+.header-container-2{
+    background-color: #f5c36e;
+    padding: 0.9rem;
+    
+}
 
+.navbar{
+    text-align: center;
+}
 
+.navbar a{
+    color: #fff;
+    display: inline-block;
+    font-size: 1.5rem;
+    visibility: hidden;
+}
+
+/* <!-- CARRITO DE COMPRAS --> */
 
 .container{
     max-width: 1200px;
@@ -79,6 +102,10 @@ body{
 .product-price,
 .product-offer{
     margin-bottom: 20px;
+}
+
+.product-offer{
+    color: rgba(27, 178, 27, 0.691);
 }
 
 .product-remove{
@@ -140,6 +167,7 @@ body{
 }
 
 @media (max-width:489px){
+
     .remove{
         display: none;
     }
@@ -160,6 +188,11 @@ body{
     }
 }
 @media (max-width:769px){
+
+    .header-container-2{
+        display: none;
+    }
+
     .cart{
         flex-direction: column;
     }
