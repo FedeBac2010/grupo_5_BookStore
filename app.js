@@ -25,3 +25,11 @@ app.listen(3000, ()=>{
 app.get("/register", (req, res) =>{
     res.sendFile(path.resolve(__dirname, "./views/register.html"))
     })
+
+app.get("/detalle-producto", (req, res) =>{
+    res.sendFile(path.resolve(__dirname, "./views/detalle-producto.html"))
+})
+
+app.get("/cart", (req, res) =>{
+    res.sendFile(path.resolve(__dirname, "./views/cart.html"))
+})

@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #4ba9e9, #4ba9e9 50%, 
+    #fff 50%, #fff 100%);
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 380px;
+    background-color: #fff;
+    box-shadow: 0px 15px 45px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.card .imgBox {
+    position: relative;
+    min-width: 300px;
+    width: 300px;
+display:flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+transition: 0.5s;
+}
+
+.card:hover .imgBox {
+    transform: rotate(-35deg)
+}
+
+.card .imgBox img {
+    width: 85%;
+}
+
+.card .details {
+    position: relative;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%; 
+    height: 100%;
+    padding: 20px;
+    background: #4ba9e9 ;
+}
+
+.card .details .title small {
+    font-weight: 300;
+    font-size: 0.8em;
+}
+
+.card .details h4 {
+font-size: 0.9em;
+}
+
+.card .details .desription p {
+font-size: 0.9em;
+ font-weight: 200;
+}
+
+.card .details .buy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .details .buy .price {
+font-size: 1.6em;
+
+}
+
+.card .details .buy .button {
+background: #fff;
+padding: 0.5em 0.8em;
+text-transform: uppercase;
+}
+
+.card .details .buy .button a{
+    text-decoration: none;
+color: black;
+}
