@@ -134,8 +134,9 @@ body{
 
 .bottom-navbar a{
     font-size: 2rem;
-    padding: 1rem 3rem;
+    padding: 1rem 1rem;
     color: #fff;
+    margin: 0 15px;
     
 }
 
@@ -253,6 +254,7 @@ footer p:hover{
     .bottom-navbar{
         display:block ;
     }
+
 
     #search-btn{
         display:inline-block;
