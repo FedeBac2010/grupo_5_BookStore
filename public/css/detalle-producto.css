@@ -2,41 +2,124 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Gentium Book Basic', serif;
+    text-transform: capitalize; /* Esto muestra un texto 
+    con la primera letra de cada palabra en mayúsculas. */
 }
 
-body {
+/* body {
     display:flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(180deg, #4ba9e9, #4ba9e9 50%, 
-    #fff 50%, #fff 100%);
+    background: linear-gradient(180deg, #fff , #fff 50%, 
+    #f5c36e 50%, #f5c36e 100%);
+} */
+
+body {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23a3a3a3' fill-opacity='0.1'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
 }
+
+
+.contenedor-total {
+    display:flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* min-height: 50vh; */
+    /* background: linear-gradient(180deg, #fff, #fff, 50%, 
+    #f5c36e 50%, #f5c36e 100%); */
+}
+
+.header-container{
+    background: #fff;
+    padding: 1.5rem;
+}
+
+.logo-bookstore{
+    display: flex;
+    justify-content: center;
+}
+
+.logo-bookstore img {
+    width: 120px;
+    border: 1px solid #917443;
+    border-radius: 20%;
+    padding: 10px;
+    background: #fff;
+    margin: 10px;
+}
+
+/* HEADER 2 */
+
+.header-container-2{
+    background-color: #f5c36e;
+    padding: 0.9rem;
+}
+
+.navbar{
+    text-align: center;
+    /* display: flex; */
+}
+
+.navbar a{
+    color: #fff;
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: 0.9rem;
+    font-size: 1.5rem;
+    /* visibility: hidden; */
+}
+
+/* BOTTOM NAVBAR */
+
+.bottom-navbar{
+    text-align: center;
+    background: #f5c36e;
+    /* position: absolute; */
+    bottom: 0; left: 0; right: 0; 
+    /* z-index: 1000; */
+    display: none;
+    
+}
+
+.bottom-navbar a{
+    font-size: 2rem;
+    padding: 1rem 3rem;
+    color: #fff;
+}
+
+.bottom-navbar a:hover{
+    background-color: #2d3c4b;
+}
+
+/* TARJETA PRODUCTO */
 
 .card {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 600px;
+    width: 100vh;
     height: 380px;
     background-color: #fff;
     box-shadow: 0px 15px 45px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
+    overflow: hidden; 
+    margin-top: 50px; 
+    margin-bottom: 170px;
 }
 
 .card .imgBox {
     position: relative;
-    min-width: 300px;
-    width: 300px;
-display:flex;
-justify-content: center;
-align-items: center;
-height: 100%;
-transition: 0.5s;
+    min-width: 19em;
+    width: 18em;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transition: 0.5s; 
 }
 
-.card:hover .imgBox {
-    transform: rotate(-35deg)
+.card:hover .imgBox img {
+    transform: scale(1.05);
 }
 
 .card .imgBox img {
@@ -51,8 +134,10 @@ transition: 0.5s;
     justify-content: space-between;
     width: 100%; 
     height: 100%;
-    padding: 20px;
-    background: #4ba9e9 ;
+    padding: 10px;
+    background: #fff ;
+    color: black;
+    border-left: black solid 3px;
 }
 
 .card .details .title small {
@@ -81,12 +166,155 @@ font-size: 1.6em;
 }
 
 .card .details .buy .button {
-background: #fff;
 padding: 0.5em 0.8em;
 text-transform: uppercase;
+background-color: #3c9b96;
+color: white;
+cursor: pointer;
 }
 
 .card .details .buy .button a{
     text-decoration: none;
-color: black;
+}
+
+.card .details .buy .button a:hover {
+    color:#3c9b96 ;
+}
+
+.card .details .buy .button:hover {
+    background-color: #fff;
+    color: #3c9b96;
+    border: 1px solid #3c9b96;
+}
+
+footer{
+    margin-top: auto;
+    background-color: #2d3c4b;
+    padding: 1em 0;
+    text-align: center;
+    border-top: 3px solid black 2px;
+}
+
+footer div.social{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 50px;
+}
+footer div p{
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+footer div.links a{
+    margin: 0 30px;
+}
+
+footer div.links a i{
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+footer div.links a i:hover,
+footer p:hover{
+    color: #f5c36e;
+}
+
+/*  MOBILE */
+
+@media (max-width: 580px) {
+    .header-container-2 {
+        display: none;
+    }
+
+    .bottom-navbar {
+        display: flex;
+        justify-content: space-between;
+        /* border: solid 3px black; */
+        width: 100%;
+    }
+
+    .bottom-navbar a{
+        font-size: 1.5rem;
+        /* border: solid 3px red; */
+        padding: 10px 10px;
+        margin: 0px 10px;
+    }
+
+    .contenedor-total {
+        height: 600px; 
+    }
+
+    .card {
+                flex-direction: column;
+                height: 500px;
+                padding: 20px;
+            }
+
+    .card .imgBox {
+        height: 50%;
+    }
+
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+    .card {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    footer {
+        display: none;
+        
+    }
+
+    .header-container-2 {
+        display: none;
+    }
+
+    .header-container {
+        box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.59);
+    }
+
+    .contenedor-total {
+        height: 100vh; 
+    }
+
+    .bottom-navbar {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 0;
+        
+    }
+
+    .card {
+/*         flex-direction: column;
+        height: 500px;
+        padding: 20px; */
+    }
+
+    .card .details {
+        border-left: none;
+        border-top: 3px solid black;
+    }
+
+    .card .details .desription {
+        margin-top: 10px;
+    }
+
+    .card .details .title {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+   
+    .card .details .buy {
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
 }
