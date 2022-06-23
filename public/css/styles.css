@@ -323,12 +323,13 @@ footer p:hover{
         
     }
 
+    .card {
+        height: 400px;
+    }
+
     .card:hover {
         filter: sepia(60%);;
         transform: translateY(-0px);
     }
-    .card {
-        height: 230px;
-    }
-    
+
 }
