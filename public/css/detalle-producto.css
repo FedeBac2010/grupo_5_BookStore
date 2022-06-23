@@ -225,7 +225,7 @@ footer p:hover{
 
 /*  MOBILE */
 
-@media (max-width: 580px) {
+@media (max-width: 425px) {
     .header-container-2 {
         display: none;
     }
@@ -247,12 +247,6 @@ footer p:hover{
     .contenedor-total {
         height: 600px; 
     }
-
-    .card {
-                flex-direction: column;
-                height: 500px;
-                padding: 20px;
-            }
 
     .card .imgBox {
         height: 50%;
@@ -282,10 +276,10 @@ footer p:hover{
     }
 
     .contenedor-total {
-        height: 100vh; 
+        height: 600px; 
     }
 
-    .bottom-navbar {
+     .bottom-navbar {
         display: flex;
         justify-content: space-between;
         position: absolute;
@@ -294,9 +288,9 @@ footer p:hover{
     }
 
     .card {
-/*         flex-direction: column;
+        flex-direction: column;
         height: 500px;
-        padding: 20px; */
+        padding: 20px;
     }
 
     .card .details {
