@@ -6,7 +6,7 @@ Encuentro nueva plataforma Meet.
 Fijar el dia de encuentro Viernes 6 p.m.
 Empezar front-end con HTML y CSS.
 Avisarnos cuando codeamos el proyecto final.
-Los encuentros de los viernes divididos en dos epatas. proyecto. final y dudas de PlayGround.
+Los encuentros de los viernes divididos en dos epatas, proyecto final y dudas de PlayGround.
 
 More of:
 
