@@ -235,6 +235,7 @@ footer p:hover{
         justify-content: space-between;
         /* border: solid 3px black; */
         width: 100%;
+        /* position: fixed; */
     }
 
     .bottom-navbar a{
