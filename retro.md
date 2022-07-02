@@ -5,7 +5,7 @@
 * Dividir las tareas del Sprint.
 * Consultar como vamos al final de cada día.
 * Avisarnos cuando arrancamos a programar.
-#### Start Doing
+#### More of
 * Más encuentros por Meet( Viernes y Miércoles).
 * Consultarnos entre nosotros dudas o preguntas.
 * Pedirnos ayuda cunado nos trabamos con algo.
