@@ -1,7 +1,6 @@
-const productosController = {
+module.exports = {
     detalle: (req, res) =>{
-        res.render("detalle-producto");
+        res.render("products/detalle-producto");
     }
     }
     
-    module.exports = productosController;

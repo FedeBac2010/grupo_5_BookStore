@@ -1,12 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const usersController = require('../Controllers/usersController');
+const usersController= require('../Controllers/usersController')
 
-router.get('/login.ejs', (req, res) => {
-    res.render('users/login');
-});
+router.get('/login', usersController.login);
 
-router.get('/register.ejs',(req, res) => {
-    res.render('users/register');
-}); 
+router.get('/register', usersController.register); 
 module.exports = router;

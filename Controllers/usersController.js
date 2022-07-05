@@ -1,10 +1,9 @@
-// Aca no me funcionó más... 
-const usersController ={
+module.exports ={
     login: (req, res) => {
         res.render('users/login');
     },
     register: (req, res) =>{
-        res.render("register");
+        res.render("users/register");
     },
 
 }

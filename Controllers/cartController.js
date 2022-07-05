@@ -1,6 +1,5 @@
-const cartController = {
+module.exports= {
     cart: (req, res) =>{
-        res.render("cart.ejs");
+        res.render("cart");
     }
 } 
-    module.exports = cartController;
