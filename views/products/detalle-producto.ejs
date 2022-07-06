@@ -1,27 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Include Head -->
+    <%- include("../partials/head") %>
     
     <!-- Custom CSS -->
     <link href="/css/detalle-producto.css" rel="stylesheet" />
-    
-    <!-- FONT AWESOME -->
-    <script
-    src="https://kit.fontawesome.com/0442526d0c.js"
-    crossorigin="anonymous"></script>
 
-    <title>Document</title>
+    <!-- Titulo -->
+    <title>Product Details</title>
 </head>
 <body>
+    <!-- HEADER -->
     <header>
         <div class="header-container">
             <!-- LOGO -->
@@ -37,7 +27,6 @@
               <a href="#categorias">categorias</a>
             </nav>
           </div>
-          
           </nav>
     </header>
     <!-- BOTTOM NAVBAR -->
@@ -79,24 +68,8 @@
         </div>
     </div>
 </div>
-
 <!-- FOOTER -->
 
-<footer>
-    <div class="social">
-    <div class="contacto">
-      <p>Contacto</p>
-    </div>
-    <div class="links">
-        <a href="#">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-    </div>
-  </div>
-</footer>
+<%- include("../partials/footer") %>
+</body>
+</html>
