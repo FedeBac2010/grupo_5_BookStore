@@ -5,7 +5,7 @@
       <%- include("../partials/head") %>
 
       <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="/css/register.css" />
+    <link rel="stylesheet" href="/css/edit.css" />
 
     <title>Edit</title>
 </head>
@@ -37,14 +37,16 @@
                 <span class="details">Descripcion</span>
                 <input type="text" placeholder="Descripcion" required />
               </div>
-              <div class="">
+              <div class="input-box">
                 <span class="details">Imagen</span>
                 <input type="file" name="" accept=".jpg" required/>
               </div>
+            </div>
+              <div class="gender-details">
+              <input type="radio" name="categoria" id="dot-1">
+              <input type="radio" name="categoria" id="dot-2">
+              <input type="radio" name="categoria" id="dot-3">
               <span class="gender-title">Categoria</span>
-            <input type="radio" name="categoria" id="dot-1">
-            <input type="radio" name="categoria" id="dot-2">
-            <input type="radio" name="categoria" id="dot-3">
           <div class="category">
             <label for="dot-1">
               <span class="dot one"></span>
@@ -59,12 +61,11 @@
               <span class="gender">Infantiles</span>
             </label>
           </div>
-            </div>
-            <div class="gender-details">
-              <div class="button">
-                <input type="submit" value="Editar"/>
-              </div>
-            </div>
+          <div class="button">
+            <input type="submit" value="Editar"/>
+          </div>
+        </div>
+      
           </form>
         </div>
       </body>

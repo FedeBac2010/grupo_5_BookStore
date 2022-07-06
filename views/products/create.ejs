@@ -5,14 +5,13 @@
     <%- include("../partials/head") %>
 
     <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="/css/register.css" />
+    <link rel="stylesheet" href="/css/create.css" />
     
     <title>Crear</title>
   </head>
   <body>
     <div class="container">
-      <div class="title">
-        Agregar libro
+      <div class="title">Agregar Producto
         <a href="/"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
       </div>
       <form action="">
@@ -41,6 +40,8 @@
             <span class="details">Imagen</span>
             <input type="file" name="" accept=".jpg" required />
           </div>
+        </div>
+          <div class="gender-details">
           <input type="radio" name="categoria" id="dot-1" />
           <input type="radio" name="categoria" id="dot-2" />
           <input type="radio" name="categoria" id="dot-3" />
@@ -59,12 +60,11 @@
               <span class="gender">Infantiles</span>
             </label>
           </div>
-        </div>
-        <div class="gender-details">
           <div class="button">
             <input type="submit" value="Agregar" />
           </div>
         </div>
+        
       </form>
     </div>
   </body>
