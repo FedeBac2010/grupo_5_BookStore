@@ -1,7 +1,30 @@
 # Retrsopectivas
+## Sprint 4:
+#### Start Doing
+* Codear en equipo.
+* Usar el liveshare.
+#### More of
+* Dividir las tareas del Sprint.
+* Programar los encuentros de Meet los Miercoles y Viernes.
+* Consultarnos entre nosotros dudas o preguntas.
+* Pedirnos ayuda cuando nos trabamos con algo.
+* Usar más el Trello, revisarlo y actualizarlo a medida que avanzamos con las actividades.
+* Implementar las correcciones del Sprint anterior.
+#### Keep Doing
+* Ponerse al día con el Playground.
+* Avisarnos cuando arrancamos a programar.
+* Llegar a las fechas de entrega con el proyecto.
+* Seguir los encuentros de los Viernes.
+#### Less of
+* Dejar los detalles para ultimo momento.
+* Atrasarnos con las actividades.
+* Procrastinar.
+#### Stop doing
+* Quedarse hasta la madrugada para llegar con el proyecto.
+* Encuentros por Discord.
 ## Sprint 3:
 #### Start Doing
-* Ponerse al día con Playhouse.
+* Ponerse al día con Playground.
 * Dividir las tareas del Sprint.
 * Consultar como vamos al final de cada día.
 * Avisarnos cuando arrancamos a programar.
