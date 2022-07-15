@@ -10,6 +10,9 @@ module.exports = {
   },
   create: (req, res) => {
     res.render("products/create",{styles:'create.css'})
+  },
+  catalog: (req, res) => {
+    res.render("products/catalog", {styles:'catalog.css'})
   }
 };
 
