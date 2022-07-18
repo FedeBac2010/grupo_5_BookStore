@@ -33,18 +33,12 @@ body{
 .header-container-2{
     background-color: #f5c36e;
     padding: 0.9rem;
-    
+    display: flex;
+    align-items: flex-end;
 }
 
-.navbar{
-    text-align: center;
-}
-
-.navbar a{
-    color: #fff;
-    display: inline-block;
-    font-size: 1.5rem;
-    visibility: hidden;
+.header-container-2 i:hover{
+    color: #3c9b96;
 }
 
 /* <!-- CARRITO DE COMPRAS --> */

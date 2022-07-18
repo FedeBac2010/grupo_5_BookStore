@@ -5,5 +5,8 @@ module.exports ={
     register: (req, res) =>{
         res.render("users/register",{styles:'register.css'});
     },
+    user: (req, res) =>{
+        res.render("users/user",{styles:'user.css'});
+    },
 
 }

@@ -13,6 +13,9 @@ module.exports = {
   },
   catalog: (req, res) => {
     res.render("products/catalog", {styles:'catalog.css'})
+  },
+  catalogebook: (req, res) => {
+    res.render("products/catalog-ebook", {styles:'catalog-ebook.css'})
   }
 };
 

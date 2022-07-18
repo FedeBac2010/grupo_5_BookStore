@@ -12,6 +12,8 @@ router.get("/edit", productsController.edit);
 
 router.get("/catalog", productsController.catalog);
 
+router.get("/catalog-ebook", productsController.catalogebook);
+
 
 module.exports = router;
 

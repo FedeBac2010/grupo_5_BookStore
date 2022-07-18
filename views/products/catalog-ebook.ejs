@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <!-- Include Head con CSS -->
-    <%- include("../partials/head") %>
+    <%- include("../partials/head.ejs") %>
 
     <title>Catalog</title>
   </head>
@@ -15,9 +15,9 @@
     <nav>
       <div class="bottom-navbar">
         <a href="/" class="fas fa-home"></a>
-        <a href="#destacados" class="fas fa-tags"></a>
-        <a href="#plataforma" class="fa-solid fa-laptop-file"></a>
-        <a href="#categorias" class="fa-solid fa-swatchbook"></a>
+        <a href="#" class="fas fa-tags">Impresos</a>
+        <a href="#" class="fa-solid fa-laptop-file">Categorias</a>
+        <a href="#" class="fa-solid fa-swatchbook">Contactos</a>
       </div>
     </nav>
 
@@ -26,11 +26,12 @@
       <section>
         <div class="first-article">
           <article>
-            <a href="./detalle-producto"><h2 class="descripcion">Señor de los anillos</h2></a>
+            <h2 class="descripcion">Señor de los anillos<br>La Comunidad del Anillo</h2>
             <img
-              src="/img/products/lordOfTheRings.jpg"
+              src="/img/products/lordOfTheRings1.jpg"
               alt="lordOfTheRings"
               class="barra"
+              href="./detalle-producto.ejs"
             />
             <!-- Logo de envio (camion) -->
             <div class="logo-like barra">
@@ -45,8 +46,9 @@
           </article>
           <article>
             <h2 class="descripcion">Señor de los anillos</h2>
+              <h3>Las Dos Torres</h3>
             <img
-              src="/img/products/lordOfTheRings.jpg"
+              src="/img/products/lordOfTheRings2.jpg"
               alt="lordOfTheRings"
               class="barra"
             />
@@ -55,16 +57,16 @@
               <i class="fa-solid fa-heart"></i>
             </div>
             <div class="precio-libro">
-              <p class="precio">$2.000</p>
+              <p class="precio">$2.500</p>
               <div class="button">
                 <a href="/products/cart">Agregar al Carrito</a>
               </div>
             </div>
           </article>
           <article>
-            <h2 class="descripcion">Señor de los anillos</h2>
+            <h2 class="descripcion">Señor de los anillos<br>El Retorno del Rey</h2>
             <img
-              src="/img/products/lordOfTheRings.jpg"
+              src="/img/products/lordOfTheRings3.jpg"
               alt="lordOfTheRings"
               class="barra"
             />

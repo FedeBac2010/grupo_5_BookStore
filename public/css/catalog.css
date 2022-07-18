@@ -79,8 +79,7 @@
 /* HEADER 2 */
 
 .header-container-2 {
-  background-color: #f5c36e;
-  padding: 0.9rem;
+  display: none;
 }
 
 .navbar {
@@ -97,17 +96,16 @@
   /* visibility: hidden; */
 }
 
-/* BOTTOM NAVBAR */
+/* BOTTOM NAVBAR para celular y tablet */
 
 .bottom-navbar {
   text-align: center;
   background: #f5c36e;
-  /* position: absolute; */
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   /* z-index: 1000; */
-  display: none;
 }
 
 .bottom-navbar a {
@@ -124,6 +122,7 @@
 body {
   font-size: 12px;
   font-family: "Roboto", sans-serif;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23a3a3a3' fill-opacity='0.1'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 h3 {
@@ -161,7 +160,7 @@ article div.barra {
   border-top: solid 1px #ebebeb;
   position: relative;
 }
-/* Icono del camion */
+/* Icono del camion-corazon? */
 main section article i {
   display: block;
   font-size: 16px;
@@ -231,6 +230,7 @@ footer {
   padding: 1em 0;
   text-align: center;
   border-top: 3px solid black 2px;
+
 }
 
 footer div.social {
@@ -258,4 +258,45 @@ footer div.links a i {
 footer div.links a i:hover,
 footer p:hover {
   color: #f5c36e;
+}
+
+
+/* TABLETS */
+@media(min-width:768px){
+
+  .bottom-navbar a{
+      margin: 0 40px;
+  }
+  
+  .main-container{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+  }
+  
+  }
+
+/*DESKTOP*/
+@media(min-width:1023px){
+
+  .search-form{
+      display: block;
+  }
+
+  #search-btn{
+      display: none;
+  }
+  
+  .header-container-2{
+    background-color: #f5c36e;
+    padding: 0.9rem;
+    display: block;
+  }
+
+  .bottom-navbar{
+      display: none;
+  }
+
+footer{
+  display: block;
+}
 }
