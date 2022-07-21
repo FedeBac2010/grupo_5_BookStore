@@ -25,61 +25,43 @@
     <main>
       <section>
         <div class="first-article">
-          <article>
-            <a href="./detalle-producto"><h2 class="descripcion">Señor de los anillos</h2></a>
+  
+            <% for(let index=0; index < books.length; index++) { %>
+              <article>
+            <a href="./detalle-producto/<%= books[index].id %>">
+            <h2 class="descripcion"><%= books[index].title %></h2></a>
+            
             <img
-              src="/img/products/lordOfTheRings.jpg"
+              src="/img/products/<%= books[index].img %>"
               alt="lordOfTheRings"
               class="barra"
             />
-            <!-- Logo de envio (camion) -->
+           
+            <!-- Logo de like (corazon) -->
             <div class="logo-like barra">
               <i class="fa-solid fa-heart"></i>
             </div>
+
+            <!--Autor, categoria, descripcion y precio-->
             <div class="precio-libro">
-              <p class="precio">$2.000</p>
+              <p class="autor">Autor: <%= books[index].author %> </p>
+              <p class="categoria">Categoria: <%= books[index].category %> </p>
+              <p class="descripcion">Descripcion: <%= books[index].description %> </p>
+              <p class="precio">Precio: <%= books[index].price %> </p>
+            
+            </div>
+
+
               <div class="button">
                 <a href="/products/cart">Agregar al Carrito</a>
               </div>
             </div>
-          </article>
-          <article>
-            <h2 class="descripcion">Señor de los anillos</h2>
-            <img
-              src="/img/products/lordOfTheRings.jpg"
-              alt="lordOfTheRings"
-              class="barra"
-            />
-            <!-- Logo de envio (camion) -->
-            <div class="logo-like barra">
-              <i class="fa-solid fa-heart"></i>
-            </div>
-            <div class="precio-libro">
-              <p class="precio">$2.000</p>
-              <div class="button">
-                <a href="/products/cart">Agregar al Carrito</a>
-              </div>
-            </div>
-          </article>
-          <article>
-            <h2 class="descripcion">Señor de los anillos</h2>
-            <img
-              src="/img/products/lordOfTheRings.jpg"
-              alt="lordOfTheRings"
-              class="barra"
-            />
-            <!-- Logo de envio (camion) -->
-            <div class="logo-like barra">
-              <i class="fa-solid fa-heart"></i>
-            </div>
-            <div class="precio-libro">
-              <p class="precio">$2.000</p>
-              <div class="button">
-                <a href="/products/cart">Agregar al Carrito</a>
-              </div>
-            </div>
-          </article>
+          </a>
+         
+        </article>
     
+          <% } %> 
+
         </div>
       </section>
     </main>

@@ -152,8 +152,8 @@ article {
 }
 
 article img {
-  width: 70%;
-  height: 80%;
+  width: 40%;
+  height: 50%;
 }
 
 article div.barra {
@@ -189,7 +189,7 @@ h2.descripcion {
 }
 /* Precio y descuento guardado en un div y poniendo flexBox */
 .precio-libro {
-  display: flex;
+
   justify-content: center;
   margin-top: 20px;
   margin-bottom: 10px;

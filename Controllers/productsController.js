@@ -1,3 +1,9 @@
+const fs = require('fs');
+const path = require('path');
+
+const productListPath = path.resolve(__dirname, '../data/products.json');
+const productList = JSON.parse(fs.readFileSync(productListPath, 'utf8'));
+
 module.exports = {
   detalle: (req, res) => {
     res.render("products/detalle-producto",{styles:'detalle-producto.css'});
@@ -12,7 +18,7 @@ module.exports = {
     res.render("products/create",{styles:'create.css'})
   },
   catalog: (req, res) => {
-    res.render("products/catalog", {styles:'catalog.css'})
+    res.render("products/catalog", {books: productList, styles:'catalog.css'})
   },
   catalogebook: (req, res) => {
     res.render("products/catalog-ebook", {styles:'catalog-ebook.css'})
