@@ -3,45 +3,56 @@
   <head>
     <!-- Include Head con CSS -->
     <%- include("../partials/head") %>
-  
+
     <title>Crear</title>
   </head>
   <body>
     <div class="container">
-      <div class="title">Agregar Producto
+      <div class="title">
+        Agregar Producto
         <a href="/"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
       </div>
-      <form action="">
+      <!-- FORMULARIO -->
+
+      <form action="/products/create" method="post">  
         <div class="user-details">
           <div class="input-box">
+
             <span class="details">Titulo</span>
-            <input type="text" placeholder="Titulo" required />
+            <input type="text" name="title" placeholder="Titulo" required />
           </div>
           <div class="input-box">
+
             <span class="details">Autor</span>
-            <input type="text" placeholder="Autor" required />
+            <input type="text" name="author" placeholder="Autor" required />
           </div>
           <div class="input-box">
+
             <span class="details">Precio</span>
-            <input type="text" placeholder="Precio" required />
+            <input type="text" name="price" placeholder="Precio" required />
           </div>
           <div class="input-box">
+
             <span class="details">Categoria</span>
-            <input type="text" placeholder="Categoria" required />
+            <input type="text" name="category" placeholder="Categoria" required />
           </div>
           <div class="input-box">
+
             <span class="details">Descripcion</span>
-            <input type="text" placeholder="Descripcion" required />
+            <input type="text" name="description" placeholder="Descripcion" required />
           </div>
           <div class="input-box">
-            <span class="details">Imagen</span>
+
+<!--             <span class="details">Imagen</span>
             <div class="foto-producto">
-              <input type="file" name="foto-producto" accept=".jpg" multiple id="foto-producto">
-              <label for="foto-producto"><i class="fa-solid fa-image"></i>Foto del producto</label>
-            </div>
+              <input type="file" name="img" accept=".jpg" multiple id="foto-producto"/>
+              <label for="foto-producto"
+                ><i class="fa-solid fa-image"></i>Foto del producto</label
+              >
+            </div> -->
           </div>
         </div>
-          <div class="gender-details">
+        <!-- <div class="gender-details">
           <input type="radio" name="categoria" id="dot-1" />
           <input type="radio" name="categoria" id="dot-2" />
           <input type="radio" name="categoria" id="dot-3" />
@@ -59,12 +70,11 @@
               <span class="dot three"></span>
               <span class="gender">Infantiles</span>
             </label>
-          </div>
+          </div> -->
           <div class="button">
             <input type="submit" value="Agregar" />
           </div>
         </div>
-        
       </form>
     </div>
   </body>

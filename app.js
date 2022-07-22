@@ -3,6 +3,9 @@ const express = require ('express');
 const app = express ();
 const path = require ('path');
 
+/* METHOD OVERRIDE */
+const methodOverride= require('method-override');
+
 /* RUTAS */
 
 const mainRoutes = require('./routes/mainRoutes');
@@ -15,6 +18,13 @@ const productsRoutes = require('./routes/productsRoutes');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+/* CONFIG CRUD */
+
+app.use(express.urlencoded({extended:true}));  //CAPTURAMOS LA INFORMACION DE LOS FORMULARIOS
+app.use(express.json());
+
+app.use(methodOverride('_method')); //utilizamos para usar PUT y DELETE
+
 /* RUTAS */
 
 app.use('/', mainRoutes);
@@ -24,7 +34,6 @@ app.use('/products', productsRoutes);
 /* CONFIGURACION DE ARCHIVOS PUBLICOS */
 
 app.use(express.static('public'))
-/* app.use(express.static(path.resolve(__dirname, ('./public')))); */
 
 /* ARCHIVO JS */
 

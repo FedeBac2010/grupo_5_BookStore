@@ -9,58 +9,67 @@
 <body>
     <body>
         <div class="container">
-          <div class="title">Editar producto
+          <div class="title">Editar producto: <%= books.title ?? '' %> 
             <a href="/"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
           </div>
-          <form action="">
+          <!-- FORMULARIO DE EDICION -->
+          <form action="/products/<%= books.id ?? ''%>?_method=PUT " method="post">  
             <div class="user-details">
               <div class="input-box">
+    
                 <span class="details">Titulo</span>
-                <input type="text" placeholder="Titulo" required />
+                <input type="text" name="title" placeholder="Titulo" required value="<%= books.title ?? '' %> "/>
               </div>
               <div class="input-box">
+    
                 <span class="details">Autor</span>
-                <input type="text" placeholder="Autor" required />
+                <input type="text" name="author" placeholder="Autor" required value="<%= books.author ?? ''%> " />
               </div>
               <div class="input-box">
-                <span class="details">Editorial</span>
-                <input type="text" placeholder="Editorial" required />
+    
+                <span class="details">Precio</span>
+                <input type="text" name="price" placeholder="Precio" required value="<%= books.price ?? ''%> " />
               </div>
               <div class="input-box">
+    
                 <span class="details">Categoria</span>
-                <input type="text" placeholder="Categoria" required />
+                <input type="text" name="category" placeholder="Categoria" required  value="<%= books.category ?? ''%> "/>
               </div>
               <div class="input-box">
+    
                 <span class="details">Descripcion</span>
-                <input type="text" placeholder="Descripcion" required />
+                <input type="text" name="description" placeholder="Descripcion" required  value="<%= books.description ?? ''%> "/>
               </div>
               <div class="input-box">
-                <span class="details">Imagen</span>
+    
+    <!--             <span class="details">Imagen</span>
                 <div class="foto-producto">
-                  <input type="file" name="foto-producto" accept=".jpg" multiple id="foto-producto">
-                  <label for="foto-producto"><i class="fa-solid fa-image"></i>Foto del producto</label>
-                </div>
+                  <input type="file" name="img" accept=".jpg" multiple id="foto-producto"/>
+                  <label for="foto-producto"
+                    ><i class="fa-solid fa-image"></i>Foto del producto</label
+                  >
+                </div> -->
               </div>
             </div>
-              <div class="gender-details">
-              <input type="radio" name="categoria" id="dot-1">
-              <input type="radio" name="categoria" id="dot-2">
-              <input type="radio" name="categoria" id="dot-3">
+            <!-- <div class="gender-details">
+              <input type="radio" name="categoria" id="dot-1" />
+              <input type="radio" name="categoria" id="dot-2" />
+              <input type="radio" name="categoria" id="dot-3" />
               <span class="gender-title">Categoria</span>
-          <div class="category">
-            <label for="dot-1">
-              <span class="dot one"></span>
-              <span class="gender">Ciencia Ficcion</span>
-            </label>
-            <label for="dot-2">
-              <span class="dot two"></span>
-              <span class="gender">No ficcion</span>
-            </label>
-            <label for="dot-3">
-              <span class="dot three"></span>
-              <span class="gender">Infantiles</span>
-            </label>
-          </div>
+              <div class="category">
+                <label for="dot-1">
+                  <span class="dot one"></span>
+                  <span class="gender">Ciencia Ficcion</span>
+                </label>
+                <label for="dot-2">
+                  <span class="dot two"></span>
+                  <span class="gender">No ficcion</span>
+                </label>
+                <label for="dot-3">
+                  <span class="dot three"></span>
+                  <span class="gender">Infantiles</span>
+                </label>
+              </div> -->
           <div class="button">
             <input type="submit" value="Editar"/>
           </div>
