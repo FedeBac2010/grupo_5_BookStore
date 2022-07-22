@@ -36,5 +36,15 @@
     "img": "",
     "category": "Fantasia",
     "id": "5"
+  },
+  {
+    "title": "Pepito",
+    "author": "pepito",
+    "price": "5000",
+    "currency": "$",
+    "description": "descripcion 1",
+    "img": "",
+    "category": "No ficcion",
+    "id": "115517c5-5ca7-423d-9839-832e5ea29cae"
   }
 ]
