@@ -15,12 +15,12 @@ module.exports = {
     res.render("products/catalog-ebook", {styles:'catalog-ebook.css'})
   },
   detalle: (req, res) => {
-    let id= req.params.id;
-    res.send('Soy producto numero: ' + id)
-    /* res.render("products/detalle-producto",{styles:'detalle-producto.css'}); */
+    let id=  req.params.id; //Toma el id que pasamos por URL
+    let product = productList.find(product=> product.id == id); // Busca en la lista de productos aquellos que coincidan con el id pasado por URL
+    res.render("products/detalle-producto",{books: product, styles:'detalle-producto.css'});
   },
   cart: (req, res) => {
-/*     res.render("products/cart",{styles:'cart.css'}); */
+    res.render("products/cart",{styles:'cart.css'});
   },
   create: (req, res) => { //AQUI ES DONDE CREAREMOS NUESTRO PRODUCTO
     res.render("products/create",{styles:'create.css'})

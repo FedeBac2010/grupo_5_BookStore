@@ -9,10 +9,10 @@
 </head>
 <body>
     <!-- HEADER -->
-    <header>
+    <!-- <header>
         <div class="header-container">
-            <!-- LOGO -->
-            <div class="logo-bookstore">
+             LOGO -->
+            <!-- <div class="logo-bookstore">
             <a href="/"><img src="/img/logo.jpg" alt="Logo Book Store" /></a>
             </div>
         </div>
@@ -25,7 +25,8 @@
             </nav>
           </div>
           </nav>
-    </header>
+    </header> -->
+    <%- include("../partials/header") %>
     <!-- BOTTOM NAVBAR -->
     <nav>
         <div class="bottom-navbar">
@@ -34,7 +35,7 @@
         <a href="#plataforma" class="fa-solid fa-laptop-file"></a>
         <a href="#categorias" class="fa-solid fa-swatchbook"></a>
     </div>
-        </nav>
+        </nav> 
     <!-- CONTENEDOR TOTAL -->
     <!--Hacer el detalle del c¿producto dinamico con javascript-->
     <div class="contenedor-total">
@@ -44,20 +45,19 @@
         </div>
         <div class="details">
             <div class="title">
-                <h3>Titulo-<br>
-                    <small>Categoria</small>
+                <h3><%= books.title ?? " "  %> <br>
+                    <small>Categoria: <%= books.category %>  </small>
+
                 </h3>
             </div>
             <div class="description">
     <h4>Descripcion</h4>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum enim eveniet quos voluptates pariatur vitae. 
-    Numquam corporis alias recusandae distinctio excepturi. Voluptas quae deserunt qui 
-    enim voluptates animi ad aperiam?</p>
+    <br>
+    <p><%= books.description %> </p>
             </div>
             <div class="buy">
                 <div class="price">
-                    <sup>$</sup>
-                    <span>155</span>
+                    <span><%= books.currency %> <%= books.price %> </span>
                 </div>
                 <div class="button">
                     <a href="/products/cart">Agregar al Carrito</a>
