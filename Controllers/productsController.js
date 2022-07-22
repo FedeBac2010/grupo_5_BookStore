@@ -67,10 +67,8 @@ module.exports = {
     res.redirect('/products/catalog') //Redirijimos al catalogo de productos
   },
 
-  deleteProduct:(req,res)=>{
-    (req, res) => {
+  deleteProduct: (req, res) => {
       let id = req.params.id;
-      console.log("deleteProduct", id);
       for (let index = 0; index < productList.length; index++) {
           const element = productList[index];
           if (element.id == id) {
@@ -80,7 +78,6 @@ module.exports = {
 
       fs.writeFileSync(productListPath, JSON.stringify(productList, null, 2));
 
-      res.redirect('/products');}
+      res.redirect('/products/catalog');}
   }
-}
 
