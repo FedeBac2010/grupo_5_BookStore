@@ -56,6 +56,17 @@
                 <a href="/products/cart">Agregar al Carrito</a>
               </div>
             </div>
+
+                        <!-- eliminar producto -->
+                        <form
+                        action="/products/<%= books[index].id %>?_method=DELETE" 
+                        method="post"
+                      >
+                        <button type="submit" 
+                          class="ps-btn ps-btn-danger"
+                        >Eliminar</button>
+                      </form>
+                      <br />
           
          
         </article>
