@@ -32,8 +32,8 @@
             <h2 class="descripcion"><%= books[index].title %></h2></a>
             
             <img
-              src="/img/products/<%= books[index].img %>"
-              alt="lordOfTheRings"
+              src="/img/uploads/<%=books[index].image %>"
+              alt=""
               class="barra"
             />
            
@@ -57,16 +57,16 @@
               </div>
             </div>
 
-                        <!-- eliminar producto -->
-                        <form
-                        action="/products/<%= books[index].id %>?_method=DELETE" 
-                        method="post"
-                      >
-                        <button type="submit" 
-                          class="ps-btn ps-btn-danger"
-                        >Eliminar</button>
-                      </form>
-                      <br />
+          <!-- eliminar producto -->
+              <form
+                action="/products/<%= books[index].id %>?_method=DELETE" 
+                method="post"
+                >
+                <button type="submit" 
+                class="ps-btn ps-btn-danger"
+                >Eliminar</button>
+                </form>
+                <br />
           
          
         </article>

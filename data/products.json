@@ -1,22 +1,26 @@
 [
   {
-    "title": "Harry Potter 5",
-    "author": "J.K ROWLING",
-    "price": "3000",
+    "title": "Señor de los anillos. Las dos torres",
+    "author": "Tolkien J.R.R.",
+    "price": "2000",
     "currency": "$",
-    "description": "Las aventuras de un pequeño mago llamado Harry Potter",
-    "img": "",
-    "category": "Fantasia",
-    "id": "5"
+    "description": "La Compañía se ha disuelto y sus integrantes emprenden caminos separados.",
+    "category": "No ficcion",
+    "id": "7f0fca0e-e4a1-4ccf-8452-1720d495ce56",
+    "image": [
+      "1658588359699.jpg"
+    ]
   },
   {
-    "title": "Pepito",
-    "author": "pepito",
-    "price": "5000",
+    "title": "El señor de los anillos 3era parte",
+    "author": "Tolkien J.R.R.",
+    "price": "3000",
     "currency": "$",
-    "description": "descripcion 1",
-    "img": "",
+    "description": "Tres",
     "category": "No ficcion",
-    "id": "115517c5-5ca7-423d-9839-832e5ea29cae"
+    "id": "c1ad162f-51bb-4948-b617-7e1cbdec693e",
+    "image": [
+      "1658592059005.jpg"
+    ]
   }
 ]

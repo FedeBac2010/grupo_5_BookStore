@@ -13,7 +13,7 @@
             <a href="/"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
           </div>
           <!-- FORMULARIO DE EDICION -->
-          <form action="/products/<%= books.id ?? ''%>?_method=PUT " method="post">  
+          <form action="/products/<%= books.id ?? ''%>?_method=PUT " method="post" enctype="multipart/form-data">  
             <div class="user-details">
               <div class="input-box">
     

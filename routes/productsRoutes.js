@@ -15,7 +15,7 @@ router.get('/detalle-producto/:id', productsController.detalle);
 
 /* RUTA DE CREACION DE PRODUCTO */
 router.get("/create", productsController.create);
-router.post("/create", productsController.storeProduct)
+router.post("/create", upload.array('img', 5), productsController.storeProduct)
 
 /* RUTA EDICION DE PRODUCTO */
 router.get("/edit/:id", productsController.edit);

@@ -28,8 +28,17 @@ module.exports = {
 
   storeProduct:(req,res)=>{
     let product= req.body;
+    let image = req.file;
+    let images = req.files;
     product.id= uuidv4(); // le damos un id unico
 
+    //condicion en caso de subir una imagen o varias. Recorrer todos los archivos y guardarlo en propiedad
+    if (image) {
+      product.image = image.filename;
+  } else if (images) {
+      product.image = images.map(image => image.filename);
+  }
+    
     productList.push(product); //agregamos lo que viene por body a nuestra lista de productos
 
     fs.writeFileSync(productListPath, JSON.stringify(productList, null,2)); //Escribe lo que recibe en nuestro archivo JSON de productos 
