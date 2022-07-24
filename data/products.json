@@ -10,5 +10,19 @@
     "image": [
       "1658592059005.jpg"
     ]
+  },
+  {
+    "title": "HARRY",
+    "author": "J.K Rowling",
+    "price": "4500",
+    "currency": "$",
+    "description": "Un mago crack de lentes contra un pelado capo",
+    "category": "Fantasia",
+    "id": "67043d4d-f200-4bfc-828e-7d6d359490e5",
+    "image": [
+      "1658685687685.jpg",
+      "1658685687687.jpg",
+      "1658685687690.jpg"
+    ]
   }
 ]
