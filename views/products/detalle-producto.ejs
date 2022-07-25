@@ -8,24 +8,6 @@
     <title>Product Details</title>
 </head>
 <body>
-    <!-- HEADER -->
-    <!-- <header>
-        <div class="header-container">
-             LOGO -->
-            <!-- <div class="logo-bookstore">
-            <a href="/"><img src="/img/logo.jpg" alt="Logo Book Store" /></a>
-            </div>
-        </div>
-        <div class="header-container-2">
-            <nav class="navbar">
-              <a href="/">Home</a>
-              <a href="#lanzamientos">lanzamientos</a>
-              <a href="#plataforma">plataforma</a>
-              <a href="#categorias">categorias</a>
-            </nav>
-          </div>
-          </nav>
-    </header> -->
     <%- include("../partials/header") %>
     <!-- BOTTOM NAVBAR -->
     <nav>
@@ -41,9 +23,11 @@
     <div class="contenedor-total">
     <div class="card">
         <div class="imgBox">
-            <img
-            src="/img/uploads/<%=books.image %>"
-            >
+            <% for( let index = 0; index < books.image.length; index++ ) { %>
+                <img
+                src="/img/uploads/<%=books.image[index] %>"
+                >
+            <% } %>
         </div>
         <div class="details">
             <div class="title">

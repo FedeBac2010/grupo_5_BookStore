@@ -30,13 +30,15 @@
               <article>
             <a href ="./detalle-producto/<%= books[index].id %>">
             <h2 class="descripcion"><%= books[index].title %></h2></a>
-            
+          <div>  
             <img
-              src="/img/uploads/<%=books[index].image %>"
+              src="/img/uploads/<%=books[index].image[index] %>"
               alt=""
               class="barra"
             />
-           
+
+
+          </div>
             <!-- Logo de like (corazon) -->
             <div class="logo-like barra">
               <i class="fa-solid fa-heart"></i>

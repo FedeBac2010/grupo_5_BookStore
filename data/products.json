@@ -1,5 +1,6 @@
 [
   {
+
     "title": "El Señor de los anillos 2",
     "author": "Tolkien J.R.R.",
     "price": "2000",
@@ -13,6 +14,9 @@
   },
   {
     "title": "El Señor de los anillos 3",
+=======
+    "title": "El señor de los anillos 3era parte",
+>>>>>>> 3e481c9f7dd35669b43250b87cfef6bd43ad2f3c
     "author": "Tolkien J.R.R.",
     "price": "3000",
     "currency": "$",
@@ -33,6 +37,20 @@
     "id": "d7b99a88-9b0b-44cd-8f02-c1e765b4d841",
     "image": [
       "1658783386134.jpg"
+    ]
+  },
+  {
+    "title": "HARRY",
+    "author": "J.K Rowling",
+    "price": "4500",
+    "currency": "$",
+    "description": "Un mago crack de lentes contra un pelado capo",
+    "category": "Fantasia",
+    "id": "67043d4d-f200-4bfc-828e-7d6d359490e5",
+    "image": [
+      "1658685687685.jpg",
+      "1658685687687.jpg",
+      "1658685687690.jpg"
     ]
   }
 ]

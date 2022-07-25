@@ -19,7 +19,7 @@ router.post("/create", upload.array('img', 5), productsController.storeProduct)
 
 /* RUTA EDICION DE PRODUCTO */
 router.get("/edit/:id", productsController.edit);
-router.put("/:id",productsController.updateProduct)
+router.put("/:id", upload.array('img', 5), productsController.updateProduct)
 
 /* RUTA PARA ELIMINAR UN PRODUCTO */
 router.delete('/:id', productsController.deleteProduct)
