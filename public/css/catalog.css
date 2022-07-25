@@ -132,6 +132,10 @@ h3 {
 }
 
 main {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
   place-content: center;
   width: 90vw;
   margin: 20px;
@@ -140,22 +144,26 @@ main {
 
 /* Secciones de los articulos */
 
+
 section div.first-article {
+  border: 1px solid blue;
   display: flex;
-  justify-content: space-around;
+ justify-content: space-between;
+  
 }
 
 article {
+  border: 1px solid red;
   border-top: solid 1px #ebebeb;
-  padding: 15px;
+  padding: 30px 0px 50px;
   margin: 10px;
   background-color: #ffff;
   text-align: center;
 }
 
 article img {
-  width: 40%;
-  height: 50%;
+  width: 60%;
+  height: 70%;
 }
 
 article div.barra {
@@ -177,8 +185,8 @@ main section article i {
   top: -15px;
 }
 
-.precio {
-  font-size: 25px;
+.autor, .categoria, .descripcion, .precio {
+  font-size: 15px;
   font-weight: bold;
   text-align: center;
   flex-grow: 0.3; /* Tambien se puede utilizar width con mismo porcentaje */
@@ -188,13 +196,22 @@ h2.descripcion {
   font-size: 25px;
   margin-bottom: 20px;
   text-align: center;
+  color: black;
 }
+
+.first-article a{
+  text-decoration: none;
+
+}
+
+
 /* Precio y descuento guardado en un div y poniendo flexBox */
-.precio-libro {
+.contenido-libro {
 
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 1px solid yellow;
 }
 
 .logo-like {

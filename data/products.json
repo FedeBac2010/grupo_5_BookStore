@@ -1,26 +1,38 @@
 [
   {
-    "title": "Señor de los anillos. Las dos torres",
+    "title": "El Señor de los anillos 2",
     "author": "Tolkien J.R.R.",
     "price": "2000",
     "currency": "$",
-    "description": "La Compañía se ha disuelto y sus integrantes emprenden caminos separados.",
+    "description": "Segunda parte",
     "category": "No ficcion",
-    "id": "7f0fca0e-e4a1-4ccf-8452-1720d495ce56",
+    "id": "a916c0d0-f3f0-40ad-b3fa-843a3702600b",
     "image": [
-      "1658588359699.jpg"
+      "1658782959260.jpg"
     ]
   },
   {
-    "title": "El señor de los anillos 3era parte",
+    "title": "El Señor de los anillos 3",
     "author": "Tolkien J.R.R.",
     "price": "3000",
     "currency": "$",
-    "description": "Tres",
+    "description": "Tercera parte",
     "category": "No ficcion",
-    "id": "c1ad162f-51bb-4948-b617-7e1cbdec693e",
+    "id": "2b531d4b-fadc-460e-b195-5afedce9d4cf",
     "image": [
-      "1658592059005.jpg"
+      "1658782988766.jpg"
+    ]
+  },
+  {
+    "title": "El Señor de los anillos 1",
+    "author": "Tolkien J.R.R.",
+    "price": "2000",
+    "currency": "$",
+    "description": "Primera parte",
+    "category": "No ficcion",
+    "id": "d7b99a88-9b0b-44cd-8f02-c1e765b4d841",
+    "image": [
+      "1658783386134.jpg"
     ]
   }
 ]

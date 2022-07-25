@@ -28,7 +28,7 @@
   
             <% for(let index=0; index < books.length; index++) { %>
               <article>
-            <a href="./detalle-producto/<%= books[index].id %>">
+            <a href ="./detalle-producto/<%= books[index].id %>">
             <h2 class="descripcion"><%= books[index].title %></h2></a>
             
             <img
@@ -43,19 +43,18 @@
             </div>
 
             <!--Autor, categoria, descripcion y precio-->
-            <div class="precio-libro">
-              <p class="autor">Autor: <%= books[index].author %> </p>
-              <p class="categoria">Categoria: <%= books[index].category %> </p>
-              <p class="descripcion">Descripcion: <%= books[index].description %> </p>
-              <p class="precio">Precio: <%= books[index].currency %>  <%= books[index].price %> </p>
-            
+            <div class="contenido-libro">
+              <p class="autor"> <b>Autor:</b> <%= books[index].author %> </p>
+              <p class="categoria"><b>Categoria: </b> <%= books[index].category %> </p>
+              <p class="descripcion"><b>Descripcion:</b> <%= books[index].description %> </p>
+              <p class="precio"><b>Precio:</b> <%= books[index].currency %>  <%= books[index].price %> </p>
             </div>
 
 
               <div class="button">
                 <a href="/products/cart">Agregar al Carrito</a>
               </div>
-            </div>
+             
 
           <!-- eliminar producto -->
               <form
@@ -68,13 +67,16 @@
                 </form>
                 <br />
           
-         
-        </article>
-    
-          <% } %> 
 
-        </div>
+        </article>
+
+        <% } %>     
+              </div>     
+
+
+
       </section>
+
     </main>
 
     <!-- Footer -->
