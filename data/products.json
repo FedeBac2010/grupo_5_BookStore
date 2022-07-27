@@ -1,56 +1,14 @@
 [
   {
-
-    "title": "El Señor de los anillos 2",
-    "author": "Tolkien J.R.R.",
-    "price": "2000",
-    "currency": "$",
-    "description": "Segunda parte",
-    "category": "No ficcion",
-    "id": "a916c0d0-f3f0-40ad-b3fa-843a3702600b",
-    "image": [
-      "1658782959260.jpg"
-    ]
-  },
-  {
-    "title": "El Señor de los anillos 3",
-=======
-    "title": "El señor de los anillos 3era parte",
->>>>>>> 3e481c9f7dd35669b43250b87cfef6bd43ad2f3c
-    "author": "Tolkien J.R.R.",
+    "title": "El señor de los anillos",
+    "author": "Tolkien",
     "price": "3000",
     "currency": "$",
-    "description": "Tercera parte",
-    "category": "No ficcion",
-    "id": "2b531d4b-fadc-460e-b195-5afedce9d4cf",
-    "image": [
-      "1658782988766.jpg"
-    ]
-  },
-  {
-    "title": "El Señor de los anillos 1",
-    "author": "Tolkien J.R.R.",
-    "price": "2000",
-    "currency": "$",
-    "description": "Primera parte",
-    "category": "No ficcion",
-    "id": "d7b99a88-9b0b-44cd-8f02-c1e765b4d841",
-    "image": [
-      "1658783386134.jpg"
-    ]
-  },
-  {
-    "title": "HARRY",
-    "author": "J.K Rowling",
-    "price": "4500",
-    "currency": "$",
-    "description": "Un mago crack de lentes contra un pelado capo",
+    "description": "Primer tomo",
     "category": "Fantasia",
-    "id": "67043d4d-f200-4bfc-828e-7d6d359490e5",
+    "id": "76943732-ca8d-41e1-9789-eefc03289a9a",
     "image": [
-      "1658685687685.jpg",
-      "1658685687687.jpg",
-      "1658685687690.jpg"
+      "1658880793841.jpg"
     ]
   }
 ]

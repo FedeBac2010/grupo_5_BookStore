@@ -22,13 +22,13 @@
     <!--Hacer el detalle del c¿producto dinamico con javascript-->
     <div class="contenedor-total">
     <div class="card">
+        <% for( let index = 0; index < books.image.length; index++ ) { %>
         <div class="imgBox">
-            <% for( let index = 0; index < books.image.length; index++ ) { %>
                 <img
                 src="/img/uploads/<%=books.image[index] %>"
                 >
+            </div>
             <% } %>
-        </div>
         <div class="details">
             <div class="title">
                 <h3><%= books.title ?? " "  %> <br>
@@ -48,6 +48,17 @@
                 <div class="button">
                     <a href="/products/cart">Agregar al Carrito</a>
                 </div>
+                <form
+                action="/products/<%= books.id %>?_method=DELETE" 
+                method="post"
+                >
+                <button type="submit" 
+                class="button"
+                >Eliminar</button>
+              </form>
+              <a href="../edit/<%= books.id  %> "><button type="submit" 
+              class="button"
+              >Editar</button></a>
             </div>
         </div>
     </div>

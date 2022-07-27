@@ -24,20 +24,18 @@
     <!--CATALOGO DE PRODUCTOS-->
     <main>
       <section>
+        <a href="./create"><button class="button">Agregar producto</button></a>
         <div class="first-article">
-  
             <% for(let index=0; index < books.length; index++) { %>
               <article>
             <a href ="./detalle-producto/<%= books[index].id %>">
             <h2 class="descripcion"><%= books[index].title %></h2></a>
-          <div>  
+          <div class="image">  
             <img
-              src="/img/uploads/<%=books[index].image[index] %>"
+              src="/img/uploads/<%=books[index].image[0] %>"
               alt=""
               class="barra"
             />
-
-
           </div>
             <!-- Logo de like (corazon) -->
             <div class="logo-like barra">
@@ -51,38 +49,28 @@
               <p class="descripcion"><b>Descripcion:</b> <%= books[index].description %> </p>
               <p class="precio"><b>Precio:</b> <%= books[index].currency %>  <%= books[index].price %> </p>
             </div>
-
-
               <div class="button">
                 <a href="/products/cart">Agregar al Carrito</a>
               </div>
-             
-
           <!-- eliminar producto -->
               <form
                 action="/products/<%= books[index].id %>?_method=DELETE" 
                 method="post"
                 >
                 <button type="submit" 
-                class="ps-btn ps-btn-danger"
+                class="button"
                 >Eliminar</button>
-                </form>
+              </form>
+              <a href="./edit/<%= books[index].id  %> "><button type="submit" 
+              class="button"
+              >Editar</button></a>
                 <br />
-          
-
         </article>
-
         <% } %>     
               </div>     
-
-
-
       </section>
-
     </main>
-
     <!-- Footer -->
-
     <%- include("../partials/footer") %>
   </body>
 </html>
