@@ -1,70 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <!-- Include Head con CSS -->
     <%- include("../partials/head") %>
 
     <!-- Titulo -->
     <title>Product Details</title>
-</head>
-<body>
+  </head>
+  <body>
     <%- include("../partials/header") %>
-    <!-- BOTTOM NAVBAR -->
-    <nav>
-        <div class="bottom-navbar">
-        <a href="/" class="fas fa-home"></a>
-        <a href="#destacados" class="fas fa-tags"></a>
-        <a href="#plataforma" class="fa-solid fa-laptop-file"></a>
-        <a href="#categorias" class="fa-solid fa-swatchbook"></a>
-    </div>
-        </nav> 
+
+    <!--Barra de navegacion celular-->
+    <%- include("../partials/bottomNav") %>
+
     <!-- CONTENEDOR TOTAL -->
-    <!--Hacer el detalle del c¿producto dinamico con javascript-->
+
     <div class="contenedor-total">
-    <div class="card">
+      <div class="card">
         <% for( let index = 0; index < books.image.length; index++ ) { %>
         <div class="imgBox">
-                <img
-                src="/img/uploads/<%=books.image[index] %>"
-                >
-            </div>
-            <% } %>
-        <div class="details">
-            <div class="title">
-                <h3><%= books.title ?? " "  %> <br>
-                    <small>Categoria: <%= books.category %>  </small>
-
-                </h3>
-            </div>
-            <div class="description">
-    <h4>Descripcion</h4>
-    <br>
-    <p><%= books.description %> </p>
-            </div>
-            <div class="buy">
-                <div class="price">
-                    <span><%= books.currency %> <%= books.price %> </span>
-                </div>
-                <div class="button">
-                    <a href="/products/cart">Agregar al Carrito</a>
-                </div>
-                <form
-                action="/products/<%= books.id %>?_method=DELETE" 
-                method="post"
-                >
-                <button type="submit" 
-                class="button"
-                >Eliminar</button>
-              </form>
-              <a href="../edit/<%= books.id  %> "><button type="submit" 
-              class="button"
-              >Editar</button></a>
-            </div>
+          <img src="/img/uploads/<%=books.image[index] %>" />
         </div>
+        <% } %>
+        <div class="details">
+          <div class="title">
+            <h3>
+              <%= books.title ?? " " %> <br />
+              <small>Categoria: <%= books.category %> </small>
+            </h3>
+          </div>
+          <div class="description">
+            <h4>Descripcion</h4>
+            <br />
+            <p><%= books.description %></p>
+          </div>
+          <div class="buy">
+            <div class="price">
+              <span><%= books.currency %> <%= books.price %> </span>
+            </div>
+            <div class="button">
+              <a href="/products/cart">Agregar al Carrito</a>
+            </div>
+            <form
+              action="/products/<%= books.id %>?_method=DELETE"
+              method="post"
+            >
+              <button type="submit" class="button">Eliminar</button>
+            </form>
+            <a href="../edit/<%= books.id  %> "
+              ><button type="submit" class="button">Editar</button></a
+            >
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-<!-- FOOTER -->
+    <!-- FOOTER -->
 
-<%- include("../partials/footer") %>
-</body>
+    <%- include("../partials/footer") %>
+  </body>
 </html>

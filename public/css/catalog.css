@@ -146,7 +146,6 @@ main {
 
 section div.first-article {
   display: flex;
-  justify-content: space-between;
   background-color: rgba(227, 227, 227, 0.812);
   flex-wrap: wrap;
 }
@@ -157,17 +156,21 @@ article {
   margin: 10px;
   background-color: #ffff;
   text-align: center;
+  width: 40vw;
 }
 
-div .image {
-  width: 500px;
-  /* height: 500px; */
-  display: flex;
+.image {
+  display: inline-block;
   align-items: center;
+  width:250px;
+  height:300px;
+  
 }
 
-article img {
-  width: 100%;
+img {
+  object-fit: cover;
+  width:100%;
+  height:100%;
   padding: 5%;
 }
 

@@ -2,28 +2,23 @@
 <html lang="en">
 <head>
     <%- include("../partials/head.ejs") %>
-    <title>Document</title>
+    <title>Usuario</title>
 </head>
 <body>
-     <!-- HEADER -->
+    <!-- HEADER -->
 
-     <%- include("../partials/header") %>
-     <!--Barra de navegacion celular-->
-     <nav>
-        <div class="bottom-navbar">
-        <a href="/" class="fas fa-home"></a>
-        <a href="#destacados" class="fas fa-tags"></a>
-        <a href="#plataforma" class="fa-solid fa-laptop-file"></a>
-        <a href="#categorias" class="fa-solid fa-swatchbook"></a>
-    </div>
-        </nav>
+    <%- include("../partials/header") %>
+    
+    <!--Barra de navegacion celular-->
+    <%-  include("../partials/bottomNav") %> 
+    
     <main>
         <h1>Usuario</h1>
         <div class="user">
             <img src="/img/users/test.jpg" alt="foto usuario">
             
             <div class="info-user">
-            <p>Nombre de Usuario:<%= users %>  </p>
+            <p>Nombre de Usuario</p>
             <p>Clave: </p>
             <br>
             <p>Nombre Completo: </p>

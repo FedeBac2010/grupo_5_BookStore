@@ -16,42 +16,45 @@
       <!-- FORMULARIO DE REGIRSTRO -->
 
       <form method="POST" action="/users/register">
-
         <div class="user-details">
-          <div class="input-box"> 
 
+          <div class="input-box">
             <span class="details">Nombre Completo</span>
             <input type="text" name="fullName" placeholder="Nombre" />
           </div>
-          <div class="input-box">
 
+          <div class="input-box">
             <span class="details">Usuario</span>
             <input type="text" name="userName" placeholder="Usuario" />
           </div>
+
           <div class="input-box">
-            
             <span class="details">Email</span>
             <input type="text" name="userEmail" placeholder="Email" />
           </div>
-          <div class="input-box">
 
-            <span class="details">Numero de Telefono</span>
-            <input type="text" name="phoneNumber" placeholder="Numero de Tel" />
-          </div>
           <div class="input-box">
-
             <span class="details">Contraseña</span>
             <input type="password" name="password" placeholder="Password" />
           </div>
-          <div class="input-box">
 
-            <span class="details">Confirmar contraseña</span>
-            <input type="text" name="passwordConfirm" placeholder="confirmar contraseña" />
+          <div class="input-box">
+            <span class="details">Numero de Telefono</span>
+            <input type="text" name="phoneNumber" placeholder="Numero de Tel" />
+          </div>
+
+          <div class="input-box">
+            <span class="details">Ciudad</span>
+            <input
+              type="text"
+              name="city"
+              placeholder="Ciudad"
+            />
           </div>
         </div>
-        <div class="input-box">
 
-<!--           <span class="details">Imagen</span>
+        <div class="input-box">
+          <!--           <span class="details">Imagen</span>
           <div class="foto-producto">
             <input type="file" name="img" accept=".jpg" multiple id="foto-perfil"/>
             <label for="foto-producto"
@@ -59,8 +62,8 @@
             >
           </div>
         </div> -->
-        
-       <!--  <div class="gender-details">
+
+          <!--  <div class="gender-details">
           <input type="radio" name="gender" id="dot-1" />
           <input type="radio" name="gender" id="dot-2" />
           <input type="radio" name="gender" id="dot-3" />
