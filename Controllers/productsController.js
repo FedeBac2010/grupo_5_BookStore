@@ -59,6 +59,16 @@ module.exports = {
 
     newProduct.id=id // Con esto mantenemos el ID actual ya que sin esto se modifica pero borra el ID que tenia antes
 
+    //Aplique el mismo procedimiento que cuando cargamos el producto al actualizar la imagen
+    let image = req.file;
+    let images = req.files;
+    if (image) {
+      newProduct.image = image.filename;
+      productList.push(product.image);
+  } else if (images) {
+      newProduct.image = images.map(image => image.filename);
+  }
+
     let productEdit= productList.find(product => product.id ==id) // Busca en la lista de productos aquellos que coincidan con el id pasado por URL
 
     productEdit= newProduct; //Nuestro producto viejo se convierte en el actualizado

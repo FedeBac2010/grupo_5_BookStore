@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Include Head con CSS -->
+    <%- include("../partials/head") %>
+
+    <title>Catalog</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+
+    <%- include("../partials/header") %>
+
+    <!-- BOTTOM NAVBAR -->
+    <nav>
+      <div class="bottom-navbar">
+        <a href="/" class="fas fa-home"></a>
+        <a href="#destacados" class="fas fa-tags"></a>
+        <a href="#plataforma" class="fa-solid fa-laptop-file"></a>
+        <a href="#categorias" class="fa-solid fa-swatchbook"></a>
+      </div>
+    </nav>
+
+    <!--USUARIOS REGISTRADOS-->
+    <main>
+      <section>
+        <a href="./register"><button class="button">Agregar Usuario</button></a>
+
+        <div class="first-article">
+          <% for(let index=0; index < users.length; index++) { %>
+          <article>
+            <a href="./user/<%= users[index].id %>">
+                <h2 class="descripcion"><%= users[index].userName%></h2>
+            </a
+            >
+<!--             <div class="image">
+              <img
+                src="/img/uploads/"
+                alt=""
+                class="barra"
+              />
+            </div> -->
+
+            <!--DEMAS DATOS-->
+            <div class="contenido-libro">
+              <p class="autor"><b>Nombre Completo:</b> <%= users[index].fullName %></p>
+              <p class="categoria">
+                <b>Email: </b> <%= users[index].userEmail %>
+              </p>
+              <p class="precio">
+                <b>Numero de telefono:</b> <%= users[index].phoneNumber %> 
+              </p>
+            </div>
+            
+            <!-- eliminar usuario -->
+            <form
+              action="/users/<%= users[index].id %>?_method=DELETE"
+              method="post"
+            >
+              <button type="submit" class="button">Eliminar</button>
+            </form>
+            <a href="./edit/<%= users[index].id  %> "
+              ><button type="submit" class="button">Editar</button></a
+            >
+            <br />
+          </article>
+          <% } %>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <%- include("../partials/footer") %>
+  </body>
+</html>

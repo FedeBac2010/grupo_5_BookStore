@@ -1,0 +1,33 @@
+ {
+    "id": "1",
+    "full-name": "Usuario 1",
+    "lastName": "Apellido 1",
+    "email": "usuario1@gmail.com",
+    "password": "12345",
+    "tel": "123456789",
+    "gender": "Femenino",
+    "img": ""
+  },
+  {
+    "id": "2",
+    "name": "Usuario 2",
+    "lastName": "Apellido 2",
+    "email": "usuario2@gmail.com",
+    "password": "12345",
+    "tel": "123456789",
+    "gender": "Masculino",
+    "img": ""
+  },
+  {
+    "id": "3",
+    "name": "Apellido 3",
+    "lastName": "Apellido 3",
+    "email": "$usuario3@gmail.com",
+    "password": "12345",
+    "tel": "123456789",
+    "gender": "Femenino",
+    "img": ""
+  },
+  {
+    "id": "a312d5a7-90ee-4975-90dd-74f274aa858b"
+  }
