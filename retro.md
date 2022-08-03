@@ -1,4 +1,26 @@
 # Retrsopectivas
+## Sprint 5:
+#### Start Doing
+* Usar el liveshare.
+* Juntarnos los Miércoles.
+#### More of
+* Codear en equipo.
+* Consultarnos entre nosotros dudas o preguntas.
+* Pedirnos ayuda cuando nos trabamos con algo.
+* Implementar las correcciones del Sprint anterior.
+#### Keep Doing
+* Usar más el Trello, revisarlo y actualizarlo a medida que avanzamos con las actividades.
+* Dividir las tareas del Sprint.
+* Ponerse al día con el Playground.
+* Avisarnos cuando arrancamos a programar.
+* Llegar a las fechas de entrega con el proyecto.
+* Seguir los encuentros de los Viernes.
+#### Less of
+* Dejar los detalles para ultimo momento.
+* Atrasarnos con las actividades.
+* Procrastinar.
+#### Stop doing
+* -
 ## Sprint 4:
 #### Start Doing
 * Codear en equipo.
