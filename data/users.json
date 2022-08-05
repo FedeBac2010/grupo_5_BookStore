@@ -7,5 +7,14 @@
     "phoneNumber": "3764121545",
     "city": "Posadas",
     "id": "6365c3be-56fd-43e5-ae9d-2714985561ee"
+  },
+  {
+    "fullName": "andrea jeong",
+    "userName": "ajeong",
+    "userEmail": "andrea@gmail.com",
+    "password": "$2b$10$6U1PLLtFzTw/CmaRyafKSONEWcjUvGFShaB4d08ZK.L.akLbQAB4K",
+    "phoneNumber": "03412517891",
+    "city": "Rosario",
+    "id": "595ed4c5-4bbb-4687-b860-9e92481f2c33"
   }
 ]

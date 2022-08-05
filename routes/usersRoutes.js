@@ -3,6 +3,9 @@ const router = express.Router();
 const usersController= require('../Controllers/usersController');
 const {body}= require('express-validator');
 
+// CONFIG MULTER
+const upload = require('../middlewares/multer');
+
 
 
 // RUTA DE REGISTRACION 
@@ -11,7 +14,7 @@ router.get('/register', usersController.register);
 
 // METODO QUE PROCESA EL REGISTRO
 
-router.post('/register', usersController.processRegister); 
+router.post('/register', upload.array('img', 5), usersController.processRegister); 
 
 // RUTA QUE EDITA EL USUARIO
 
