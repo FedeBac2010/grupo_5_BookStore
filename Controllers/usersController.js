@@ -7,19 +7,35 @@ const { v4: uuidv4 } = require("uuid");
 const usersListPath = path.resolve(__dirname, "../data/users.json"); //Solicitamos el JSON con la lista de usuarios
 const usersList = JSON.parse(fs.readFileSync(usersListPath, "utf8")); //Leemos el Json y lo traducimos a JS
 
+const userModel = require('../models/UsersModel'); // Importamos archivo userModel
+
+
 module.exports = {
   register: (req, res) => {
     res.render("users/register", { styles: "register.css" });
   },
   processRegister: (req, res) => {
-    let user = req.body;
-    user.id = uuidv4();
+    let currentUser = req.body;
+    let listUsers = userModel.getAll();
 
-    usersList.push(user);
+    const newUser = listUsers.find(user => {
+      if (user.userEmail == currentUser.userEmail) {
+          res.render("users/register", { styles: "register.css" }, { error: "El email ya existe" });
+      }
+  });
 
-    fs.writeFileSync(usersListPath, JSON.stringify(usersList, null, 2));
+  if (! newUser) {
+      userModel.create(currentUser);
+      res.redirect("/");
+  }
+ 
+    // user.id = uuidv4();
 
-    res.redirect("/users/all-profiles"); //Redirijimos a la lista de usuarios;
+    // usersList.push(user);
+
+    // fs.writeFileSync(usersListPath, JSON.stringify(usersList, null, 2));
+
+    // res.redirect("/users/all-profiles"); //Redirijimos a la lista de usuarios;
   },
 
   edit: (req, res) => {
@@ -75,4 +91,5 @@ module.exports = {
   AllProfiles: (req, res) => {
     res.render("users/all-users", { users: usersList, styles: "user.css" });
   },
+
 };

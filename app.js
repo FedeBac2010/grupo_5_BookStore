@@ -6,6 +6,9 @@ const path = require ('path');
 /* METHOD OVERRIDE */
 const methodOverride= require('method-override');
 
+/*SESSION*/
+const session = require('express-session');
+
 /* RUTAS */
 
 const mainRoutes = require('./routes/mainRoutes');
@@ -24,6 +27,12 @@ app.use(express.urlencoded({extended:true}));  //CAPTURAMOS LA INFORMACION DE LO
 app.use(express.json());
 
 app.use(methodOverride('_method')); //utilizamos para usar PUT y DELETE
+
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+})); //Utilizamos para session
 
 /* RUTAS */
 
