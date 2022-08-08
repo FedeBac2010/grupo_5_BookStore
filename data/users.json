@@ -16,5 +16,32 @@
     "phoneNumber": "03412517891",
     "city": "Rosario",
     "id": "595ed4c5-4bbb-4687-b860-9e92481f2c33"
+  },
+  {
+    "fullName": "Federico Bacigalupi",
+    "userName": " crac",
+    "userEmail": "bacigalaipa@gmail.com",
+    "password": "$2b$10$2yV.0d3R51bZJKR5hOZkKuhPpqtmyUsPiCguVn9lGXGpTF0w8z7ea",
+    "phoneNumber": "03764655704",
+    "city": "Posadas",
+    "id": "e4d8af36-f44d-4134-a5d7-b5dd71e8e3f7"
+  },
+  {
+    "fullName": "Federico Bacigalupi",
+    "userName": " crac",
+    "userEmail": "bacigalaipa@gmail.com",
+    "password": "$2b$10$SR8tsXJvcZ4tcAtm4bRRwu5XqF5aKvAb1S/jNDxDA7dTf1uObrbg.",
+    "phoneNumber": "03764655704",
+    "city": "Posadas",
+    "id": "b63e612e-ded4-40a6-8d04-3c58b4adc161"
+  },
+  {
+    "fullName": "Federico Bacigalupi",
+    "userName": " crac",
+    "userEmail": "bacigalaipa@gmail.com",
+    "password": "$2b$10$mgcdCREsnfU8tRCMSV0yp.xhUc4tdqcxq8jO.G3ObeKkUE48JnpRS",
+    "phoneNumber": "03764655704",
+    "city": "Posadas",
+    "id": "8a27432b-5b68-4a43-ab6a-359c9df8bb3b"
   }
 ]

@@ -1,6 +1,9 @@
 const fs = require("fs");
 const path = require("path");
 
+/* EXPRESS-VALIDATOR */
+const {validationResult} = require('express-validator')
+
 /* CONFIG UUID  */
 const { v4: uuidv4 } = require("uuid");
 
@@ -15,12 +18,26 @@ module.exports = {
     res.render("users/register", { styles: "register.css" });
   },
   processRegister: (req, res) => {
+    
+    const resultValidation= validationResult(req); //va entregar la data sobre los datos que valido
+
+
+    if(resultValidation.errors.length >0){
+      return res.render("users/register",{
+        styles: "register.css",
+        errors:resultValidation.mapped(),
+        oldData:req.body
+      })
+    }
+    
     let currentUser = req.body;
     let listUsers = userModel.getAll();
-
+    
     const newUser = listUsers.find(user => {
       if (user.userEmail == currentUser.userEmail) {
-          res.render("users/register", { styles: "register.css" }, { error: "El email ya existe" });
+        res.render("users/register", { 
+          styles: "register.css",
+          error: "El email ya existe" });
       }
   });
 
@@ -90,6 +107,6 @@ module.exports = {
 
   AllProfiles: (req, res) => {
     res.render("users/all-users", { users: usersList, styles: "user.css" });
-  },
+  }
 
 };

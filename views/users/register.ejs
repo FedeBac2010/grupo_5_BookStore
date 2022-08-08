@@ -2,45 +2,70 @@
 <html lang="en">
   <head>
     <!-- Include Head con CSS -->
-    <%- include("../partials/head") %>
+    <%- include("../partials/head.ejs") %>
 
     <title>Registrate</title>
   </head>
   <body>
     <div class="container">
       <div class="title">
-        Registration
+        Registro
         <a href="/"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
       </div>
 
       <!-- FORMULARIO DE REGIRSTRO -->
-
-      <form method="POST" action="/users/register">
+      
+      <form method="POST" action="/users/register" ><!-- enctype="multipart/form-data" --> 
         <div class="user-details">
 
           <div class="input-box">
             <span class="details">Nombre Completo</span>
-            <input type="text" name="fullName" placeholder="Nombre" />
+            <input type="text" name="fullName" placeholder="Nombre" value="<%= locals.oldData ? oldData.fullName : null  %>"/>
+            <% if (locals.errors && errors.fullName) { %>
+              <div class="text-danger">
+                <%= errors.fullName.msg %> 
+              </div>
+            <% } %>
           </div>
 
           <div class="input-box">
             <span class="details">Usuario</span>
-            <input type="text" name="userName" placeholder="Usuario" />
+            <input type="text" name="userName" placeholder="Usuario" value="<%= locals.oldData ? oldData.userName : null  %>" />
+            <% if (locals.errors && errors.userName) { %>
+              <div class="text-danger">
+                <%= errors.userName.msg %> 
+              </div>
+            <% } %>
           </div>
 
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="text" name="userEmail" placeholder="Email" />
+            <input type="text" name="userEmail" placeholder="Email" value="<%= locals.oldData ? oldData.userEmail : null  %>"/>
+            <% if (locals.errors && errors.userEmail) { %>
+              <div class="text-danger">
+                <%= errors.userEmail.msg %> 
+              </div>
+            <% } %>
           </div>
 
           <div class="input-box">
             <span class="details">Contraseña</span>
-            <input type="password" name="password" placeholder="Password" />
+            <input type="password" name="password" placeholder="Password" value="<%= locals.oldData ? oldData.password : null  %>"/>
+            <% if (locals.errors && errors.password) { %>
+              <div class="text-danger">
+                <%= errors.password.msg %> 
+              </div>
+            <% } %>
           </div>
 
           <div class="input-box">
             <span class="details">Numero de Telefono</span>
-            <input type="text" name="phoneNumber" placeholder="Numero de Tel" />
+            <input type="text" name="phoneNumber" placeholder="Numero de Tel" value="<%= locals.oldData ? oldData.phoneNumber : null  %>"/>
+            <% if (locals.errors && errors.phoneNumber) { %>
+              <div class="text-danger">
+                <%= errors.phoneNumber.msg %> 
+              </div>
+            <% } %>
           </div>
 
           <div class="input-box">
@@ -49,11 +74,17 @@
               type="text"
               name="city"
               placeholder="Ciudad"
+              value="<%= locals.oldData ? oldData.city : null  %>"
             />
           </div>
           
                 <div class="foto-perfil">
                   <input type="file" name="img" accept=".jpg" multiple id="foto-perfil"/>
+                  <% if (locals.errors && errors.img) { %>
+                    <div class="text-danger">
+                      <%= errors.img.msg %> 
+                    </div>
+                  <% } %>
                   <label for="foto-perfil"
                     ><i class="fa-solid fa-image"></i>Foto de perfil</label
                   >
@@ -61,14 +92,6 @@
         </div>
 
         <div class="input-box">
-          <!--           <span class="details">Imagen</span>
-          <div class="foto-producto">
-            <input type="file" name="img" accept=".jpg" multiple id="foto-perfil"/>
-            <label for="foto-producto"
-              ><i class="fa-solid fa-image"></i>Foto de perfil</label
-            >
-          </div>
-        </div> -->
 
           <!--  <div class="gender-details">
           <input type="radio" name="gender" id="dot-1" />

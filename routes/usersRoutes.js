@@ -1,12 +1,36 @@
 const express = require('express');
 const router = express.Router();
 const usersController= require('../Controllers/usersController');
-const {body}= require('express-validator');
+const {body}= require('express-validator'); //requerimos express-validator
 
 // CONFIG MULTER
 const upload = require('../middlewares/multer');
 
+//EXPRESS VALIDATOR
 
+const validations= [
+    body('fullName').notEmpty().withMessage('Tienes que escribir un nombre'),
+    
+    body('userName').notEmpty().withMessage('Tienes que escribir un nombre de usuario'),
+    
+    body('userEmail')
+    .notEmpty().withMessage('Tienes que escribir un correo electronico').bail()
+    .isEmail().withMessage('Debes escribir un formato de correo valido'),
+
+    body('phoneNumber').notEmpty().withMessage('Tienes que escribir un numero telefonico'),
+
+    body('city').notEmpty().withMessage('Tienes que escribir una ciudad'),
+    
+    body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
+
+    body('img').custom((value,{req})=>{
+        let file = req.file;
+        if (!file){
+            throw new Error('Tienes que subir una imagen')
+        }
+        return true;
+    })
+];
 
 // RUTA DE REGISTRACION 
 
@@ -14,7 +38,7 @@ router.get('/register', usersController.register);
 
 // METODO QUE PROCESA EL REGISTRO
 
-router.post('/register', upload.array('img', 5), usersController.processRegister); 
+router.post('/register', upload.array('img', 3), validations ,usersController.processRegister); 
 
 // RUTA QUE EDITA EL USUARIO
 
