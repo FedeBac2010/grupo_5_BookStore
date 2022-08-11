@@ -60,7 +60,7 @@
 
           <div class="input-box">
             <span class="details">Numero de Telefono</span>
-            <input type="text" name="phoneNumber" placeholder="Numero de Tel" value="<%= locals.oldData ? oldData.phoneNumber : null  %>"/>
+            <input type="tel" name="phoneNumber" placeholder="Numero de Tel" value="<%= locals.oldData ? oldData.phoneNumber : null  %>"/>
             <% if (locals.errors && errors.phoneNumber) { %>
               <div class="text-danger">
                 <%= errors.phoneNumber.msg %> 

@@ -17,7 +17,7 @@ const validations= [
     .notEmpty().withMessage('Tienes que escribir un correo electronico').bail()
     .isEmail().withMessage('Debes escribir un formato de correo valido'),
 
-    body('phoneNumber').notEmpty().withMessage('Tienes que escribir un numero telefonico'),
+    body('phoneNumber').notEmpty().withMessage('Tienes que escribir un numero telefonico').isMobilePhone(),
 
     body('city').notEmpty().withMessage('Tienes que escribir una ciudad'),
     
