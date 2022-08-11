@@ -15,7 +15,7 @@
 
       <!-- FORMULARIO DE REGIRSTRO -->
       
-      <form method="POST" action="/users/register" ><!-- enctype="multipart/form-data" --> 
+      <form method="POST" action="/users/register" enctype="multipart/form-data" > 
         <div class="user-details">
 
           <div class="input-box">
@@ -79,10 +79,10 @@
           </div>
           
                 <div class="foto-perfil">
-                  <input type="file" name="img" accept=".jpg" multiple id="foto-perfil"/>
-                  <% if (locals.errors && errors.img) { %>
+                  <input type="file" name="avatar" />
+                  <% if (locals.errors && errors.avatar) { %>
                     <div class="text-danger">
-                      <%= errors.img.msg %> 
+                      <%= errors.avatar.msg %> 
                     </div>
                   <% } %>
                   <label for="foto-perfil"

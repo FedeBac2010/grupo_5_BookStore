@@ -4,7 +4,7 @@ const usersController= require('../Controllers/usersController');
 const {body}= require('express-validator'); //requerimos express-validator
 
 // CONFIG MULTER
-const upload = require('../middlewares/multer');
+const upload = require('../middlewares/multerAvatar');
 
 //EXPRESS VALIDATOR
 
@@ -23,13 +23,13 @@ const validations= [
     
     body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
 
-    body('img').custom((value,{req})=>{
+    body('avatar').custom((value,{req})=>{
         let file = req.file;
         if (!file){
             throw new Error('Tienes que subir una imagen')
         }
         return true;
-    })
+    }),
 ];
 
 // RUTA DE REGISTRACION 
@@ -38,7 +38,7 @@ router.get('/register', usersController.register);
 
 // METODO QUE PROCESA EL REGISTRO
 
-router.post('/register', upload.array('img', 3), validations ,usersController.processRegister); 
+router.post('/register', upload.single('avatar'), validations ,usersController.processRegister); 
 
 // RUTA QUE EDITA EL USUARIO
 

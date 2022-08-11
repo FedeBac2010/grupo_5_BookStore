@@ -12,13 +12,15 @@ const User = {
     },
     create: (user) => {
         let newUser = {
-            fullName: user.fullName,
-            userName: user.userName,
-            userEmail: user.userEmail,
+            // fullName: user.fullName,
+            // userName: user.userName,
+            // userEmail: user.userEmail,
+            // phoneNumber: user.phoneNumber,
+            // city: user.city,
+            ...user,
             password: bcrypt.hashSync(user.password, 10),
-            phoneNumber: user.phoneNumber,
-            city: user.city,
             id: uuid.v4(),//genera automaticamenete un id
+        
         };
 
         let userList = User.getAll();
@@ -26,6 +28,7 @@ const User = {
         userList.push(newUser);
 
         fs.writeFileSync(userListPath, JSON.stringify(userList, null, 2));
+    return newUser
     },
     validateUser: (viewUser) => {
         let userList = User.getAll();

@@ -42,9 +42,16 @@ module.exports = {
   });
 
   if (! newUser) {
-      userModel.create(currentUser);
-      res.redirect("/");
+
+	let userToCreate = {
+    ...req.body,
+    avatar: req.file.filename
   }
+
+  let userCreated = userModel.create(userToCreate);
+
+  res.redirect('/');
+}
  
     // user.id = uuidv4();
 
