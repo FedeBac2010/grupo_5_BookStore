@@ -14,18 +14,18 @@
     
     <main>
     <div class="title-usuario">
-        <h1>Usuario</h1>
+        <h1>Datos del Perfil</h1> 
     </div>
     <div class="contenedor">
     <div class="img-box">
-    <img src="../img/users/1660576586778.png" alt="foto usuario" >
+    <img src="../img/users/<%= user.avatar  %> " alt="foto usuario" >
     </div>
     <div class="info-user">
-            <p>Nombre de Usuario: </p>
-            <p>Nombre Completo: </p>
-            <p>Mail: </p>
-            <p>Teléfono: </p>
-            <p>Género: </p>
+            <p>Nombre de Usuario: <%= user.userName %></p>
+            <p>Nombre Completo: <%= user.fullName %></p>
+            <p>Mail: <%= user.fullName %></p>
+            <p>Teléfono: <%= user.phoneNumber %></p>
+            <p>Ciudad: <%= user.city %></p>
             <div class="user-edit">
                             <a class="button" href="#">Editar</a>
             </div>

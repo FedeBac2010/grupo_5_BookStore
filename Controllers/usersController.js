@@ -119,6 +119,8 @@ module.exports = {
     if(userToLogin){
       let okPassword= bcrypt.compareSync(req.body.password, userToLogin.password)
       if(okPassword){
+        delete userToLogin.password; //Utilizado para que no se vea la contraseña durante la sesion
+        req.session.userLogged= userToLogin; //Se almacena la info del userToLogin
         return res.redirect('/users/profile')
       }
       return res.render("users/login", {
@@ -142,7 +144,10 @@ module.exports = {
 
 
   profile: (req, res) => {
-    res.render("users/user", { styles: "user.css" });
+    res.render("users/user", { 
+      styles: "user.css",
+      user: req.session.userLogged
+    });
   },
 
   AllProfiles: (req, res) => {

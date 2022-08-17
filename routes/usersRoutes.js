@@ -1,6 +1,9 @@
+const { request } = require('express');
 const express = require('express');
 const router = express.Router();
 const usersController= require('../Controllers/usersController');
+
+const guestMiddleware= require('../middlewares/guestMiddleware')
 
 
 // CONFIG MULTER
@@ -12,7 +15,7 @@ const validations= require('../middlewares/validations')
 
 // RUTA DE REGISTRACION 
 
-router.get('/register', usersController.register); 
+router.get('/register', guestMiddleware,usersController.register); 
 
 // METODO QUE PROCESA EL REGISTRO
 
