@@ -7,11 +7,15 @@ const {validationResult} = require('express-validator')
 /* CONFIG UUID  */
 const { v4: uuidv4 } = require("uuid");
 
+/* CONFIG USUARIOS */
+
 const usersListPath = path.resolve(__dirname, "../data/users.json"); //Solicitamos el JSON con la lista de usuarios
 const usersList = JSON.parse(fs.readFileSync(usersListPath, "utf8")); //Leemos el Json y lo traducimos a JS
 
-const userModel = require('../models/UsersModel'); // Importamos archivo userModel
+/* const userModel = require('../models/User'); */ // Importamos archivo userModel
 
+const bcrypt = require('bcrypt');
+const User = require("../models/User");
 
 module.exports = {
   register: (req, res) => {
@@ -19,6 +23,7 @@ module.exports = {
   },
   processRegister: (req, res) => {
     
+    /* VALIDACIONES */
     const resultValidation= validationResult(req); //va entregar la data sobre los datos que valido
 
 
@@ -29,37 +34,36 @@ module.exports = {
         oldData:req.body
       })
     }
+    /* PROCESO DE CREACION */
+    let currentUser = req.body; //Lo que viene por registro
+    let listUsers = User.getData(); //OBTENEMOS LOS USUARIOS
     
-    let currentUser = req.body;
-    let listUsers = userModel.getAll();
-    
-    const newUser = listUsers.find(user => {
-      if (user.userEmail == currentUser.userEmail) {
-        res.render("users/register", { 
-          styles: "register.css",
-          error: "El email ya existe" });
-      }
-  });
-
-  if (! newUser) {
 
 	let userToCreate = {
     ...req.body,
-    avatar: req.file.filename
+    password: bcrypt.hashSync(req.body.password, 10), //Encriptamos la contraseña
+    avatar: req.file.filename //para subir la imagen
   }
 
-  let userCreated = userModel.create(userToCreate);
+  let userInDB= User.findByfield('userEmail', req.body.userEmail) //La variable almacena al usuario de acuerdo al campo (userEmail) que ya se encuentra registrado en la basde datos JSON
 
-  res.redirect('/');
-}
- 
-    // user.id = uuidv4();
+  if (userInDB){
+    return res.render("users/register",{
+      styles: "register.css",
+      errors:{
+        userEmail:{
+          msg: 'Este email ya esta registrado'
+        }
+      },
+      oldData:req.body
+    })
+  }
 
-    // usersList.push(user);
 
-    // fs.writeFileSync(usersListPath, JSON.stringify(usersList, null, 2));
+  let userCreated = User.create(userToCreate);
 
-    // res.redirect("/users/all-profiles"); //Redirijimos a la lista de usuarios;
+  res.redirect('/users/login');
+
   },
 
   edit: (req, res) => {
@@ -108,8 +112,37 @@ module.exports = {
   login: (req, res) => {
     res.render("users/login", { styles: "login.css" });
   },
+
+  loginProcess: (req,res)=>{
+    let userToLogin= User.findByfield ('userEmail', req.body.userEmail);
+    
+    if(userToLogin){
+      let okPassword= bcrypt.compareSync(req.body.password, userToLogin.password)
+      if(okPassword){
+        return res.redirect('/users/profile')
+      }
+      return res.render("users/login", {
+        styles: "login.css",
+        errors:{
+          userEmail:{
+            msg: 'Las credenciales(email o contraseña) son invalidas'
+          }
+        }
+      })
+    }
+    return res.render("users/login", {
+      styles: "login.css",
+      errors:{
+        userEmail:{
+          msg: 'no se encuentra este Email registrado en la base de de datos'
+        }
+      }
+    })
+  },
+
+
   profile: (req, res) => {
-    res.render("users/user", { styles: "catalog.css" });
+    res.render("users/user", { styles: "user.css" });
   },
 
   AllProfiles: (req, res) => {

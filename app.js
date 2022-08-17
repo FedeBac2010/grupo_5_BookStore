@@ -30,8 +30,8 @@ app.use(methodOverride('_method')); //utilizamos para usar PUT y DELETE
 
 app.use(session({
     secret: 'secret',
-    resave: true,
-    saveUninitialized: true
+    resave: false,
+    saveUninitialized: false
 })); //Utilizamos para session
 
 /* RUTAS */

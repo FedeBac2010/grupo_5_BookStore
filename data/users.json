@@ -1,12 +1,12 @@
 [
   {
-    "fullName": "andi",
-    "userName": "andi",
-    "userEmail": "andij@gmail.com",
-    "password": "$2b$10$JTWuYdFVCuyP9eNkuVe3vOXW1v0boFyN8JX7TfzuzbS7fa9yrLgQa",
-    "phoneNumber": "123456",
-    "city": "rosario",
-    "avatar": "1660183979100.jpg",
-    "id": "331e18a8-67ce-4f2d-8c11-9fafe49c166d"
+    "id": 1,
+    "fullName": "Fede Bacigalupi",
+    "userName": "ElMonoRustico",
+    "userEmail": "fedu95@hotmail.com",
+    "password": "$2b$10$SZvNESxr3WjLmVM5JoWvmOv35wxNQ12mlTycGfSnuMvblgtwqzYMC",
+    "phoneNumber": "3764655704",
+    "city": "Posadas ",
+    "avatar": "1660576680878.jpeg"
   }
 ]

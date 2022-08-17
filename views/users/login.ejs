@@ -1,67 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <!-- Include Head con CSS -->
     <%- include("../partials/head") %>
-    
+
     <title>Incia Sesion</title>
-</head>
-<body>
+  </head>
+  <body>
     <section>
+      <div class="imgBx">
+        <img src="/img/Login-foto.jpg" alt="" />
+      </div>
 
-        <div class="imgBx">
-            <img src="/img/Login-foto.jpg" alt="">
-
-        </div>
-
-        <div class="contentBx">
-            <div class="formBx">
-            <!-- LOGO -->
-            <div class="logo-bookstore">
-                <a href="/"><img src="/img/logo.jpg" alt="Logo Book Store" /></a>
-                </div>
-                <h2>LOGIN</h2>
-                <form action="">
-                    <div class="inputBx">
-                        <span>Usuario</span>
-                        <input type="text">
-                    </div>
-                    <div class="inputBx">
-                        <span>Contraseña</span>
-                        <input type="password">
-                    </div>
-                    <div class="remember">
-                        <label for=""><input type="checkbox">Recuerdame</label>
-                    </div>
-                    <div class="inputBx">
-                        <input type="submit" value="Inicia Sesion">
-                    </div>
-                    <div class="inputBx">
-                        <p>¿No tienes una cuenta? <a href="/users/register">Registrate</a></p>
-                    </div>
-                    <div class="inputBx">
-                        <p><a href="#">¿Olvidaste tu contraseña? </a></p>
-                    </div>
-                </form>
-                <h3>Inicia sesion con tus redes</h3>
-                <ul class="sci">
-                    <li>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    </li>
-                </ul>
+      <div class="contentBx">
+        <div class="formBx">
+          <!-- LOGO -->
+          <div class="logo-bookstore">
+            <a href="/"><img src="/img/logo.jpg" alt="Logo Book Store" /></a>
+          </div>
+          <h2>LOGIN</h2>
+          <form method="POST" action="/users/login">
+            <div class="inputBx">
+              <span>Usuario/Email</span>
+              <input type="text" name="userEmail" />
+              <% if (locals.errors && errors.userEmail) { %>
+              <div class="text-danger">
+                <%= errors.userEmail.msg %></div>
+              <% } %>
             </div>
-
+            <div class="inputBx">
+              <span>Contraseña</span>
+              <input type="password" name="password" />
+            </div>
+            <div class="remember">
+              <label for=""><input type="checkbox" />Recuerdame</label>
+            </div>
+            <div class="inputBx">
+              <input type="submit" value="Inicia Sesion" />
+            </div>
+            <div class="inputBx">
+              <p>
+                ¿No tienes una cuenta? <a href="/users/register">Registrate</a>
+              </p>
+            </div>
+            <div class="inputBx">
+              <p><a href="#">¿Olvidaste tu contraseña? </a></p>
+            </div>
+          </form>
+          <h3>Inicia sesion con tus redes</h3>
+          <ul class="sci">
+            <li>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+          </ul>
         </div>
+      </div>
     </section>
-
-
-
-    
-</body>
+  </body>
 </html>
