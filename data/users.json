@@ -18,5 +18,15 @@
     "phoneNumber": "5544777",
     "city": "Posadas",
     "avatar": "1660744508029.jpg"
+  },
+  {
+    "id": 3,
+    "fullName": "andrea jeong",
+    "userName": "andi",
+    "userEmail": "andi@hotmail.com",
+    "password": "$2b$10$KckwyOjxnC2.Rp.c0/8SyOeDiRnZkvVqVzs4z.k.coajc1Hiw/itG",
+    "phoneNumber": "03412517891",
+    "city": "Rosario",
+    "avatar": "1660776014744.jpg"
   }
 ]

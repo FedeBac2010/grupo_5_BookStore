@@ -16,6 +16,7 @@ const usersRoutes = require('./routes/usersRoutes');
 const productsRoutes = require('./routes/productsRoutes');
 
 
+
 /* CONFIG EJS */
 
 app.set('view engine', 'ejs');
@@ -39,6 +40,8 @@ app.use(session({
 app.use('/', mainRoutes);
 app.use('/users', usersRoutes);
 app.use('/products', productsRoutes);
+
+
 
 /* CONFIGURACION DE ARCHIVOS PUBLICOS */
 
