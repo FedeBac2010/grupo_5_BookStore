@@ -34,10 +34,11 @@
             />
           </div>
             <!-- Logo de like (corazon) -->
+            <% if (locals.isLogged) { %>
             <div class="logo-like barra">
               <i class="fa-solid fa-heart"></i>
             </div>
-
+            <% } %>
             <!--Autor, categoria, descripcion y precio-->
             <div class="contenido-libro">
               <p class="autor"> <b>Autor:</b> <%= books[index].author %> </p>

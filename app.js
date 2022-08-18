@@ -19,6 +19,7 @@ const productsRoutes = require('./routes/productsRoutes');
 const userLoggedMiddleware=require("./middlewares/userLoggedMiddleware");
 
 
+
 /* CONFIG EJS */
 
 app.set('view engine', 'ejs');
@@ -45,6 +46,8 @@ app.use(userLoggedMiddleware);
 app.use('/', mainRoutes);
 app.use('/users', usersRoutes);
 app.use('/products', productsRoutes);
+
+
 
 /* CONFIGURACION DE ARCHIVOS PUBLICOS */
 

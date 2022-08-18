@@ -21,12 +21,22 @@
   },
   {
     "id": 3,
+    "fullName": "andrea jeong",
+    "userName": "andi",
+    "userEmail": "andi@hotmail.com",
+    "password": "$2b$10$KckwyOjxnC2.Rp.c0/8SyOeDiRnZkvVqVzs4z.k.coajc1Hiw/itG",
+    "phoneNumber": "03412517891",
+    "city": "Rosario",
+    "avatar": "1660776014744.jpg"
+  },
+  {
+    "id": 4,
     "fullName": "Tatiana",
-    "userName": "Tachy",
+    "userName": "Tach",
     "userEmail": "tach.lilen@gmail.com",
-    "password": "$2b$10$N1vkli8DTtVpAwb4gAbQC.mLE8b1l5dysRL3QY3UjhRTecKlwgJ0u",
+    "password": "$2b$10$gS9So9QfJiEyWJOcKQtF7.q6LcYSkEqT9WGSjxyknf4IA3mMyQwqu",
     "phoneNumber": "024567323",
     "city": "Bariloche",
-    "avatar": "1660763095009.JPG"
+    "avatar": "1660783335980.JPG"
   }
 ]
