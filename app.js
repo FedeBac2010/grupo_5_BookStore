@@ -15,6 +15,9 @@ const mainRoutes = require('./routes/mainRoutes');
 const usersRoutes = require('./routes/usersRoutes');
 const productsRoutes = require('./routes/productsRoutes');
 
+/* MIDDLEWARES */
+const userLoggedMiddleware=require("./middlewares/userLoggedMiddleware");
+
 
 /* CONFIG EJS */
 
@@ -34,6 +37,9 @@ app.use(session({
     saveUninitialized: false
 })); //Utilizamos para session
 
+app.use(userLoggedMiddleware);
+
+
 /* RUTAS */
 
 app.use('/', mainRoutes);
@@ -43,6 +49,7 @@ app.use('/products', productsRoutes);
 /* CONFIGURACION DE ARCHIVOS PUBLICOS */
 
 app.use(express.static('public'))
+
 
 /* ARCHIVO JS */
 

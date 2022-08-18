@@ -18,5 +18,15 @@
     "phoneNumber": "5544777",
     "city": "Posadas",
     "avatar": "1660744508029.jpg"
+  },
+  {
+    "id": 3,
+    "fullName": "Tatiana",
+    "userName": "Tachy",
+    "userEmail": "tach.lilen@gmail.com",
+    "password": "$2b$10$N1vkli8DTtVpAwb4gAbQC.mLE8b1l5dysRL3QY3UjhRTecKlwgJ0u",
+    "phoneNumber": "024567323",
+    "city": "Bariloche",
+    "avatar": "1660763095009.JPG"
   }
 ]

@@ -12,9 +12,14 @@
         <!-- ICONOS -->
         <div class="icons">
           <div id="search-btn" class="fas fa-search"></div>
-          <a href="../users/profile" class="fas fa-heart"></a>
-          <a href="../products/cart" class="fas fa-shopping-cart"></a>
-          <a href="../users/login"id="login-btn" class="fas fa-user"></a>
+          <% if (locals.isLogged) { %>
+              <p> Hi <%= locals.userLogged.fullName %>!</p>
+              <a href="../users/profile" class="fas fa-heart"></a>
+          <!-- no está funcionando del todo el if...-->
+              <% } else { %> 
+              <a href="../products/cart" class="fas fa-shopping-cart"></a>
+              <a href="../users/login"id="login-btn" class="fas fa-user"></a>
+            <% } %>
         </div>
     </div>
       <!-- NAVEGACION -->

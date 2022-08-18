@@ -17,7 +17,10 @@
     <!--CATALOGO DE PRODUCTOS-->
     <main>
       <section>
+        <% if (locals.isLogged) { %>
         <a href="./create"><button class="button">Agregar producto</button></a>
+        
+        <% } %>
         <div class="first-article">
             <% for(let index=0; index < books.length; index++) { %>
               <article>
@@ -46,6 +49,7 @@
                 <a href="/products/cart">Agregar al Carrito</a>
               </div>
           <!-- eliminar producto -->
+            <% if (locals.isLogged) { %>
               <form
                 action="/products/<%= books[index].id %>?_method=DELETE" 
                 method="post"
@@ -57,6 +61,8 @@
               <a href="./edit/<%= books[index].id  %> "><button type="submit" 
               class="button"
               >Editar</button></a>
+            <% } %>
+
                 <br />
         </article>
         <% } %>     

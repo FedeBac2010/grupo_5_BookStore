@@ -3,8 +3,8 @@ const express = require('express');
 const router = express.Router();
 const usersController= require('../Controllers/usersController');
 
-const guestMiddleware= require('../middlewares/guestMiddleware')
-
+const guestMiddleware= require('../middlewares/guestMiddleware');
+const authMiddleware= require('../middlewares/authMiddleware');
 
 // CONFIG MULTER
 const upload = require('../middlewares/multerAvatar');
@@ -28,7 +28,7 @@ router.put("/:id", usersController.updateUser)
 
 // RUTA DE LOGIN
 
-router.get('/login', usersController.login);
+router.get('/login',guestMiddleware, usersController.login);
 
 // METODO QUE PROCESA EL LOGIN
 
@@ -36,7 +36,7 @@ router.post('/login', usersController.loginProcess);
 
 // RUTA DE  PERFIL DE USUARIO
 
-router.get('/profile', usersController.profile);
+router.get('/profile',authMiddleware, usersController.profile);
 
 // RUTA DE TODOS LOS USUARIOS
 
@@ -46,4 +46,10 @@ router.get('/all-profiles', usersController.AllProfiles);
 
 router.delete('/:id', usersController.deleteProduct)
 
+// RUTA DE  LOGOUT
+
+router.get('/logout', usersController.logout);
+
+
 module.exports = router;
+

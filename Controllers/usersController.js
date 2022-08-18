@@ -152,6 +152,13 @@ module.exports = {
 
   AllProfiles: (req, res) => {
     res.render("users/all-users", { users: usersList, styles: "user.css" });
+  },
+
+  logout: (req, res) => {
+    req.session.destroy();
+    return res.redirect("/");
   }
+
+
 
 };
