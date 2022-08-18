@@ -16,10 +16,10 @@ const usersRoutes = require('./routes/usersRoutes');
 const productsRoutes = require('./routes/productsRoutes');
 
 /* MIDDLEWARES */
-const userLoggedMiddleware=require("./middlewares/userLoggedMiddleware");
+const userLoggedMiddleware= require("./middlewares/userLoggedMiddleware");
 
-
-
+/* COOKIES */
+const cookies = require('cookie-parser');
 /* CONFIG EJS */
 
 app.set('view engine', 'ejs');
@@ -37,6 +37,8 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 })); //Utilizamos para session
+
+app.use(cookies());
 
 app.use(userLoggedMiddleware);
 

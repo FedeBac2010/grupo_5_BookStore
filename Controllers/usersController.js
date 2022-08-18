@@ -121,6 +121,12 @@ module.exports = {
       if(okPassword){
         delete userToLogin.password; //Utilizado para que no se vea la contraseña durante la sesion
         req.session.userLogged= userToLogin; //Se almacena la info del userToLogin
+
+          if(req.body.remember_user) {
+					res.cookie('userEmail', req.body.userEmail, { maxAge: (1000 * 60) * 2})
+				}
+        //cookie para mantener usuario logeado por milesimas de segundos en este caso existe por 2 minutos
+
         return res.redirect('/users/profile')
       }
       return res.render("users/login", {
@@ -155,6 +161,7 @@ module.exports = {
   },
 
   logout: (req, res) => {
+    res.clearCookie('userEmail');
     req.session.destroy();
     return res.redirect("/");
   }
