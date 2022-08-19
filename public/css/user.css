@@ -3,8 +3,6 @@
   margin: 0;
   padding: 0;
   font-family: 'Gentium Book Basic', serif;
-  text-transform: capitalize; /* Esto muestra un texto 
-  con la primera letra de cada palabra en mayúsculas. */
 }
 
 /* HEADER 1 */
@@ -153,9 +151,8 @@
 .contenedor {
   /* border: solid 5px blue; */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
 }
 
 .img-box {
@@ -189,6 +186,10 @@ div .user-edit{
   padding: 30px;
 }
 
+.all-buttons {
+  display: flex;
+}
+
 .button {
   height: 100%;
   width: 100%;
@@ -201,6 +202,7 @@ div .user-edit{
   background: linear-gradient(135deg, #F5C36E,#2D3C4B);
   border-radius: 5px;
   text-decoration: none;
+  
 }
 
 .button:hover {
@@ -234,6 +236,7 @@ footer {
   /* border: solid 5px red; */
   width: 100vw;
   position: absolute;
+  bottom: 0;
 }
 
 footer div.social{
