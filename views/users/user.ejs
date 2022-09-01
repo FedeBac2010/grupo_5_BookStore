@@ -26,8 +26,11 @@
             <p><b>Email:</b> <%= user.userEmail%></p>
             <p><b>Teléfono:</b> <%= user.phoneNumber %></p>
             <p><b>Ciudad:</b> <%= user.city %></p>
+            <div class="all-buttons">
             <div class="user-edit">
+
                             <a class="button" href="./edit/<%= user.id  %>">Editar Usuario</a>
+
             </div>
             <div class="user-edit">
                 <a class="button" href="./all-profiles">Administrar Usuarios</a>
@@ -35,6 +38,7 @@
             <div class="user-edit">
                 <a class="button" href="./logout">Logout</a>
             </div>
+        </div>
     </div>
 </div>            
     <div class="favourite-book">
