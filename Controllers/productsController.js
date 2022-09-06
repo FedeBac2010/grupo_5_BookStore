@@ -1,6 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
+
+const db = require ('../database/models')
+
 /* CONFIG UUID  */
 const {v4: uuidv4}= require('uuid');
 
@@ -23,8 +26,11 @@ module.exports = {
     res.render("products/cart",{styles:'cart.css'});
   },
   create: (req, res) => { //AQUI ES DONDE CREAREMOS NUESTRO PRODUCTO
-    res.render("products/create",{styles:'create.css'})
-  },
+   
+      res.render("products/create",{styles:'create.css'})
+    }
+   
+  ,
 
   storeProduct:(req,res)=>{
     let product= req.body;
