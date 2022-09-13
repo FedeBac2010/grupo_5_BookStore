@@ -16,149 +16,50 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `authors`
+-- Table structure for table `author`
 --
 
-DROP TABLE IF EXISTS `authors`;
+DROP TABLE IF EXISTS `author`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `authors` (
-  `ID_(PK)` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `author` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
-  `last_name` varchar(100) NOT NULL,
-  PRIMARY KEY (`ID_(PK)`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tabla de autores de los libros';
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `authors`
---
-
-LOCK TABLES `authors` WRITE;
-/*!40000 ALTER TABLE `authors` DISABLE KEYS */;
-/*!40000 ALTER TABLE `authors` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `carts`
---
-
-DROP TABLE IF EXISTS `carts`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `carts` (
-  `ID_(PK)` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id(FK)` int(11) NOT NULL,
-  `carts_products_id(FK)` int(11) NOT NULL,
-  `quantity` mediumint(9) NOT NULL,
-  `total` decimal(10,0) NOT NULL,
-  PRIMARY KEY (`ID_(PK)`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `carts`
+-- Dumping data for table `author`
 --
 
-LOCK TABLES `carts` WRITE;
-/*!40000 ALTER TABLE `carts` DISABLE KEYS */;
-/*!40000 ALTER TABLE `carts` ENABLE KEYS */;
+LOCK TABLES `author` WRITE;
+/*!40000 ALTER TABLE `author` DISABLE KEYS */;
+/*!40000 ALTER TABLE `author` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `carts_products`
+-- Table structure for table `category`
 --
 
-DROP TABLE IF EXISTS `carts_products`;
+DROP TABLE IF EXISTS `category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `carts_products` (
-  `ID_(PK)` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador ',
-  `cart_id` int(11) NOT NULL COMMENT 'Identificador de clave foranea',
-  `product_id(FK)` int(11) NOT NULL COMMENT 'identificador de clave foranea',
-  PRIMARY KEY (`ID_(PK)`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Detalle del carrito de compras';
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `carts_products`
---
-
-LOCK TABLES `carts_products` WRITE;
-/*!40000 ALTER TABLE `carts_products` DISABLE KEYS */;
-/*!40000 ALTER TABLE `carts_products` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `favourites`
---
-
-DROP TABLE IF EXISTS `favourites`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `favourites` (
-  `ID_(PK)` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id(FK)` int(11) NOT NULL,
-  `products_id(FK)` int(11) NOT NULL,
-  PRIMARY KEY (`ID_(PK)`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `favourites`
---
-
-LOCK TABLES `favourites` WRITE;
-/*!40000 ALTER TABLE `favourites` DISABLE KEYS */;
-/*!40000 ALTER TABLE `favourites` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `formats`
---
-
-DROP TABLE IF EXISTS `formats`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `formats` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT COMMENT 'llave primaria',
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COMMENT='Categorías de los libros (Géneros)';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `formats`
+-- Dumping data for table `category`
 --
 
-LOCK TABLES `formats` WRITE;
-/*!40000 ALTER TABLE `formats` DISABLE KEYS */;
-INSERT INTO `formats` VALUES (1,'Físicos'),(2,'Digitales');
-/*!40000 ALTER TABLE `formats` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `genres`
---
-
-DROP TABLE IF EXISTS `genres`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `genres` (
-  `ID_PK` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador unico de tabla',
-  `name` varchar(100) NOT NULL,
-  PRIMARY KEY (`ID_PK`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `genres`
---
-
-LOCK TABLES `genres` WRITE;
-/*!40000 ALTER TABLE `genres` DISABLE KEYS */;
-INSERT INTO `genres` VALUES (1,'Fantasia'),(3,'Ciencia Ficción'),(4,'No Ficción');
-/*!40000 ALTER TABLE `genres` ENABLE KEYS */;
+LOCK TABLES `category` WRITE;
+/*!40000 ALTER TABLE `category` DISABLE KEYS */;
+INSERT INTO `category` VALUES (1,'Ciencia ficción'),(2,'Aventura'),(3,'Fatansía'),(4,'Terror');
+/*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -169,17 +70,18 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products` (
-  `ID_(PK)` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(500) NOT NULL,
-  `author_id(FK)` int(11) NOT NULL,
-  `currency` varchar(10) NOT NULL,
-  `price` decimal(10,0) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
   `description` text NOT NULL,
-  `genre_id(FK)` int(11) NOT NULL,
-  `image` blob DEFAULT NULL,
-  `format_id(FK)` int(11) NOT NULL,
-  PRIMARY KEY (`ID_(PK)`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tabla de todos los productos';
+  `image` varchar(100) NOT NULL,
+  `price` int(11) NOT NULL,
+  `currency` varchar(100) DEFAULT NULL,
+  `category_id` int(11) NOT NULL,
+  `author` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `category_FK` (`category_id`),
+  CONSTRAINT `category_FK` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -188,34 +90,8 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (5,'El señor de los anillos','El señor de los anillos','',1000,'$',1,'JJ Tolkien');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `sales`
---
-
-DROP TABLE IF EXISTS `sales`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `sales` (
-  `ID_(PK)` int(11) NOT NULL AUTO_INCREMENT,
-  `users_id(FK)` int(11) NOT NULL,
-  `cart_id(FK)` int(11) NOT NULL,
-  `date` datetime NOT NULL,
-  `paymentMethod` decimal(10,0) NOT NULL,
-  `totals` decimal(10,0) NOT NULL,
-  PRIMARY KEY (`ID_(PK)`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `sales`
---
-
-LOCK TABLES `sales` WRITE;
-/*!40000 ALTER TABLE `sales` DISABLE KEYS */;
-/*!40000 ALTER TABLE `sales` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -226,17 +102,17 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `ID_(PK)` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fullName` varchar(100) NOT NULL,
   `userName` varchar(100) NOT NULL,
-  `userEmail` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
+  `userEmail` varchar(100) NOT NULL,
   `phoneNumber` varchar(100) NOT NULL,
-  `City` varchar(100) NOT NULL,
-  `avatar` blob NOT NULL,
-  `rol` int(11) NOT NULL,
-  PRIMARY KEY (`ID_(PK)`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `city` varchar(100) NOT NULL,
+  `avatar` varchar(100) NOT NULL,
+  `rol` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -261,4 +137,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-06 19:24:48
+-- Dump completed on 2022-09-13 19:01:50

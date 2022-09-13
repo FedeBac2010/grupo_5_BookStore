@@ -1,65 +1,28 @@
-module.exports = (sequelize, dataTypes) => {
-    let alias = 'User'; // esto debería estar en singular. Apodo de la tabla
-    let cols = { //Configuracion de columnas
-        id: {
-            type: dataTypes.INTEGER(11),
+module.exports = (sequelize, dataTypes) =>{
+    let alias = 'Users';
+    let cols = {
+        id:{
+            type: dataTypes.INTEGER,
             primaryKey: true,
-            allowNull: false,
             autoIncrement: true
         },
-        fullName: {
-            type: dataTypes.STRING(100),
-            allowNull: false
-        },
-        userName: {
-            type: dataTypes.STRING(100),
-            allowNull: false
-        },
-        userEmail: {
-            type: dataTypes.STRING(100),
-            allowNull: false
-        },
-        password: {
-            type: dataTypes.STRING(100),
-            allowNull: false
-        },
-        phoneNumber: {
-            type: dataTypes.STRING(100),
-            allowNull: false
-        },
-        city: {
-            type: dataTypes.STRING(100),
-            allowNull: false
-        },
-        avatar: {
-            type: dataTypes.BLOB,
-            allowNull: false
-        },
-        rol: {
-            type: dataTypes.INTEGER(11),
-            allowNull: false
-        }
+        fullName: dataTypes.STRING(100),
+        userName: dataTypes.STRING(100),
+        password: dataTypes.STRING(100),
+        // repeatPassword: dataTypes.STRING(100),
+        userEmail: dataTypes.STRING(100),
+        phoneNumber: dataTypes.STRING(100),
+        city: dataTypes.STRING(100),
+        avatar: dataTypes.STRING(20),
+        rol: dataTypes.STRING(20),
+        // isAdmin: dataTypes.BOOLEAN
+    };
+    let options = {
+        tableName: 'users',
+        timestamps: false
     };
 
-    let config = { //configuraciones
-        tablename: 'users',
-        timestamps: false,
-    }
+    const User = sequelize.define(alias,cols,options);
+    return User;
 
-
-    const User = sequelize.define(alias,cols,config);
-
-    //relaciones con otros modelos
-    User.associate = function(models) {
-        User.belongsTo(models.Cart, {
-            as: 'carts',
-            foreignKey: 'user_id'
-        });
-        User.belongsToMany(models.Sale, {
-            as: 'sale',
-            foreignKey: 'user_id'
-        });
-    }
-
-    return Genre
-};
+}

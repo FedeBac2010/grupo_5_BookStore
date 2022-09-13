@@ -28,7 +28,7 @@
             <h2 class="descripcion"><%= books[index].title %></h2></a>
           <div class="image">  
             <img
-              src="/img/uploads/<%=books[index].image[0] %>"
+              src="/img/uploads/<%=books[index].image %>"
               alt=""
               class="barra"
             />
@@ -40,11 +40,13 @@
             </div>
             <% } %>
             <!--Autor, categoria, descripcion y precio-->
+            
             <div class="contenido-libro">
-              <p class="autor"> <b>Autor:</b> <%= books[index].author %> </p>
-              <p class="categoria"><b>Categoria: </b> <%= books[index].category %> </p>
+              <p class="autor"> <b>Autor:</b> <%= books[index].author%> </p>
+              <p class="categoria"><b>Genero: </b> <%= category[index].name %> </p>
               <p class="descripcion"><b>Descripcion:</b> <%= books[index].description %> </p>
               <p class="precio"><b>Precio:</b> <%= books[index].currency %>  <%= books[index].price %> </p>
+
             </div>
               <div class="button">
                 <a href="/products/cart">Agregar al Carrito</a>

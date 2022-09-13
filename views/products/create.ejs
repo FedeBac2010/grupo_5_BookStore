@@ -45,32 +45,22 @@
 
             <span class="details">Imagen</span>
             <div class="foto-producto">
-              <input type="file" name="img" accept=".jpg" multiple id="foto-producto"/>
+              <input type="file" name="image" accept=".jpg" multiple id="foto-producto"/>
               <label for="foto-producto"
                 ><i class="fa-solid fa-image"></i>Foto del producto</label
               >
             </div>
           </div>
         </div>
-        <div class="gender-details">
-          <input type="radio" name="category" id="dot-1" value="Ciencia ficcion" />
-          <input type="radio" name="category" id="dot-2" value="No ficcion" />
-          <input type="radio" name="category" id="dot-3" value="Fantasia" />
-          <span class="gender-title">Categoria</span>
-          <div class="category">
-            <label for="dot-1">
-              <span class="dot one"></span>
-              <span class="gender">Ciencia Ficcion</span>
-            </label>
-            <label for="dot-2">
-              <span class="dot two"></span>
-              <span class="gender">No ficcion</span>
-            </label>
-            <label for="dot-3">
-              <span class="dot three"></span>
-              <span class="gender">Fantasia</span>
-            </label>
-          </div>
+        <div>
+          <label>Categoria</label>
+          <select name="category_id">
+              <% category.forEach(category => { %>
+              <option value="<%= category.id %>"><%= category.name %></option>
+              <% }); %>
+          </select>
+      </div>
+          
           <div class="button">
             <input type="submit" value="Agregar" />
           </div>
