@@ -14,7 +14,9 @@ const productList = JSON.parse(fs.readFileSync(productListPath, 'utf8'));//Leemo
 module.exports = {
   catalog:async (req, res) => {
     let category = await db.Category.findAll();
-    let books = await db.Products.findAll();
+    let books = await db.Products.findAll({
+      include:[{association:"categories"}]
+    });
        
     res.render("products/catalog", {books: books, category:category, styles:'catalog.css'})
 
@@ -26,7 +28,9 @@ module.exports = {
 
       let category = await db.Category.findAll();
 
-      let books = await db.Products.findByPk(req.params.id)
+      let books = await db.Products.findByPk(req.params.id,{
+        include:[{association:"categories"}]
+      })
 
       res.render('products/detalle-producto', {books:books, category: category, styles:'detalle-producto.css'});
 
@@ -56,11 +60,12 @@ module.exports = {
     },
 
   storeProduct: async function (req,res) {
+    let category = await db.Category.findAll();
     
           db.Products.create({
               title: req.body.title,
               description: req.body.description,
-              // image: req.file.filename,
+              image: req.file.filename,
               price: req.body.price,
               currency: req.body.currency,
               category_id: req.body.category_id,
@@ -71,33 +76,36 @@ module.exports = {
 
   edit: async function (req, res) {
     let category = await db.Category.findAll();
-    let books = await db.Products.findAll();
+   /*  let books = await db.Products.findAll(); */
 
     let product = await db.Products.findByPk(req.params.id) 
 
+    Promise.all([category,product])
+    .then(function([category,product]){
+      res.render("products/edit",{books:product,category:category, styles:'edit.css'})
+    })
     
-    res.render("products/edit",{books:product,category:category, styles:'edit.css'})
   },
 
   updateProduct:async function(req,res) {
 
     await db.Products.update({
-      name: req.body.name,
-                    description: req.body.description,
-                    // image: req.file.filename,
-                    price: req.body.price,
-                    currency: req.body.currency,
-                    category_id: req.body.category_id,
-                    author: req.body.author,
+            title: req.body.title,
+            description: req.body.description,
+            image: req.file.filename,
+            price: req.body.price,
+            currency: req.body.currency,
+            category_id: req.body.category_id,
+            author: req.body.author,
             },
                 {
                     where: {
                         id: req.params.id
                     }
                   })
-                  .then(function (movie) {
-                      res.redirect('/products/catalog');
-                  })
+                  
+                    res.redirect('/products/catalog');
+                  
               
               
           },

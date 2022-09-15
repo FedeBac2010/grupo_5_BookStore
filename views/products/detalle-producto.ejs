@@ -17,17 +17,17 @@
 
     <div class="contenedor-total">
       <div class="card">
-        <% for( let index = 0; index < books.image.length; index++ ) { %>
+        
         <div class="imgBox">
-          <img src="/img/uploads/<%=books.image[index] %>" />
+          <img src="/img/uploads/<%=books.image %>" />
         </div>
-        <% } %>
+        
         <div class="details">
           <div class="title">
             <h3>
               <%= books.title ?? " " %> <br />
               
-              <small>Genero: <%= category.name %> </small>
+              <small>Genero: <%= books.categories.name %> </small>
             </h3>
           </div>
           <div class="autor">

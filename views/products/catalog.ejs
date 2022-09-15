@@ -43,7 +43,7 @@
             
             <div class="contenido-libro">
               <p class="autor"> <b>Autor:</b> <%= books[index].author%> </p>
-              <p class="categoria"><b>Genero: </b> <%= category[index].name %> </p>
+              <p class="categoria"><b>Genero: </b> <%= books[index].categories.name %> </p>
               <p class="descripcion"><b>Descripcion:</b> <%= books[index].description %> </p>
               <p class="precio"><b>Precio:</b> <%= books[index].currency %>  <%= books[index].price %> </p>
 
