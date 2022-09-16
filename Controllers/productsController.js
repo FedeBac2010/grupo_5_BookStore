@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-
+//SEQUELIZE
 const db = require ('../database/models')
 const sequelize = db.sequelize;
 

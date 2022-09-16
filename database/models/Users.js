@@ -13,8 +13,8 @@ module.exports = (sequelize, dataTypes) =>{
         userEmail: dataTypes.STRING(100),
         phoneNumber: dataTypes.STRING(100),
         city: dataTypes.STRING(100),
-        avatar: dataTypes.STRING(20),
-        rol: dataTypes.STRING(20),
+        avatar: dataTypes.BLOB,
+        /* rol: dataTypes.STRING(20), */
         // isAdmin: dataTypes.BOOLEAN
     };
     let options = {

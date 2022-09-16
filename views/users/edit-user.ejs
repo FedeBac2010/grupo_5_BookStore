@@ -18,6 +18,7 @@
       <form
         action="/users/<%= users.id ?? ''%>?_method=PUT "
         method="POST"
+        enctype="multipart/form-data"
       >
         <div class="user-details">
           <div class="input-box">
@@ -74,36 +75,18 @@
               placeholder="Ciudad"
             />
           </div>
-        </div>
-        <div class="input-box">
-          <!--           <span class="details">Imagen</span>
-          <div class="foto-producto">
-            <input type="file" name="img" accept=".jpg" multiple id="foto-perfil"/>
-            <label for="foto-producto"
+          <div class="foto-perfil">
+            <input type="file" name="avatar" />
+            <% if (locals.errors && errors.avatar) { %>
+              <div class="text-danger">
+                <%= errors.avatar.msg %> 
+              </div>
+            <% } %>
+            <label for="foto-perfil"
               ><i class="fa-solid fa-image"></i>Foto de perfil</label
             >
           </div>
-        </div> -->
-
-          <!--  <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1" />
-          <input type="radio" name="gender" id="dot-2" />
-          <input type="radio" name="gender" id="dot-3" />
-          <span class="gender-title">Genero</span>
-          <div class="category">
-            <label for="dot-1">
-              <span class="dot one"></span>
-              <span class="gender">Masculino</span>
-            </label>
-            <label for="dot-2">
-              <span class="dot two"></span>
-              <span class="gender">Femenino</span>
-            </label>
-            <label for="dot-3">
-              <span class="dot three"></span>
-              <span class="gender">Prefiero no decirlo</span>
-            </label>
-          </div> -->
+        </div>
           <div class="button">
             <input type="submit" value="Register" />
           </div>

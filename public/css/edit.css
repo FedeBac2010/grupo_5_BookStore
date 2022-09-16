@@ -147,7 +147,7 @@ form .button input:hover {
 }
 
 input[type="file"] {
-    display:none
+    display:block
 }
 
 .foto-producto{

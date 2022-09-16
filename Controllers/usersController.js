@@ -1,6 +1,10 @@
 const fs = require("fs");
 const path = require("path");
 
+//SEQUELIZE
+const db = require ('../database/models')
+const sequelize = db.sequelize;
+
 /* EXPRESS-VALIDATOR */
 const {validationResult} = require('express-validator')
 
@@ -18,15 +22,19 @@ const bcrypt = require('bcrypt');
 const User = require("../models/User");
 
 module.exports = {
-  register: (req, res) => {
+  
+  register: async (req, res) => {
+
+    let user= await db.Users.findAll()
+
     res.render("users/register", { styles: "register.css" });
   },
-  processRegister: (req, res) => {
-    
+  processRegister: async (req, res) => {
+    let user= await db.Users.findAll();
+
     /* VALIDACIONES */
     const resultValidation= validationResult(req); //va entregar la data sobre los datos que valido
-
-
+    
     if(resultValidation.errors.length >0){
       return res.render("users/register",{
         styles: "register.css",
@@ -34,8 +42,22 @@ module.exports = {
         oldData:req.body
       })
     }
-    /* PROCESO DE CREACION */
-    let currentUser = req.body; //Lo que viene por registro
+  /* PROCESO DE CREACION */
+
+  db.Users.create({
+    fullName: req.body.fullName,
+    userName: req.body.userName,
+    password: req.body.password,
+    userEmail: req.body.userEmail,
+    phoneNumber: req.body.phoneNumber,
+    city: req.body.city,
+    avatar: req.file.filename
+})
+  
+res.redirect('/users/login');
+
+
+    /* let currentUser = req.body; //Lo que viene por registro
     let listUsers = User.getData(); //OBTENEMOS LOS USUARIOS
     
 
@@ -60,21 +82,49 @@ module.exports = {
   }
 
 
-  let userCreated = User.create(userToCreate);
+  let userCreated = User.create(userToCreate); */
 
-  res.redirect('/users/login');
+
+
+  
 
   },
 
-  edit: (req, res) => {
-    let id = req.params.id; //Toma el id que pasamos por URL
-    let user = usersList.find((user) => user.id == id); // Busca en la lista de usuarios aquellos que coincidan con el id pasado por URL
+  edit: async (req, res) => {
+
+    let user= await db.Users.findByPk(req.params.id);
+
     res.render("users/edit-user", { users: user, styles: "edit.css" });
 
+   /*  let id = req.params.id; //Toma el id que pasamos por URL
+    let user = usersList.find((user) => user.id == id); // Busca en la lista de usuarios aquellos que coincidan con el id pasado por URL
+    res.render("users/edit-user", { users: user, styles: "edit.css" }); */
+
   },
 
-  updateUser: (req, res) => {
-    let id = req.params.id; //Toma el id que pasamos por URL
+  updateUser: async (req, res) => {
+
+    console.log(req.file);
+    await db.Users.update({
+      fullName: req.body.fullName,
+      userName: req.body.userName,
+      password: req.body.password,
+      userEmail: req.body.userEmail,
+      phoneNumber: req.body.phoneNumber,
+      city: req.body.city,
+      avatar: req.file.filename,
+    },{
+      where:{
+        id:req.params.id
+      }
+    })
+
+
+    res.redirect("/users/all-profiles"); //Redirijimos a la lista de usuarios
+    
+    
+    
+    /* let id = req.params.id; //Toma el id que pasamos por URL
     let newUser = req.body; //Lo que viene por body es nuestra info del usuario actualizado
 
     newUser.id = id; // Con esto mantenemos el ID actual ya que sin esto se modifica pero borra el ID que tenia antes
@@ -91,12 +141,19 @@ module.exports = {
     } //En este ciclo for recorremos la lista de productos y  'element' representa cada elemento del array y aque que coincida con el id, ese elemento sera el nuevo Usuario actualizado
 
     fs.writeFileSync(usersListPath, JSON.stringify(usersList, null, 2)); //Escribe lo que recibe en nuestro archivo JSON de productos
-
-    res.redirect("/users/all-profiles"); //Redirijimos a la lista de usuarios
+ */
+    
   },
 
-  deleteProduct: (req, res) => {
-    let id = req.params.id;
+  deleteProduct: async(req, res) => {
+    
+    let user= await db.Users.findByPk(req.params.id)
+
+    await user.destroy();
+
+
+    res.redirect('/users/all-profiles');
+/*     let id = req.params.id;
     for (let index = 0; index < usersList.length; index++) {
         const element = usersList[index];
         if (element.id == id) {
@@ -104,17 +161,22 @@ module.exports = {
         }
     }
 
-    fs.writeFileSync(usersListPath, JSON.stringify(usersList, null, 2));
+    fs.writeFileSync(usersListPath, JSON.stringify(usersList, null, 2)); */
 
-    res.redirect('/users/all-profiles');
+    
   },
 
-  login: (req, res) => {
+  login: async (req, res) => {
     res.render("users/login", { styles: "login.css" });
   },
 
   loginProcess: (req,res)=>{
-    let userToLogin= User.findByfield ('userEmail', req.body.userEmail);
+
+    let userToLogin= db.Users.findOne({
+      where:{
+        userEmail: req.body.userEmail
+      }
+    });
     
     if(userToLogin){
       let okPassword= bcrypt.compareSync(req.body.password, userToLogin.password)
@@ -146,25 +208,25 @@ module.exports = {
         }
       }
     })
-  },
-
-
-  profile: (req, res) => {
-    res.render("users/user", { 
-      styles: "user.css",
-      user: req.session.userLogged
-    });
-  },
-
-  AllProfiles: (req, res) => {
-    res.render("users/all-users", { users: usersList, styles: "user.css" });
+    
   },
 
   logout: (req, res) => {
     res.clearCookie('userEmail');
     req.session.destroy();
     return res.redirect("/");
-  }
+  },
+
+  AllProfiles:  async (req, res) => {
+    let users= await db.Users.findAll()
+    res.render("users/all-users", { users: users, styles: "user.css" });
+  },
+  
+  profile: async (req, res) => {
+    let user= await db.Users.findbyPk(req.params.id);
+    
+    res.render("users/user", {user:user,styles: "user.css",user: req.session.userLogged});
+  },
 
 
 
