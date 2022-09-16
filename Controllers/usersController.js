@@ -4,6 +4,7 @@ const path = require("path");
 //SEQUELIZE
 const db = require ('../database/models')
 const sequelize = db.sequelize;
+const { Op } = require("sequelize");
 
 /* EXPRESS-VALIDATOR */
 const {validationResult} = require('express-validator')
@@ -170,19 +171,23 @@ res.redirect('/users/login');
     res.render("users/login", { styles: "login.css" });
   },
 
-  loginProcess: (req,res)=>{
+  loginProcess: async (req,res)=>{
 
-    let userToLogin= db.Users.findOne({
+    let userToLogin = await db.Users.findOne({
       where:{
-        userEmail: req.body.userEmail
+        userEmail: { [Op.like]: req.body.userEmail },
+        // password: { [Op.like]: req.body.password }
       }
     });
-    
+
     if(userToLogin){
-      let okPassword= bcrypt.compareSync(req.body.password, userToLogin.password)
+       let okPassword = bcrypt.compare(userToLogin.password, req.body.password)
+      
+      console.log(okPassword, req.body.password, userToLogin.password)
       if(okPassword){
         delete userToLogin.password; //Utilizado para que no se vea la contraseña durante la sesion
-        req.session.userLogged= userToLogin; //Se almacena la info del userToLogin
+        req.session.userLogged = userToLogin; //Se almacena la info del userToLogin
+  
 
           if(req.body.remember_user) {
 					res.cookie('userEmail', req.body.userEmail, { maxAge: (1000 * 60) * 2})
@@ -190,7 +195,7 @@ res.redirect('/users/login');
         //cookie para mantener usuario logeado por milesimas de segundos en este caso existe por 2 minutos
 
         return res.redirect('/users/profile')
-      }
+      }else{
       return res.render("users/login", {
         styles: "login.css",
         errors:{
@@ -199,7 +204,8 @@ res.redirect('/users/login');
           }
         }
       })
-    }
+        }
+    }else{
     return res.render("users/login", {
       styles: "login.css",
       errors:{
@@ -208,7 +214,8 @@ res.redirect('/users/login');
         }
       }
     })
-    
+  }
+
   },
 
   logout: (req, res) => {
@@ -223,7 +230,7 @@ res.redirect('/users/login');
   },
   
   profile: async (req, res) => {
-    let user= await db.Users.findbyPk(req.params.id);
+    let user= await db.Users.findByPk(req.params.id);
     
     res.render("users/user", {user:user,styles: "user.css",user: req.session.userLogged});
   },
