@@ -31,10 +31,56 @@ module.exports = {
     res.render("users/register", { styles: "register.css" });
   },
   processRegister: async (req, res) => {
-    let user= await db.Users.findAll();
+
+/* PROCESO DE CREACION y VALIDACION */
+
+    const resultValidation = validationResult(req);
+
+    let usuarioRepetido = await db.Users.findOne({
+        where: {
+            userEmail: { [Op.like]: req.body.userEmail }
+        }
+    })
+    
+    if (!resultValidation.errors.length && !usuarioRepetido){
+
+      db.Users.create({
+          fullName: req.body.fullName,
+          userName: req.body.userName,
+          password: req.body.password,
+          userEmail: req.body.userEmail,
+          phoneNumber: req.body.phoneNumber,
+          city: req.body.city,
+          avatar: req.file.filename
+}).then(function(user) {
+  req.session.userLogged = user;
+  res.redirect('/users/login');
+})
+} else {
+if (usuarioRepetido) {
+  return res.render('users/register', {
+    styles: "register.css",
+      errors: {
+          userEmail: {
+              msg: 'Este email ya está registrado'
+          }
+      },
+      oldData: req.body
+})} else {
+  
+  return res.render('users/register', {
+      styles: "register.css",
+      errors: resultValidation.mapped(),
+      oldData: req.body
+  });
+}
+}
+},
+  
+//Proceso de creacion -- cuando se usaba JSON --
 
     /* VALIDACIONES */
-    const resultValidation= validationResult(req); //va entregar la data sobre los datos que valido
+/*     const resultValidation= validationResult(req); //va entregar la data sobre los datos que valido
     
     if(resultValidation.errors.length >0){
       return res.render("users/register",{
@@ -42,21 +88,7 @@ module.exports = {
         errors:resultValidation.mapped(),
         oldData:req.body
       })
-    }
-  /* PROCESO DE CREACION */
-
-  db.Users.create({
-    fullName: req.body.fullName,
-    userName: req.body.userName,
-    password: req.body.password,
-    userEmail: req.body.userEmail,
-    phoneNumber: req.body.phoneNumber,
-    city: req.body.city,
-    avatar: req.file.filename
-})
-  
-res.redirect('/users/login');
-
+    } */
 
     /* let currentUser = req.body; //Lo que viene por registro
     let listUsers = User.getData(); //OBTENEMOS LOS USUARIOS
@@ -85,18 +117,13 @@ res.redirect('/users/login');
 
   let userCreated = User.create(userToCreate); */
 
+  edit: (req, res) => {
 
+/*     let user= await db.Users.findByPk(req.params.id); */
 
-  
-
-  },
-
-  edit: async (req, res) => {
-
-    let user= await db.Users.findByPk(req.params.id);
-
-    res.render("users/edit-user", { users: user, styles: "edit.css" });
-
+    res.render("users/edit-user", { users: req.session.userLogged, styles: "edit.css" });
+    
+    //CON --JSON--
    /*  let id = req.params.id; //Toma el id que pasamos por URL
     let user = usersList.find((user) => user.id == id); // Busca en la lista de usuarios aquellos que coincidan con el id pasado por URL
     res.render("users/edit-user", { users: user, styles: "edit.css" }); */
@@ -104,9 +131,10 @@ res.redirect('/users/login');
   },
 
   updateUser: async (req, res) => {
-
-    console.log(req.file);
-    await db.Users.update({
+    
+      db.Users.findByPk(req.session.userLogged.id)
+    .then(function(user){
+      user.update({
       fullName: req.body.fullName,
       userName: req.body.userName,
       password: req.body.password,
@@ -114,16 +142,25 @@ res.redirect('/users/login');
       phoneNumber: req.body.phoneNumber,
       city: req.body.city,
       avatar: req.file.filename,
-    },{
+    }).then(user=>{
+      req.session.userLogged = user;
+      res.redirect("/users/all-profiles");
+    }).catch(function(e){
+      res.render('error');
+  });
+  })
+    
+    /* {
       where:{
         id:req.params.id
       }
-    })
+    } */
 
 
-    res.redirect("/users/all-profiles"); //Redirijimos a la lista de usuarios
+     //Redirijimos a la lista de usuarios
     
     
+    //CUANDO USABAMOS --JSON--
     
     /* let id = req.params.id; //Toma el id que pasamos por URL
     let newUser = req.body; //Lo que viene por body es nuestra info del usuario actualizado
@@ -143,7 +180,6 @@ res.redirect('/users/login');
 
     fs.writeFileSync(usersListPath, JSON.stringify(usersList, null, 2)); //Escribe lo que recibe en nuestro archivo JSON de productos
  */
-    
   },
 
   deleteProduct: async(req, res) => {
@@ -176,12 +212,11 @@ res.redirect('/users/login');
     let userToLogin = await db.Users.findOne({
       where:{
         userEmail: { [Op.like]: req.body.userEmail },
-        // password: { [Op.like]: req.body.password }
       }
     });
 
     if(userToLogin){
-       let okPassword = bcrypt.compare(userToLogin.password, req.body.password)
+        let okPassword = bcrypt.compare(userToLogin.password, req.body.password)
       
       console.log(okPassword, req.body.password, userToLogin.password)
       if(okPassword){
@@ -226,7 +261,7 @@ res.redirect('/users/login');
 
   AllProfiles:  async (req, res) => {
     let users= await db.Users.findAll()
-    res.render("users/all-users", { users: users, styles: "user.css" });
+    res.render("users/all-users", { users: users, styles: "all-users.css" });
   },
   
   profile: async (req, res) => {

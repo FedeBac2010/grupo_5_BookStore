@@ -1,0 +1,332 @@
+/* Para que el texto se ajuste correctamente a la pagina */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* HEADER 1 */
+  
+  .header-container {
+    background: #fff;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.59);
+  }
+  
+  .logo-bookstore {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .logo-bookstore img {
+    width: 120px;
+    border: 1px solid #917443;
+    border-radius: 20%;
+    padding: 10px;
+    background: #fff;
+  }
+  
+  .search-form {
+    width: 30rem;
+    height: 3rem;
+    border: 2px solid black;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    display: none;
+  }
+  
+  .search-form input {
+    font-size: 1rem;
+    padding: 0 1.2rem;
+    height: 100%;
+    width: 90%;
+    text-transform: none;
+    border: none;
+  }
+  
+  .search-form label {
+    font-size: 1.2rem;
+    padding-right: 0.5rem;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .search-form label:hover {
+    color: #f5c36e;
+  }
+  
+  /* ICONS */
+  
+  .icons div,
+  .icons a {
+    font-size: 1.4rem;
+    margin-left: 1rem;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .icons div:hover,
+  .icons a:hover {
+    color: #f5c36e;
+  }
+  
+  /* HEADER 2 */
+  
+  .header-container-2 {
+    display: none;
+  }
+  
+  .navbar {
+    text-align: center;
+    /* display: flex; */
+  }
+  
+  .navbar a {
+    color: #fff;
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: 0.9rem;
+    font-size: 1.5rem;
+    /* visibility: hidden; */
+    text-decoration: none;
+  }
+  
+  /* BOTTOM NAVBAR para celular y tablet */
+  
+  .bottom-navbar {
+    text-align: center;
+    background: #f5c36e;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* z-index: 1000; */
+  }
+  
+  .bottom-navbar a {
+    font-size: 2rem;
+    padding: 1rem 3rem;
+    color: #fff;
+  }
+  
+  .bottom-navbar a:hover {
+    background-color: #2d3c4b;
+  }
+  
+  /* BODY */
+  body {
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23a3a3a3' fill-opacity='0.1'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  
+  h3 {
+    font-size: 24px;
+  }
+  
+  main {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    place-content: center;
+    width: 90vw;
+    margin: 20px;
+  }
+  
+  /* Secciones de los articulos */
+  
+  
+  section div.first-article {
+    display: flex;
+    background-color: rgba(227, 227, 227, 0.812);
+    flex-wrap: wrap;
+    width: 100vw;
+    justify-content: center;
+    
+  }
+  
+  article {
+    border-top: solid 1px #ebebeb;
+    padding: 30px 10px 50px;
+    margin: 10px;
+    background-color: #ffff;
+    text-align: center;
+    width: 40vw;
+  }
+  
+  .image {
+    display: inline-block;
+    align-items: center;
+    width:350px;
+    height:300px;
+    
+  }
+  
+  img {
+    object-fit: cover;
+    width: 100%;
+    height:100%;
+    padding: 50px;
+  }
+
+
+  
+  article div.barra {
+    border-top: solid 1px #ebebeb;
+    position: relative;
+  }
+  /* Icono del camion-corazon? */
+  main section article i {
+    display: block;
+    font-size: 16px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #39b54a;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: -15px;
+  }
+  
+  .autor, .categoria, .descripcion, .precio {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 0.3; /* Tambien se puede utilizar width con mismo porcentaje */
+  }
+  
+  h2.descripcion {
+    font-size: 25px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: black;
+  }
+  
+  .first-article a{
+    text-decoration: none;
+  }
+  
+  
+  /* Precio y descuento guardado en un div y poniendo flexBox */
+  .contenido-libro {
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .logo-like {
+    color: #3c9b96;
+  }
+  
+  .button {
+    padding: 0.5em 0.8em;
+    text-transform: uppercase;
+    background-color: #3c9b96;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .button a {
+    text-decoration: none;
+    color:white;
+  }
+  
+  .button a:hover {
+    color: #3c9b96;
+  }
+  
+  .button:hover {
+    background-color: #fff;
+    color: #3c9b96;
+    border: 1px solid #3c9b96;
+  }
+  
+  /* FOOTER */
+  
+  footer {
+    margin-top: auto;
+    background-color: #2d3c4b;
+    padding: 1em 0;
+    text-align: center;
+    border-top: 3px solid black 2px;
+  
+  }
+  
+  footer div.social {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 50px;
+  }
+  footer div p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  footer div.links a {
+    margin: 0 30px;
+  }
+  
+  footer div.links a i {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  
+  footer div.links a i:hover,
+  footer p:hover {
+    color: #f5c36e;
+  }
+  
+  
+  /* TABLETS */
+  @media(min-width:768px){
+  
+    .bottom-navbar a{
+        margin: 0 40px;
+    }
+    
+    .main-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    }
+  
+  /*DESKTOP*/
+  @media(min-width:1023px){
+  
+    .search-form{
+        display: block;
+    }
+  
+    #search-btn{
+        display: none;
+    }
+    
+    .header-container-2{
+      background-color: #f5c36e;
+      padding: 0.9rem;
+      display: block;
+    }
+  
+    .bottom-navbar{
+        display: none;
+    }
+  
+  footer{
+    display: block;
+  }
+  }
