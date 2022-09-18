@@ -47,7 +47,7 @@ module.exports = {
       db.Users.create({
           fullName: req.body.fullName,
           userName: req.body.userName,
-          password: req.body.password,
+          password: bcrypt.hashSync(req.body.password, 12),
           userEmail: req.body.userEmail,
           phoneNumber: req.body.phoneNumber,
           city: req.body.city,
@@ -119,7 +119,7 @@ if (usuarioRepetido) {
 
   edit: (req, res) => {
 
-/*     let user= await db.Users.findByPk(req.params.id); */
+    let user= db.Users.findByPk(req.params.id);
 
     res.render("users/edit-user", { users: req.session.userLogged, styles: "edit.css" });
     
@@ -130,14 +130,15 @@ if (usuarioRepetido) {
 
   },
 
-  updateUser: async (req, res) => {
+  updateUser: (req, res) => {
+    
     
       db.Users.findByPk(req.session.userLogged.id)
     .then(function(user){
       user.update({
       fullName: req.body.fullName,
       userName: req.body.userName,
-      password: req.body.password,
+      password: bcrypt.hashSync(req.body.password, 12),
       userEmail: req.body.userEmail,
       phoneNumber: req.body.phoneNumber,
       city: req.body.city,
@@ -145,7 +146,7 @@ if (usuarioRepetido) {
     }).then(user=>{
       req.session.userLogged = user;
       res.redirect("/users/all-profiles");
-    }).catch(function(e){
+    }).catch(function(error){
       res.render('error');
   });
   })
@@ -211,21 +212,22 @@ if (usuarioRepetido) {
 
     let userToLogin = await db.Users.findOne({
       where:{
-        userEmail: { [Op.like]: req.body.userEmail },
+        userEmail: { [Op.like]: req.body.userEmail },//Corrobora que el userEmail se encuentre dentro de la DB
+        /* password: { [Op.like]: req.body.password } *///Corrobora que la password se encuentre dentro de la DB
       }
     });
 
     if(userToLogin){
-        let okPassword = bcrypt.compare(userToLogin.password, req.body.password)
+        let okPassword = (bcrypt.compareSync(req.body.password,userToLogin.password ))
       
-      console.log(okPassword, req.body.password, userToLogin.password)
+
       if(okPassword){
         delete userToLogin.password; //Utilizado para que no se vea la contraseña durante la sesion
         req.session.userLogged = userToLogin; //Se almacena la info del userToLogin
   
 
           if(req.body.remember_user) {
-					res.cookie('userEmail', req.body.userEmail, { maxAge: (1000 * 60) * 2})
+					res.cookie('userEmail', req.body.userEmail, { maxAge: (1000 * 60) * 5})
 				}
         //cookie para mantener usuario logeado por milesimas de segundos en este caso existe por 2 minutos
 
@@ -235,9 +237,13 @@ if (usuarioRepetido) {
         styles: "login.css",
         errors:{
           userEmail:{
-            msg: 'Las credenciales(email o contraseña) son invalidas'
+            msg: 'El Email ingresado es correcto',
+          },
+          password:{
+            msg: 'Las contraseña no es correcta'
           }
-        }
+        },
+        oldData: req.body
       })
         }
     }else{
@@ -245,7 +251,7 @@ if (usuarioRepetido) {
       styles: "login.css",
       errors:{
         userEmail:{
-          msg: 'no se encuentra este Email registrado en la base de de datos'
+          msg: 'Debe colocar un Email de usuario valido para ingresar'
         }
       }
     })

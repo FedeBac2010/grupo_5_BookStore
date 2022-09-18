@@ -17,7 +17,7 @@ module.exports= validations= [
 
     body('avatar').custom((value,{req})=>{
         let file = req.file;
-        if (!file){
+        if (!file || file == undefined){
             throw new Error('Tienes que subir una imagen')
         }
         return true;

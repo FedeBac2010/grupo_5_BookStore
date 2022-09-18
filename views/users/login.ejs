@@ -22,7 +22,7 @@
           <form method="POST" action="/users/login">
             <div class="inputBx">
               <span>Email del Usuario</span>
-              <input type="text" name="userEmail" />
+              <input type="text" name="userEmail" value="<%= locals.oldData ? oldData.userEmail : null  %>" />
               <% if (locals.errors && errors.userEmail) { %>
               <div class="text-danger">
                 <%= errors.userEmail.msg %></div>
@@ -31,6 +31,10 @@
             <div class="inputBx">
               <span>Contraseña</span>
               <input type="password" name="password" />
+              <% if (locals.errors && errors.password) { %>
+                <div class="text-danger">
+                  <%= errors.password.msg %></div>
+                <% } %>
             </div>
             <div class="remember">
               <label for=""><input type="checkbox" name="remember_user"/>Recuerdame</label>
