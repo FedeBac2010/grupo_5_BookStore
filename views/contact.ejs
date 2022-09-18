@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Include Head con CSS -->
+    <%- include("./partials/head") %>
+
+    <title>Book Store</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+
+    <%- include("./partials/header") %>
+
+    <!--Barra de navegacion celular-->
+    <%- include("./partials/bottomNav.ejs") %>
+
+    <!-- Centro del body -->
+    <main>
+      <div class="main-container">
+        <div class="map">
+            <img src="/img/map.png">
+            </div>
+        
+            <div class="contact-info">
+                <h1>BookStore</h1>
+                <h3>Email:</h3>
+                   <p>bookstore@gmail.com</p>
+                   <br> 
+                <h3>Teléfono:</h3>
+                   <p>777-534678</p>
+                   <br>
+                <h3>Ciudad:</h3>
+                   <p>Nunca Jamás</p> 
+            </div>
+      </div>
+    </main>
+    <!-- Footer -->
+
+    <%- include("./partials/footer") %>
+
+    <!-- SCROLL REVEAL -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- CUSTOM JS -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

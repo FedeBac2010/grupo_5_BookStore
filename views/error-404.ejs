@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Include Head con CSS -->
+    <%- include("./partials/head") %>
+
+    <title>Book Store</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+
+    <%- include("./partials/header") %>
+
+    <!--Barra de navegacion celular-->
+    <%- include("./partials/bottomNav.ejs") %>
+
+    <!-- Centro del body -->
+    <main>
+      <div class="error-container">
+       <h1>Lo sentimos mucho</h1>
+       <h2>Pagina no encontrada</h2>
+       <a href="https://www.flaticon.es/stickers-gratis/error-404" title="error 404 stickers">Error 404 stickers creadas por Stickers - Flaticon</a>
+      </div>
+    </main>
+    <!-- Footer -->
+
+    <%- include("./partials/footer") %>
+
+    <!-- SCROLL REVEAL -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- CUSTOM JS -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
