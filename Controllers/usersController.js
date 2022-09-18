@@ -131,7 +131,9 @@ if (usuarioRepetido) {
   },
 
   updateUser: (req, res) => {
-    
+    const resultValidation = validationResult(req);
+
+    if(!resultValidation.errors.length){
     
       db.Users.findByPk(req.session.userLogged.id)
     .then(function(user){
@@ -146,8 +148,12 @@ if (usuarioRepetido) {
     }).then(user=>{
       req.session.userLogged = user;
       res.redirect("/users/all-profiles");
-    }).catch(function(error){
-      res.render('error');
+    }).catch(function(e){
+      res.render('users/edit-user', {
+        styles: "edit.css",
+        errors: resultValidation.mapped(),
+        oldData: req.body
+    });
   });
   })
     
@@ -181,7 +187,13 @@ if (usuarioRepetido) {
 
     fs.writeFileSync(usersListPath, JSON.stringify(usersList, null, 2)); //Escribe lo que recibe en nuestro archivo JSON de productos
  */
-  },
+  }else{
+    return res.render('users/edit-user', {
+      styles: "edit.css",
+      errors: resultValidation.mapped(),
+      oldData: req.body
+  });
+  }},
 
   deleteProduct: async(req, res) => {
     
@@ -227,7 +239,7 @@ if (usuarioRepetido) {
   
 
           if(req.body.remember_user) {
-					res.cookie('userEmail', req.body.userEmail, { maxAge: (1000 * 60) * 5})
+					res.cookie('userEmail', req.body.userEmail, { maxAge: (1000 * 60* 5)})
 				}
         //cookie para mantener usuario logeado por milesimas de segundos en este caso existe por 2 minutos
 

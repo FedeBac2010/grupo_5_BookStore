@@ -24,7 +24,7 @@ router.post('/register', upload.single('avatar'), [validations] ,usersController
 // RUTA QUE EDITA EL USUARIO
 
 router.get("/edit/:id", usersController.edit);
-router.put("/:id", upload.single('avatar'),usersController.updateUser)
+router.put("/:id", upload.single('avatar'),validations ,usersController.updateUser)
 
 // RUTA DE LOGIN
 

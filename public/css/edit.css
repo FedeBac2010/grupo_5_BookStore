@@ -17,7 +17,9 @@ body {
     background-position: center;
 }
 
-
+.text-danger{
+    color: red;
+}
 
 .container{
 max-width: 700px;
