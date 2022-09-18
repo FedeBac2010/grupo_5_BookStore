@@ -1,5 +1,5 @@
 # Retrsopectivas
-## Sprint 5:
+## Sprint 6:
 #### Start Doing
 * Usar el liveshare.
 * Adelantar temas.
