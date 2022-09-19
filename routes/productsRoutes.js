@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const productsController = require('../Controllers/productsController')
 
+//EXPRESS VALIDATOR
+
+const productsValidations= require('../middlewares/productValidations')
+
 // CONFIG MULTER
 const upload = require('../middlewares/multer');
 
@@ -15,11 +19,11 @@ router.get('/detalle-producto/:id', productsController.detalle);
 
 /* RUTA DE CREACION DE PRODUCTO */
 router.get("/create", productsController.create);
-router.post("/create", upload.single('image'), productsController.storeProduct)
+router.post("/create", upload.single('image'), productsValidations,productsController.storeProduct)
 
 /* RUTA EDICION DE PRODUCTO */
 router.get("/edit/:id", productsController.edit);
-router.put("/:id", upload.single('image'), productsController.updateProduct)
+router.put("/:id", upload.single('image'), productsValidations,productsController.updateProduct)
 
 /* RUTA PARA ELIMINAR UN PRODUCTO */
 router.delete('/:id', productsController.deleteProduct)

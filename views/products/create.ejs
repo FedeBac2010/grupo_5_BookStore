@@ -19,36 +19,66 @@
           <div class="input-box">
 
             <span class="details">Titulo</span>
-            <input type="text" name="title" placeholder="Titulo" required />
+            <input type="text" name="title" placeholder="Titulo"  />
+            <% if (locals.errors && errors.title) { %>
+              <div class="text-danger">
+                  <%= errors.title.msg %> 
+              </div>
+          <% } %>
           </div>
           <div class="input-box">
 
             <span class="details">Autor</span>
-            <input type="text" name="author" placeholder="Autor" required />
+            <input type="text" name="author" placeholder="Autor"  />
+            <% if (locals.errors && errors.author) { %>
+              <div class="text-danger">
+                  <%= errors.author.msg %> 
+              </div>
+          <% } %>
           </div>
           <div class="input-box">
 
             <span class="details">Precio</span>
-            <input type="text" name="price" placeholder="Precio" required />
+            <input type="text" name="price" placeholder="Precio"  />
+            <% if (locals.errors && errors.price) { %>
+              <div class="text-danger">
+                  <%= errors.price.msg %> 
+              </div>
+          <% } %>
           </div>
           <div class="input-box">
 
             <span class="details">Moneda</span>
-            <input type="text" name="currency" placeholder="Moneda" required />
+            <input type="text" name="currency" placeholder="Moneda"  />
+            <% if (locals.errors && errors.price) { %>
+              <div class="text-danger">
+                  <%= errors.price.msg %> 
+              </div>
+          <% } %>
           </div>
           <div class="input-box">
 
             <span class="details">Descripcion</span>
-            <input type="text" name="description" placeholder="Descripcion" required />
+            <input type="text" name="description" placeholder="Descripcion"  />
+            <% if (locals.errors && errors.description) { %>
+              <div class="text-danger">
+                  <%= errors.description.msg %> 
+              </div>
+          <% } %>
           </div>
           <div class="input-box">
 
             <span class="details">Imagen</span>
             <div class="foto-producto">
               <input type="file" name="image" accept=".jpg" multiple id="foto-producto"/>
+              
               <label for="foto-producto"
-                ><i class="fa-solid fa-image"></i>Foto del producto</label
-              >
+                ><i class="fa-solid fa-image"></i>Foto del producto</label>
+                <% if (locals.errors && errors.image) { %>
+                  <div class="text-danger">
+                      <%= errors.image.msg %> 
+                  </div>
+              <% } %>
             </div>
           </div>
         </div>

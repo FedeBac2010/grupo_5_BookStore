@@ -99,16 +99,16 @@
               placeholder="Ciudad"
             />
           </div>
-          <div class="foto-perfil">
-            <input type="file" name="avatar"/>
+          <div class="foto-producto">
+            <input type="file" name="avatar" accept=".jpg" multiple id="foto-producto"/>
+            
+            <label for="foto-producto">
+              <i class="fa-solid fa-image"></i>Foto de perfil</label>
             <% if (locals.errors && errors.avatar) { %>
               <div class="text-danger">
                 <%= errors.avatar.msg %> 
               </div>
             <% } %>
-            <label for="foto-perfil"
-              ><i class="fa-solid fa-image"></i>Foto de perfil</label
-            >
           </div>
         </div>
           <div class="button">

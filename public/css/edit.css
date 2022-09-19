@@ -19,6 +19,7 @@ body {
 
 .text-danger{
     color: red;
+    margin: 10px
 }
 
 .container{
@@ -149,7 +150,7 @@ form .button input:hover {
 }
 
 input[type="file"] {
-    display:block
+    display:none
 }
 
 .foto-producto{

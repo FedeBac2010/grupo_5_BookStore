@@ -5,6 +5,9 @@ const path = require('path');
 const db = require ('../database/models')
 const sequelize = db.sequelize;
 
+//VALIDACION
+const { validationResult } = require('express-validator');
+
 /* CONFIG UUID  */
 const {v4: uuidv4}= require('uuid');
 
@@ -60,8 +63,11 @@ module.exports = {
     },
 
   storeProduct: async function (req,res) {
+
+    const resultProductsValidation = validationResult(req);
     let category = await db.Category.findAll();
     
+    if(!resultProductsValidation.errors.length){
           db.Products.create({
               title: req.body.title,
               description: req.body.description,
@@ -72,22 +78,39 @@ module.exports = {
               author: req.body.author,
           })
               res.redirect('/products/catalog');
-  },
+            }else {
+              
+              return res.render('products/create', {
+                  category:category,
+                  styles:'create.css',
+                  errors: resultProductsValidation.mapped(),
+                  oldData: req.body,
+              });
+          }
+          },
 
   edit: async function (req, res) {
     let category = await db.Category.findAll();
-   /*  let books = await db.Products.findAll(); */
+    /* let books = await db.Products.findAll(); */
 
     let product = await db.Products.findByPk(req.params.id) 
 
-    Promise.all([category,product])
+/*     Promise.all([category,product])
     .then(function([category,product]){
       res.render("products/edit",{books:product,category:category, styles:'edit.css'})
-    })
+    }) */
+
+    res.render("products/edit",{books:product,category:category, styles:'edit.css'})
+
+
     
   },
 
   updateProduct:async function(req,res) {
+
+    const resultProductsValidation = validationResult(req);
+
+    if(!resultProductsValidation.errors.length){
 
     await db.Products.update({
             title: req.body.title,
@@ -105,6 +128,17 @@ module.exports = {
                   })
                   
                     res.redirect('/products/catalog');
+                  }else {
+                    let product = await db.Products.findByPk(req.params.id);
+                    let category = await db.Category.findAll();
+                    return res.render('products/edit', {
+                        styles:'edit.css',
+                        errors: resultProductsValidation.mapped(),
+                        books:product,
+                        category:category,
+                        oldData: req.body,
+                    });
+                }
                   
               
               

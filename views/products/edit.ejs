@@ -9,56 +9,86 @@
 <body>
     <body>
         <div class="container">
-          <div class="title">Editar producto: <%= books.title ?? '' %> 
+          <div class="title">Editar producto: <%= locals.oldData ? oldData.title :books.title %> 
             <a href="/"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
           </div>
           <!-- FORMULARIO DE EDICION -->
-          <form action="/products/<%= books.id ?? ''%>?_method=PUT " method="post" enctype="multipart/form-data">  
+          <form action="/products/<%= books.id ?? ''%>?_method=PUT " method="POST" enctype="multipart/form-data">  
             <div class="user-details">
               <div class="input-box">
     
                 <span class="details">Titulo</span>
-                <input type="text" name="title" placeholder="Titulo" required value="<%= books.title ?? '' %> "/>
+                <input type="text" name="title" placeholder="Titulo" value="<%= locals.oldData ? oldData.title : books.title%>" />
+                <% if (locals.errors && errors.title) { %>
+                  <div class="text-danger">
+                      <%= errors.title.msg %> 
+                  </div>
+              <% } %>
               </div>
               <div class="input-box">
     
                 <span class="details">Autor</span>
-                <input type="text" name="author" placeholder="Autor" required value="<%= books.author ?? ''%> " />
+                <input type="text" name="author" placeholder="Autor" value="<%= locals.oldData ? oldData.author : books.author%>"  />
+                <% if (locals.errors && errors.author) { %>
+                  <div class="text-danger">
+                      <%= errors.author.msg %> 
+                  </div>
+              <% } %>
               </div>
               <div class="input-box">
     
                 <span class="details">Precio</span>
-                <input type="text" name="price" placeholder="Precio" required value="<%= books.price ?? ''%> " />
+                <input type="text" name="price" placeholder="Precio" value="<%= locals.oldData ? oldData.price : books.price%>"  />
+                <% if (locals.errors && errors.price) { %>
+                  <div class="text-danger">
+                      <%= errors.price.msg %> 
+                  </div>
+              <% } %>
               </div>
               <div class="input-box">
     
                 <span class="details">Moneda</span>
-                <input type="text" name="currency" placeholder="Moneda" required  value="<%= books.currency ?? ''%> "/>
+                <input type="text" name="currency" placeholder="Moneda" value="<%= locals.oldData ? oldData.currency : books.currency%>" />
+                <% if (locals.errors && errors.price) { %>
+                  <div class="text-danger">
+                      <%= errors.price.msg %> 
+                  </div>
+              <% } %>
               </div>
               <div class="input-box">
     
                 <span class="details">Descripcion</span>
-                <input type="text" name="description" placeholder="Descripcion" required  value="<%= books.description ?? ''%> "/>
+                <input type="text" name="description" placeholder="Descripcion" value="<%= locals.oldData ? oldData.description : books.description%>" />
+                <% if (locals.errors && errors.description) { %>
+                  <div class="text-danger">
+                      <%= errors.description.msg %> 
+                  </div>
+              <% } %>
               </div>
               <div class="input-box">
     
                 <span class="details">Imagen</span>
                 <div class="foto-producto">
                   <input type="file" name="image" accept=".jpg" multiple id="foto-producto"/>
+                  
                   <label for="foto-producto"
-                    ><i class="fa-solid fa-image"></i>Foto del producto</label
-                  >
+                    ><i class="fa-solid fa-image"></i>Foto del producto</label>
+                    <% if (locals.errors && errors.image) { %>
+                      <div class="text-danger">
+                          <%= errors.image.msg %> 
+                      </div>
+                  <% } %>
                 </div>
               </div>
             </div>
-            <div class="gender-details">
-              <label>Genero</label>
+            <div>
+              <label>Categoria</label>
               <select name="category_id">
-                <% category.forEach(category => { %>
-                <option value="<%= category.id %>"><%= category.name %></option>
-                <% }); %>
-            </select>
-              </div>
+                  <% category.forEach(category => { %>
+                  <option value="<%= category.id %>"><%= category.name %></option>
+                  <% }); %>
+              </select>
+          </div>
 
           <div class="button">
             <input type="submit" value="Editar"/>
