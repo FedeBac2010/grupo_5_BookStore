@@ -9,6 +9,11 @@
     margin: 10px;
 }
 
+.errores{
+    color: red;
+    margin: 10px;
+}
+
 body {
     display: flex;
     height: 100vh;

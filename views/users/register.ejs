@@ -15,12 +15,18 @@
 
       <!-- FORMULARIO DE REGIRSTRO -->
       
-      <form method="POST" action="/users/register" enctype="multipart/form-data" > 
+      <form method="POST" action="/users/register" enctype="multipart/form-data" >
+        
+        <div class="errores">
+          <ul></ul>
+        </div>
+
+
         <div class="user-details">
 
           <div class="input-box">
             <span class="details">Nombre Completo</span>
-            <input type="text" name="fullName" placeholder="Nombre" value="<%= locals.oldData ? oldData.fullName : null  %>"/>
+            <input type="text" name="fullName" class="fullName"  placeholder="Nombre" value="<%= locals.oldData ? oldData.fullName : null  %>"/>
             <% if (locals.errors && errors.fullName) { %>
               <div class="text-danger">
                 <%= errors.fullName.msg %> 
@@ -30,7 +36,7 @@
 
           <div class="input-box">
             <span class="details">Usuario</span>
-            <input type="text" name="userName" placeholder="Usuario" value="<%= locals.oldData ? oldData.userName : null  %>" />
+            <input type="text" name="userName" class="userName" placeholder="Usuario" value="<%= locals.oldData ? oldData.userName : null  %>" />
             <% if (locals.errors && errors.userName) { %>
               <div class="text-danger">
                 <%= errors.userName.msg %> 
@@ -40,7 +46,7 @@
 
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="text" name="userEmail" placeholder="Email" value="<%= locals.oldData ? oldData.userEmail : null  %>"/>
+            <input type="text" name="userEmail" class="userEmail" placeholder="Email" value="<%= locals.oldData ? oldData.userEmail : null  %>"/>
             <% if (locals.errors && errors.userEmail) { %>
               <div class="text-danger">
                 <%= errors.userEmail.msg %> 
@@ -50,7 +56,7 @@
 
           <div class="input-box">
             <span class="details">Contraseña</span>
-            <input type="password" name="password" placeholder="Password" value="<%= locals.oldData ? oldData.password : null  %>"/>
+            <input type="password" name="password" class="password" placeholder="Password" value="<%= locals.oldData ? oldData.password : null  %>"/>
             <% if (locals.errors && errors.password) { %>
               <div class="text-danger">
                 <%= errors.password.msg %> 
@@ -60,7 +66,7 @@
 
           <div class="input-box">
             <span class="details">Numero de Telefono</span>
-            <input type="tel" name="phoneNumber" placeholder="Numero de Tel" value="<%= locals.oldData ? oldData.phoneNumber : null  %>"/>
+            <input type="tel" name="phoneNumber" class="phoneNumber" placeholder="Numero de Tel" value="<%= locals.oldData ? oldData.phoneNumber : null  %>"/>
             <% if (locals.errors && errors.phoneNumber) { %>
               <div class="text-danger">
                 <%= errors.phoneNumber.msg %> 
@@ -73,6 +79,7 @@
             <input
               type="text"
               name="city"
+              class="city"
               placeholder="Ciudad"
               value="<%= locals.oldData ? oldData.city : null  %>"
             />
@@ -131,5 +138,7 @@
         </div>
       </form>
     </div>
+        <!-- CUSTOM JS -->
+        <script src="/JS/validationsFront.js"></script>
   </body>
 </html>
