@@ -98,6 +98,11 @@
               name="city"
               placeholder="Ciudad"
             />
+            <% if (locals.errors && errors.city) { %>
+              <div class="text-danger">
+                <%= errors.city.msg %> 
+              </div>
+            <% } %>
           </div>
           <div class="foto-producto">
             <input type="file" name="avatar" accept=".jpg" multiple id="foto-producto"/>

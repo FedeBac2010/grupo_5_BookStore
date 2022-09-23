@@ -78,6 +78,7 @@ module.exports = {
               author: req.body.author,
           })
               res.redirect('/products/catalog');
+              console.log(req.file);
             }else {
               
               return res.render('products/create', {

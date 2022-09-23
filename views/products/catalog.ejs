@@ -27,11 +27,21 @@
             <a href ="./detalle-producto/<%= books[index].id %>">
             <h2 class="descripcion"><%= books[index].title %></h2></a>
           <div class="image">  
-            <img
-              src="/img/uploads/<%=books[index].image %>"
+            <% if (books[index].image== null ||books[index].image== undefined) { %>
+              <img
+              src="/img/tapalibro.jpg"
               alt=""
               class="barra"
             />
+            <% } else{ %>
+              <img
+                src="/img/uploads/<%=books[index].image %>"
+                alt=""
+                class="barra"
+              />
+              
+              <% } %>
+             
           </div>
             <!-- Logo de like (corazon) -->
             <% if (locals.isLogged) { %>

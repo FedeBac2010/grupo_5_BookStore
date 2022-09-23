@@ -9,7 +9,7 @@ module.exports= validations= [
     .notEmpty().withMessage('Tienes que escribir un correo electronico').bail()
     .isEmail().withMessage('Debes escribir un formato de correo valido'),
 
-    body('phoneNumber').notEmpty().withMessage('Tienes que escribir un numero telefonico').isMobilePhone(),
+    body('phoneNumber').notEmpty().withMessage('Tienes que escribir un numero telefonico').isMobilePhone().withMessage('Tienes que escribir solo numeros'),
 
     body('city').notEmpty().withMessage('Tienes que escribir una ciudad'),
     

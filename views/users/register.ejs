@@ -76,21 +76,32 @@
               placeholder="Ciudad"
               value="<%= locals.oldData ? oldData.city : null  %>"
             />
+            <% if (locals.errors && errors.city) { %>
+              <div class="text-danger">
+                <%= errors.city.msg %> 
+              </div>
+            <% } %>
           </div>
           
-                <div class="foto-perfil">
-                  <input 
-                    type="file" 
-                    name="avatar" />
-                  <% if (locals.errors && errors.avatar) { %>
-                    <div class="text-danger">
+          <div class="input-box">
+
+            <span class="details">Imagen</span>
+            <div class="foto-perfil">
+              <input 
+              type="file" 
+              name="avatar" 
+              accept=".jpg" 
+              multiple id="foto-perfil" />
+              
+              <label for="foto-perfil"
+                ><i class="fa-solid fa-image"></i>Foto de perfil</label>
+                <% if (locals.errors && errors.avatar) { %>
+                  <div class="text-danger">
                       <%= errors.avatar.msg %> 
-                    </div>
-                  <% } %>
-                  <label for="foto-perfil"
-                    ><i class="fa-solid fa-image"></i>Foto de perfil</label
-                  >
-                </div>
+                  </div>
+              <% } %>
+            </div>
+          </div>
         </div>
 
         <div class="input-box">
