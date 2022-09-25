@@ -20,6 +20,12 @@
         method="POST"
         enctype="multipart/form-data"
       >
+            <!--  Lista donde se almacenan los errores de validaciones Front -->
+            <div class="errores">
+              <ul></ul>
+            </div>
+            <!--  -->
+
         <div class="user-details">
           <div class="input-box">
             <span class="details">Nombre Completo</span>
@@ -27,6 +33,7 @@
               type="text"
               value="<%= locals.oldData ? oldData.fullName : users.fullName%>"
               name="fullName"
+              class="fullName"
               placeholder="Nombre"
             />
             <% if (locals.errors && errors.fullName) { %>
@@ -41,6 +48,7 @@
               type="text"
               value="<%= locals.oldData ? oldData.userName : users.userName%>"
               name="userName"
+              class="userName"
               placeholder="Usuario"
             />
             <% if (locals.errors && errors.userName) { %>
@@ -55,6 +63,7 @@
               type="text"
               value="<%= locals.oldData ? oldData.userEmail :users.userEmail%>"
               name="userEmail"
+              class="userEmail"
               placeholder="Email"
             />
             <% if (locals.errors && errors.userEmail) { %>
@@ -69,6 +78,7 @@
               type="text"
               value="<%= locals.oldData ? oldData.phoneNumber : users.phoneNumber%>"
               name="phoneNumber"
+              class="phoneNumber"
               placeholder="Numero de Tel"
             />
             <% if (locals.errors && errors.phoneNumber) { %>
@@ -82,6 +92,7 @@
             <input
               type="password"
               name="password"
+              class="password"
               placeholder="Contraseña"
             />
             <% if (locals.errors && errors.password) { %>
@@ -96,6 +107,7 @@
               type="text"
               value="<%= locals.oldData ? oldData.city : users.city%>"
               name="city"
+              class="city"
               placeholder="Ciudad"
             />
             <% if (locals.errors && errors.city) { %>
@@ -123,6 +135,8 @@
       </form>
     </div>
   </body>
+  <!-- CUSTOM JS -->
+  <script src="/JS/validationsFrontRegister-Edit.js"></script>
 </html>
 
 
