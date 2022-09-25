@@ -4,15 +4,6 @@
     box-sizing: border-box;
 }
 
-.text-danger{
-    color: red;
-    margin: 10px;
-}
-
-.errores{
-    color: red;
-    margin: 10px;
-}
 
 body {
     display: flex;
@@ -83,7 +74,7 @@ height: 45px;
 width: 100%;
 outline: none;
 border-radius: 5px;
-border: 1px solid #ccc;
+/* border: 1px solid #ccc; */
 padding-left: 15px;
 font-size: 16px;
 border-bottom-width: 2px;
@@ -91,7 +82,7 @@ border-bottom-width: 2px;
 
 .container form .user-details .input-box input:focus, 
 .container form .user-details .input-box input:valid {
-border-color:#2D3C4B;
+/* border-color:#2D3C4B; */
 box-shadow: #2D3C4B; 
 }
 
@@ -130,9 +121,9 @@ border-color: #d9d9d9;
 background:#F5C36E ;
 }
 
-form input[type="radio"] {
+/* form input[type="radio"] {
     display: none;
-}
+} */
 
 form .button {
     height: 45px;
@@ -204,4 +195,41 @@ input[type="file"] {
             width: 14px;
         }
 }
+
+
+
+/* Para Validaciones JS Front */
+.text-danger{
+    /* color: red; */
+    border: 3px black;
+    margin: 10px;
+    color:#842029;
+    background-color: #F8D7DA;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.is-valid {
+    /*  color: #198754; */
+    border-color: #198754;
+
+}
+
+.is-invalid {
+     /* color: #842029; */
+    border-color:  #BB2D3B;
+}
+
+.alert-warning{
+    color:#842029;
+    background-color: #F8D7DA;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    list-style: none;
+}
+
+/* Aca cierra las validaciones  JS Front*/
 

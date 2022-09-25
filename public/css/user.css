@@ -296,9 +296,47 @@ footer p:hover{
 
 
   
-  footer{
-          display: none;
-      }
+  /* Footer */
+
+footer{
+  /* margin-top: auto; */
+  background-color: #2d3c4b;
+  padding: 1em 0;
+  text-align: center;
+  border-top: 3px solid black 2px;
+  position: relative;
+  bottom: 0;
+  display: none;
+}
+
+footer div.social{
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 50px;
+}
+footer div p{
+  font-size: 20px;
+  margin-bottom: 0px;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+footer div.links a{
+  margin: 0 30px;
+}
+
+footer div.links a i{
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+footer div.links a i:hover,
+footer p:hover{
+  color: #f5c36e;
+}
+  
   }
   
   /* DESKTOP */
