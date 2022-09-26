@@ -21,7 +21,7 @@ form.addEventListener('submit',(e)=>{
 
 
     if( fullName.value == ''){
-        errores.push('Debes completar el campo Nombre Completo');
+        errores.push('Debes completar el campo de Nombre Completo');
     }else if(fullName.value.length < 3){
         errores.push('El campo de Nombre Completo debe tener al menos 3 caracteres')
     }

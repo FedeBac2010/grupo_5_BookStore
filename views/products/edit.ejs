@@ -14,11 +14,16 @@
           </div>
           <!-- FORMULARIO DE EDICION -->
           <form action="/products/<%= books.id ?? ''%>?_method=PUT " method="POST" enctype="multipart/form-data">  
+             <!--  Lista donde se almacenan los errores de validaciones Front -->
+        <div class="errores">
+          <ul></ul>
+        </div>
+        <!--  -->
             <div class="user-details">
               <div class="input-box">
     
                 <span class="details">Titulo</span>
-                <input type="text" name="title" placeholder="Titulo" value="<%= locals.oldData ? oldData.title : books.title%>" />
+                <input type="text" name="title" placeholder="Titulo" value="<%= locals.oldData ? oldData.title : books.title%>" class="titulo"/>
                 <% if (locals.errors && errors.title) { %>
                   <div class="text-danger">
                       <%= errors.title.msg %> 
@@ -28,7 +33,7 @@
               <div class="input-box">
     
                 <span class="details">Autor</span>
-                <input type="text" name="author" placeholder="Autor" value="<%= locals.oldData ? oldData.author : books.author%>"  />
+                <input type="text" name="author" placeholder="Autor" value="<%= locals.oldData ? oldData.author : books.author%>" class="author" />
                 <% if (locals.errors && errors.author) { %>
                   <div class="text-danger">
                       <%= errors.author.msg %> 
@@ -38,7 +43,7 @@
               <div class="input-box">
     
                 <span class="details">Precio</span>
-                <input type="text" name="price" placeholder="Precio" value="<%= locals.oldData ? oldData.price : books.price%>"  />
+                <input type="text" name="price" placeholder="Precio" value="<%= locals.oldData ? oldData.price : books.price%>" class="price" />
                 <% if (locals.errors && errors.price) { %>
                   <div class="text-danger">
                       <%= errors.price.msg %> 
@@ -48,7 +53,7 @@
               <div class="input-box">
     
                 <span class="details">Moneda</span>
-                <input type="text" name="currency" placeholder="Moneda" value="<%= locals.oldData ? oldData.currency : books.currency%>" />
+                <input type="text" name="currency" placeholder="Moneda" value="<%= locals.oldData ? oldData.currency : books.currency%>" class="currency"/>
                 <% if (locals.errors && errors.price) { %>
                   <div class="text-danger">
                       <%= errors.price.msg %> 
@@ -58,7 +63,7 @@
               <div class="input-box">
     
                 <span class="details">Descripcion</span>
-                <input type="text" name="description" placeholder="Descripcion" value="<%= locals.oldData ? oldData.description : books.description%>" />
+                <input type="text" name="description" placeholder="Descripcion" value="<%= locals.oldData ? oldData.description : books.description%>" class="description" />
                 <% if (locals.errors && errors.description) { %>
                   <div class="text-danger">
                       <%= errors.description.msg %> 
@@ -69,7 +74,7 @@
     
                 <span class="details">Imagen</span>
                 <div class="foto-producto">
-                  <input type="file" name="image" accept=".jpg" multiple id="foto-producto"/>
+                  <input type="file" name="image" accept=".jpg" multiple id="foto-producto" class="imagen"/>
                   
                   <label for="foto-producto"
                     ><i class="fa-solid fa-image"></i>Foto del producto</label>
@@ -89,15 +94,13 @@
                   <% }); %>
               </select>
           </div>
-
           <div class="button">
             <input type="submit" value="Editar"/>
           </div>
         </div>
-      
           </form>
         </div>
       </body>
+      <script src="/JS/validationsFrontProduct.js"></script>
     </html>
-</body>
-</html>
+    

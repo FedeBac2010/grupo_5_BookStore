@@ -172,7 +172,35 @@ input[type="file"] {
 
 }
 
-/* Para Validaciones JS Front */
+
+
+
+
+@media (max-width: 584px) {
+    .container {
+        max-width: 100%;
+    }
+    .container form .user-details .input-box {
+        margin-bottom: 15px;
+        width: 100%;
+        }
+        form .gender-details .category {
+            width: 100%;
+        }
+        .container form .user-details {
+            max-height: 300px;
+            overflow-y: scroll;
+        }
+        .user-details::-webkit-scrollbar {
+            width: 0;
+        }
+        .gender-details .category .dot {
+            width: 14px;
+        }
+}
+
+/* VALIDACIONES FRONT BACK */
+
 .text-danger{
     /* color: red; */
     border: 3px black;
@@ -203,29 +231,4 @@ input[type="file"] {
     padding: 5px;
     margin: 5px;
     list-style: none;
-}
-
-/* Aca cierra las validaciones  JS Front*/
-
-@media (max-width: 584px) {
-    .container {
-        max-width: 100%;
-    }
-    .container form .user-details .input-box {
-        margin-bottom: 15px;
-        width: 100%;
-        }
-        form .gender-details .category {
-            width: 100%;
-        }
-        .container form .user-details {
-            max-height: 300px;
-            overflow-y: scroll;
-        }
-        .user-details::-webkit-scrollbar {
-            width: 0;
-        }
-        .gender-details .category .dot {
-            width: 14px;
-        }
 }
