@@ -146,10 +146,27 @@ body{
 /* MAIN */
 
 main{
-    width: 100vw;
-    
+    width: 100vw;   
 }
 
+.error-container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+}
+.error-text{
+    margin-top: 5%;
+    flex-wrap: wrap;
+}
+.error{
+    font-size: 18px;
+    font-style: oblique;
+    text-align: center;
+}
+h1{
+    text-align: center;
+}
 .main-container {
     display: flex;
     flex-direction: column;

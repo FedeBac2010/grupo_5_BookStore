@@ -1,8 +1,9 @@
 /* Para que el texto se ajuste correctamente a la pagina */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: 'Gentium Book Basic', serif;
 }
 
 /* HEADER 1 */
@@ -28,7 +29,7 @@
   padding: 10px;
   background: #fff;
 }
-
+/* Boton de busqueda */
 .search-form {
   width: 30rem;
   height: 3rem;
@@ -93,7 +94,6 @@
   display: inline-block;
   font-size: 1.5rem;
   padding: 0.9rem;
-  font-size: 1.5rem;
   /* visibility: hidden; */
   text-decoration: none;
 }
@@ -311,16 +311,28 @@ footer p:hover {
       display: none;
   }
   
+  .navbar a:hover{
+    border-bottom: 3px solid #2d3c4b;
+  }
+  
+  .navbar a:hover{
+    background: #f5c36e;
+  }
   .header-container-2{
     background-color: #f5c36e;
-    padding: 0.9rem;
     display: block;
   }
 
   .bottom-navbar{
       display: none;
   }
-
+.first-article{
+  margin-top: 2%;
+}
+.admin{
+  display: flex;
+  justify-content: space-around;
+}
 footer{
   display: block;
 }

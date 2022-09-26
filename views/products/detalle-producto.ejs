@@ -12,9 +12,7 @@
 
     <!--Barra de navegacion celular-->
     <%- include("../partials/bottomNav") %>
-
-    <!-- CONTENEDOR TOTAL -->
-
+<main>
     <div class="contenedor-total">
       <div class="card">
         
@@ -42,9 +40,9 @@
             <div class="price">
               <span><%= books.currency %> <%= books.price %> </span>
             </div>
-            <div class="button">
-              <a href="/products/cart">Agregar al Carrito</a>
+            <a href="/products/cart"> <buttom class="button">Agregar al Carrito</button></a>
             </div>
+            <div class="admin">
             <form
               action="/products/<%= books.id %>?_method=DELETE"
               method="post"
@@ -52,12 +50,13 @@
               <button type="submit" class="button">Eliminar</button>
             </form>
             <a href="../edit/<%= books.id  %> "
-              ><button type="submit" class="button">Editar</button></a
-            >
+              ><button type="submit" class="button">Editar</button></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </main>
     <!-- FOOTER -->
 
     <%- include("../partials/footer") %>

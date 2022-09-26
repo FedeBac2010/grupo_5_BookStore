@@ -48,9 +48,7 @@ app.use(userLoggedMiddleware);
 app.use('/', mainRoutes);
 app.use('/users', usersRoutes);
 app.use('/products', productsRoutes);
-/* app.use((req, res, next)=>{
-    res.status(404).render('error-404');
-}); */
+
 
 
 /* CONFIGURACION DE ARCHIVOS PUBLICOS */
@@ -63,8 +61,10 @@ app.use(express.static('public'))
 app.get('/JS', (req, res)=>{
     res.sendFile(path.resolve(__dirname, './JS/script.js'))
 });
-
-
+/* Pagina error 404 -agregarla siempre al final */
+app.use((req, res, next)=>{
+    res.status(404).render('error-404',{styles:'styles.css'});
+});
 /* SERVIDOR */
 const PORT= process.env.PORT || 3000
 
