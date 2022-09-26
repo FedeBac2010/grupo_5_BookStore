@@ -8,7 +8,7 @@ window.addEventListener('load',()=> {
     let moneda = document.querySelector('.currency');
     let descripcion = document.querySelector('.description');
 
-  /*   let imagen= document.querySelector('.imagen').value; */
+    let imagen = document.querySelector('.imagen');
     
     
     
@@ -51,14 +51,13 @@ window.addEventListener('load',()=> {
     
         if( descripcion.value == ''){
             errores.push('Debes agregar una descripcion del producto');
-        }else if(descripcion.value.length < 15){
+        }else if(descripcion.value.length < 20){
             errores.push('El campo de descripcion debe ser superior a 15 caracteres')
         }
 
-  /*       if( imagen.value.length == undefined  || imagen.value == null || imagen.value == ''){
+        if( imagen.value == ""){
             errores.push('Debes agregar una Imagen del producto');
-            
-        } */
+        }
        
     
     

@@ -9,6 +9,9 @@ let password= document.querySelector('.password');
 let phoneNumber= document.querySelector('.phoneNumber');
 let city= document.querySelector('.city');
 
+let imagen = document.querySelector('.avatar');
+
+
 
 
 form.addEventListener('submit',(e)=>{
@@ -46,8 +49,8 @@ form.addEventListener('submit',(e)=>{
 
     if( password.value == ''){
         errores.push('Debes completar el campo de Contraseña');
-    }else if(password.value.length < 3){
-        errores.push('El campo de Contraseña debe tener al menos 3 caracteres')
+    }else if(password.value.length < 8){
+        errores.push('El campo de Contraseña debe tener al menos 8 caracteres')
     }
 
     
@@ -64,6 +67,10 @@ form.addEventListener('submit',(e)=>{
         errores.push('Debes completar el campo de Ciudad');
     }else if(city.value.length < 3){
         errores.push('El campo de nombre debe tener al menos 3 caracteres')
+    }
+
+    if( imagen.value == ""){
+        errores.push('Debes agregar una Imagen de Perfil');
     }
 
 if (errores.length > 0){
@@ -123,7 +130,7 @@ fullName.addEventListener('blur',(e)=>{
     })
     password.addEventListener('blur',(e)=>{
         let errores=[]; 
-        if( password.value == '' || password.value.length < 3){
+        if( password.value == '' || password.value.length < 8){
             errores.push('Debes completar el campo de Contraseña')
             password.classList.add('is-invalid')
             password.classList.remove('is-valid')
