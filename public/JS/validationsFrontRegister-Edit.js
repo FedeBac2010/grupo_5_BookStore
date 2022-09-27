@@ -11,6 +11,10 @@ let city= document.querySelector('.city');
 
 let imagen = document.querySelector('.avatar');
 
+//Para validad Email
+
+let emailCaracters = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i; //Los caracteres que son habilitados
+
 
 
 
@@ -43,6 +47,8 @@ form.addEventListener('submit',(e)=>{
         errores.push('Debes completar el campo de Email');
     }else if(userEmail.value.length < 3){
         errores.push('El campo de Email debe tener al menos 3 caracteres')
+    }else if(!emailCaracters.test(userEmail.value)){ //Aqui decimos que si el email ingresado no contiene algunos de lo caracteres salta el error
+        errores.push('El campo de Email debe tener al menos el caracter especial @')
     }
 
     
@@ -108,7 +114,7 @@ fullName.addEventListener('blur',(e)=>{
 
     userEmail.addEventListener('blur',(e)=>{
         let errores=[]; 
-        if( userEmail.value == '' || userEmail.value.length < 3){
+        if( userEmail.value == '' || userEmail.value.length < 3 || !emailCaracters.test(userEmail.value)){
             errores.push('Debes completar el campo de Email')
             userEmail.classList.add('is-invalid')
             userEmail.classList.remove('is-valid')

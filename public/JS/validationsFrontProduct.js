@@ -23,7 +23,7 @@ window.addEventListener('load',()=> {
     
     
         if( titulo.value == ''){
-            errores.push('Debes completar el campo de titulo');
+            errores.push('Debes completar el campo de Titulo del producto');
             /* console.log(titulo.value); */
         }
     
