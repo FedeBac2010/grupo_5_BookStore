@@ -9,6 +9,10 @@ const methodOverride= require('method-override');
 /*SESSION*/
 const session = require('express-session');
 
+//Requerimos rutas de Api
+const productsApiRouter = require('./routes/api/productsApiRoutes');
+const usersApiRouter = require('./routes/api/usersApiRoutes');
+
 /* RUTAS */
 
 const mainRoutes = require('./routes/mainRoutes');
@@ -48,6 +52,11 @@ app.use(userLoggedMiddleware);
 app.use('/', mainRoutes);
 app.use('/users', usersRoutes);
 app.use('/products', productsRoutes);
+
+
+//Endpoints de Apis
+app.use('/api/products', productsApiRouter);
+app.use('/api/users', usersApiRouter);
 
 
 

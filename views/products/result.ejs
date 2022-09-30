@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Include Head con CSS -->
+    <%- include("../partials/head") %>
+
+    <!-- Titulo -->
+    <title>Product Details</title>
+  </head>
+  <body>
+    <%- include("../partials/header") %>
+
+    <!--Barra de navegacion celular-->
+    <%- include("../partials/bottomNav") %>
+<main>
+
+    <h2 class="products-title">Resultados de la búsqueda: <%= search %></h2>
+    <% for( book of books ) {  %>
+    <div class="contenedor-total">
+       
+      <div class="card">
+        
+        <div class="imgBox">
+          <img src="/img/uploads/<%=books.image %>" />
+        </div>
+        
+        <div class="details">
+          <div class="title">
+            <h3>
+              <%= books.title ?? " " %> <br />
+              
+              <!-- <small>Genero: <!%= books.categories.name %> </small> -->
+            </h3>
+          </div>
+          <div class="autor">
+            <span>Autor: <%= books.author %> </span>
+          </div>
+          <div class="description">
+            <h4>Descripcion:</h4>
+            <br />
+            <p><%= books.description %></p>
+          </div>
+          <div class="buy">
+            <div class="price">
+              <span><%= books.currency %> <%= books.price %> </span>
+            </div>
+            <a href="/products/cart"> <buttom class="button">Agregar al Carrito</button></a>
+            </div>
+            <div class="admin">
+            <form
+              action="/products/<%= books.id %>?_method=DELETE"
+              method="post"
+            >
+              <button type="submit" class="button">Eliminar</button>
+            </form>
+            <a href="../edit/<%= books.id  %> "
+              ><button type="submit" class="button">Editar</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+    <% } %>
+  </main>
+    <!-- FOOTER -->
+
+    <%- include("../partials/footer") %>
+  </body>
+</html>

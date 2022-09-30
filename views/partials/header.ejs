@@ -5,13 +5,13 @@
         <a href="/"><img src="/img/logo.jpg" alt="Logo Book Store" /></a>
         </div>
         <!-- BARRA DE BUSQUEDA -->
-        <form action="" class="search-form">
-          <input type="search" name="" placeholder="Busque aqui..." id="search-box">
+        <form action="/search" method="GET" class="search-form" >
+          <input type="search" name="search" placeholder="Busque aqui..." id="search-box">
           <label for="search-box" class="fas fa-search"></label>
         </form>
         <!-- ICONOS -->
         <div class="icons">
-          <div id="search-btn" class="fas fa-search"></div>
+          <div><a href="/search" id="search-btn" class="fas fa-search"><a></div>
           <% if (locals.isLogged) { %>
               <p> Hi <%= locals.userLogged.fullName %>!</p>
               <a href="../users/profile" class="fas fa-heart"></a>
