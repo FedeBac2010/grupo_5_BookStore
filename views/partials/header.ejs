@@ -7,11 +7,11 @@
         <!-- BARRA DE BUSQUEDA -->
         <form action="/search" method="GET" class="search-form" >
           <input type="search" name="search" placeholder="Busque aqui..." id="search-box">
-          <label for="search-box" class="fas fa-search"></label>
+          <!-- <label for="search-box"> <a href="/search" class="fas fa-search"></a></label> -->
         </form>
         <!-- ICONOS -->
         <div class="icons">
-          <div><a href="/search" id="search-btn" class="fas fa-search"><a></div>
+          
           <% if (locals.isLogged) { %>
               <p> Hi <%= locals.userLogged.fullName %>!</p>
               <a href="../users/profile" class="fas fa-heart"></a>

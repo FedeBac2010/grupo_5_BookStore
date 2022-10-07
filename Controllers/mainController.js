@@ -13,8 +13,10 @@ module.exports = {
         res.render("contact",{styles:'styles.css'});
     },
     search: (req, res) => {
+        let category = db.Category.findAll();
         
-        db.Products.findAll({
+         db.Products.findAll({
+            include:[{association:"categories"}],
             where: {
                 title: {[Op.like]: "%" + req.query.search + "%"}
             }
@@ -23,6 +25,7 @@ module.exports = {
             res.render('products/result',{
                 search,
                 books:books,
+                category:category,
             
                 styles:'detalle-producto.css'
             })
