@@ -81,8 +81,9 @@ body{
 
 .icons div,
 .icons a{
-    font-size: 1.4rem;
+    font-size: 1.0rem;
     margin-left:1.0rem ;
+    margin-top: 5px;
     color: black;
     cursor: pointer;
     
@@ -265,6 +266,39 @@ footer div.links a i{
 footer div.links a i:hover,
 footer p:hover{
     color: #f5c36e;
+}
+
+
+/*MOBILE FIRST*/
+
+@media(min-width:425px){
+
+
+
+.search-form{
+        display:contents
+    }
+
+.header-container p{
+    font-size: 12px;
+   text-align: center
+}
+
+.fa-heart{
+    text-align: center;
+    margin-top: 5px;
+}
+  
+
+
+.main-container{
+    margin-bottom: 150px;
+    margin-top: 90px;
+}
+
+footer{
+    display: none;
+}
 }
 
 

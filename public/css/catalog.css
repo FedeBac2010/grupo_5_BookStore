@@ -179,8 +179,8 @@ article div.barra {
   position: relative;
 }
 /* Icono del camion-corazon? */
-main section article i {
-  display: block;
+/* main section article i {
+  display: inline;
   font-size: 16px;
   padding: 5px;
   width: 30px;
@@ -191,12 +191,12 @@ main section article i {
   position: absolute;
   right: 20px;
   top: -15px;
-}
+} */
 
 .autor, .categoria, .descripcion, .precio {
   font-size: 15px;
-  font-weight: bold;
-  text-align: center;
+  text-align: left;
+  line-height: 18px;
   flex-grow: 0.3; /* Tambien se puede utilizar width con mismo porcentaje */
 }
 
@@ -220,7 +220,7 @@ h2.descripcion {
 }
 
 .logo-like {
-  color: #3c9b96;
+  color: #fff;
 }
 
 .button {
@@ -284,6 +284,45 @@ footer div.links a i:hover,
 footer p:hover {
   color: #f5c36e;
 }
+
+/*MOBILE FIRST*/
+
+@media(min-width:425px){
+
+
+
+  .search-form{
+          display:contents
+      }
+  
+  .header-container p{
+      font-size: 12px;
+     text-align: center
+  }
+  
+  .fa-heart{
+      text-align: center;
+      margin-top: 5px;
+  }
+    
+  
+  
+  .main-container{
+    display: flex
+  }
+
+  .first-article{
+    margin-top: 10px;
+  }
+
+  article{
+    width: 100%;
+  }
+  
+  footer{
+      display: none;
+  }
+  }
 
 
 /* TABLETS */
