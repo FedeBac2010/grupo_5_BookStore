@@ -22,13 +22,17 @@ module.exports = {
             }
         }).then(books => {
             let search = req.query.search
+            if(search === "" ){
+                res.render('error-404',{styles:'styles.css'})
+            }else{
+
             res.render('products/result',{
                 search,
                 books:books,
                 category:category,
             
                 styles:'detalle-producto.css'
-            })
+            })}
         })
     }
 
