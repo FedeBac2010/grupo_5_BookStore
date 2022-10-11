@@ -25,7 +25,7 @@
             <% for(let index=0; index < books.length; index++) { %>
               <article>
             <a href ="./detalle-producto/<%= books[index].id %>">
-            <h2 class="descripcion"><%= books[index].title %></h2></a>
+            <h2 class="title"><%= books[index].title %></h2>
           <div class="image">  
             <% if (books[index].image== null ||books[index].image== undefined) { %>
               <img
@@ -41,7 +41,7 @@
               />
               
               <% } %>
-             
+            </a>
           </div>
             <!-- Logo de like (corazon) -->
             <% if (locals.isLogged) { %>
@@ -58,8 +58,8 @@
               <p class="precio"><b>Precio:</b> <%= books[index].currency %>  <%= books[index].price %> </p>
 
             </div>
-              <div class="button">
-                <a href="/products/cart">Agregar al Carrito</a>
+              <div>
+                <a href="/products/cart"><button class="button">Agregar al Carrito</button></a>
               </div>
               <div class="admin">
           <!-- eliminar producto -->

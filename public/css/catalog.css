@@ -147,7 +147,7 @@ main {
 section div.first-article {
   display: flex;
   background-color: rgba(227, 227, 227, 0.812);
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 article {
@@ -200,7 +200,7 @@ article div.barra {
   flex-grow: 0.3; /* Tambien se puede utilizar width con mismo porcentaje */
 }
 
-h2.descripcion {
+h2.title {
   font-size: 25px;
   margin-bottom: 20px;
   text-align: center;
@@ -234,16 +234,18 @@ h2.descripcion {
 
 .button a {
   text-decoration: none;
-  color:white;
+  color: white;
 }
 
+/* Comentado cambio de color etiqueta Agregar al carrito */
+
 .button a:hover {
-  color: #3c9b96;
+  color: #84bfbc;
 }
 
 .button:hover {
   background-color: #fff;
-  color: #3c9b96;
+  color: #84bfbc;
   border: 1px solid #3c9b96;
 }
 
@@ -255,7 +257,7 @@ footer {
   padding: 1em 0;
   text-align: center;
   border-top: 3px solid black 2px;
-  
+  /* display: none; */
 }
 
 footer div.social {
@@ -273,6 +275,7 @@ footer div p {
 
 footer div.links a {
   margin: 0 30px;
+  text-decoration: none;
 }
 
 footer div.links a i {
@@ -289,22 +292,28 @@ footer p:hover {
 
 @media(min-width:425px){
 
-
-
   .search-form{
-          display:contents
+          display: contents;
       }
   
   .header-container p{
       font-size: 12px;
-     text-align: center
+     text-align: center;
+  }
+
+  .header-container {
+    justify-content: center;
+    width: 100%;
   }
   
   .fa-heart{
       text-align: center;
       margin-top: 5px;
   }
-    
+  
+  div .icons {
+    display: none;
+  }
   
   
   .main-container{
@@ -313,6 +322,7 @@ footer p:hover {
 
   .first-article{
     margin-top: 10px;
+    flex-wrap: wrap;
   }
 
   article{
@@ -322,6 +332,23 @@ footer p:hover {
   footer{
       display: none;
   }
+  }
+
+  div.bottom-navbar{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  div.bottom-navbar a{
+    text-decoration: none;
+  }
+
+  .categoria {
+    display: none;
+  }
+
+  .descripcion {
+    display: none;
   }
 
 
@@ -357,22 +384,41 @@ footer p:hover {
   .navbar a:hover{
     background: #f5c36e;
   }
+
+  .header-container {
+    background: #fff;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.59);
+  }
+
+  
+  div.icons {
+    display: block;
+  }
+
   .header-container-2{
     background-color: #f5c36e;
     display: block;
   }
 
-  .bottom-navbar{
+  div.bottom-navbar{
       display: none;
   }
-.first-article{
+
+  .first-article{
   margin-top: 2%;
+  flex-wrap: nowrap;
 }
-.admin{
+
+  .admin{
   display: flex;
   justify-content: space-around;
 }
-footer{
+
+  footer{
   display: block;
 }
 }

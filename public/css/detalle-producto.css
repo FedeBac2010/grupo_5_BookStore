@@ -208,6 +208,12 @@ cursor: pointer;
     font-family: 'Gentium Book Basic', serif;
 }
 
+
+
+div.admin {
+    display: none;
+}
+
 footer{
     margin-top: auto;
     background-color: #2d3c4b;
@@ -256,7 +262,7 @@ footer p:hover{
         justify-content: space-between;
         /* border: solid 3px black; */
         width: 100%;
-        /* position: fixed; */
+        position: fixed;
     }
 
     .bottom-navbar a{
@@ -264,6 +270,7 @@ footer p:hover{
         /* border: solid 3px red; */
         padding: 10px 10px;
         margin: 0px 10px;
+        text-decoration: none;
     }
 
     .contenedor-total {
@@ -271,7 +278,11 @@ footer p:hover{
     }
 
     .card .imgBox {
-        height: 50%;
+        height: 80%;
+    }
+
+    div .details {
+        margin-bottom: 20px;
     }
 
 }
@@ -279,14 +290,9 @@ footer p:hover{
 /* TABLET */
 
 @media (max-width: 768px) {
-    .card {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
+    
     footer {
         display: none;
-        
     }
 
     .header-container-2 {
@@ -297,22 +303,22 @@ footer p:hover{
         box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.59);
     }
 
-    .contenedor-total {
-        height: 600px; 
-    }
-
      .bottom-navbar {
         display: flex;
         justify-content: space-between;
-        position: absolute;
-        bottom: 0;
-        
+        position: fixed;
+    }
+
+    .bottom-navbar a {
+        text-decoration: none;
     }
 
     .card {
         flex-direction: column;
-        height: 500px;
+        height: 600px;
         padding: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .card .details {
