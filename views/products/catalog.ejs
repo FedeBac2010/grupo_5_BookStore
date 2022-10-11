@@ -17,10 +17,8 @@
     <!--CATALOGO DE PRODUCTOS-->
     <main>
       <section>
-        <% if (locals.isLogged) { %>
-        <a href="./create"><button class="button">Agregar producto</button></a>
+
         
-        <% } %>
         <div class="first-article">
             <% for(let index=0; index < books.length; index++) { %>
               <article>
@@ -63,7 +61,9 @@
               </div>
               <div class="admin">
           <!-- eliminar producto -->
-            <% if (locals.isLogged) { %>
+              
+              <% if (locals.isLogged &&locals.userLogged.rol) { %>
+                <a href="./create"><button class="button">Agregar producto</button></a>
               <form
                 action="/products/<%= books[index].id %>?_method=DELETE" 
                 method="post"
@@ -75,7 +75,7 @@
               <a href="./edit/<%= books[index].id  %> "><button type="submit" 
               class="button"
               >Editar</button></a>
-            <% } %>
+              <% } %>
           </div>
         </article>
         <% } %>     
