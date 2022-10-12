@@ -1,9 +1,11 @@
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: 'Gentium Book Basic', serif;
 }
+
+
 
 /* HEADER 1 */
 
@@ -16,10 +18,10 @@
   box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.59);
 }
 
-.logo-bookstore{
+/* .logo-bookstore{
   display: flex;
   justify-content: center;
-}
+} */
 
 .logo-bookstore img {
   width: 120px;
@@ -34,13 +36,13 @@
 .search-form{
   width: 30rem;
   height: 3rem;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   overflow: hidden;
   background: #fff;
   display: flex;
   align-items: center;
   border-radius: 0.5rem;
-  display: none;
+  /* display: none; */
 }
 
 .search-form input{
@@ -110,24 +112,23 @@
 /* BOTTOM NAVBAR */
 
 .bottom-navbar{
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
   background: #f5c36e;
   position: fixed;
-  bottom: 0; left: 0; right: 0;
-  z-index: 1000;
+  right: 0;
+  left: 0;
 }
 
 .bottom-navbar a{
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
   color: #fff;
-  margin: 0 10px;
-  
+  text-decoration: none;
 }
 
 .bottom-navbar a:hover{
   background-color: #2d3c4b;
-
 }
 
 .title-usuario {
@@ -144,8 +145,6 @@
   width: 350px;
   padding: 10px;
 }
-
-
 
 .contenedor {
   /* border: solid 5px blue; */
@@ -189,9 +188,9 @@ div .user-edit{
   display: flex;
 }
 
-.button {
-  height: 100%;
-  width: 100%;
+.button  {
+  /* height: 100%;
+  width: 100%; */
   outline: none;
   color: #fff;
   border: none;
@@ -208,21 +207,13 @@ div .user-edit{
   background: linear-gradient(-135deg, #F5C36E,#2D3C4B);
 }
 
-.user-edit {
+/* .user-edit {
   margin: 10px;
-}
+} */
 
 .user-edit a {
   padding: 5px;
 }
-
-.favourite-book {
-
-padding: 20px;
-}
-
-
-
 
 /* Footer */
 
@@ -268,6 +259,31 @@ footer p:hover{
 
 /* MEDIA QUERY */
 
+/* MOBILE */
+@media(min-width: 425px) {
+  
+  .contenedor {
+    /* border: red solid 3px; */
+    flex-direction: column;
+  }
+
+  footer {
+    display: none;
+  }
+
+  .bottom-navbar {
+    position: fixed;
+    bottom: 0;
+  }
+
+  .all-buttons {
+    /* border: red 3px solid; */
+    margin-bottom: 40px;
+    flex-direction: column;
+  }
+
+}
+
 /* TABLETS */
 @media(min-width:768px){
 
@@ -288,11 +304,9 @@ footer p:hover{
       transform: translateY(-20px);
   }
 
-  .favourite-book {
-   
-    padding-bottom: 50px;
-    }
-
+  .all-buttons {
+    flex-direction: row;
+  }
 
   
   /* Footer */
@@ -342,6 +356,10 @@ footer p:hover{
   
   @media(min-width:1023px){
   
+    .contenedor {
+      flex-direction: row;
+    }
+
       .search-form{
           display: block;
       }
@@ -380,6 +398,10 @@ footer p:hover{
       .card:hover{
           transform: translateY(-20px);
           filter: none;
+      }
+
+      .all-buttons {
+        flex-direction: column;
       }
   
   footer{

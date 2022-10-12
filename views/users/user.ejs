@@ -1,53 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include("../partials/head.ejs") %>
     <title>Usuario</title>
-</head>
-<body>
-    <!-- HEADER -->
+  </head>
+  <body>
+    <header>
+      <!-- HEADER -->
 
-    <%- include("../partials/header") %>
-    
-    <!--Barra de navegacion celular-->
-    <%-  include("../partials/bottomNav") %> 
-    
+      <%- include("../partials/header") %>
+
+      <!--Barra de navegacion celular-->
+      <%- include("../partials/bottomNav") %>
+    </header>
     <main>
-    <div class="title-usuario">
-        <h1>Datos del Perfil</h1> 
-    </div>
-    <div class="contenedor">
-    <div class="img-box">
-    <img src="/img/users/<%= user.avatar %>">
-    </div>
-    <div class="info-user">
-            <p><b>Nombre de Usuario:</b> <%= user.userName %></p>
-            <p><b> Nombre Completo:</b> <%= user.fullName %></p>
-            <p><b>Email:</b> <%= user.userEmail%></p>
-            <p><b>Teléfono:</b> <%= user.phoneNumber %></p>
-            <p><b>Ciudad:</b> <%= user.city %></p>
-            <div class="all-buttons">
-            <div class="user-edit">
-
-                            <a class="button" href="./edit/<%= user.id  %>">Editar Usuario</a>
-
-            </div>
-            <div class="user-edit">
-                <a class="button" href="./all-profiles">Administrar Usuarios</a>
-            </div>
-            <div class="user-edit">
-                <a class="button" href="./logout">Logout</a>
-            </div>
+      <div class="title-usuario">
+        <h1>Datos del Perfil</h1>
+      </div>
+      <div class="contenedor">
+        <div class="img-box">
+          <img src="/img/users/<%= user.avatar %>" />
         </div>
-    </div>
-</div>            
-    <div class="favourite-book">
-            <h2>Favoritos</h2>
-    </div>
-            
-    </main>
-    <!-- Footer -->
+        <div class="info-user">
+          <p><b>Nombre de Usuario:</b> <%= user.userName %></p>
+          <p><b> Nombre Completo:</b> <%= user.fullName %></p>
+          <p><b>Email:</b> <%= user.userEmail%></p>
+          <p><b>Teléfono:</b> <%= user.phoneNumber %></p>
+          <p><b>Ciudad:</b> <%= user.city %></p>
+        </div>
+        <div class="all-buttons">
+          <div class="user-edit">
+            <a class="button" href="./edit/<%= user.id  %>">Editar Usuario</a>
+          </div>
+          <div class="user-edit">
+            <a class="button" href="./all-profiles">Administrar Usuarios</a>
+          </div>
+          <div class="user-edit">
+            <a class="button" href="./logout">Logout</a>
+          </div>
+        </div>
+      </div>
 
-    <%- include("../partials/footer") %>
-</body>
+      <!-- No tiene funcionalidad -->
+      <!-- <div class="favourite-book">
+            <h2>Favoritos</h2>
+    </div> -->
+    </main>
+    <footer>
+      <!-- Footer -->
+      <%- include("../partials/footer") %>
+    </footer>
+  </body>
 </html>
