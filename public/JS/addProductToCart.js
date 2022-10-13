@@ -5,7 +5,7 @@ window.addEventListener("load", (e) => {
 const productTitle = document.querySelector("h3").innerText;
 const productPrice = document.querySelector("#bookPrice").innerHTML;
 const productImage = document.querySelector("#imgBook").getAttribute("src");
-// aca estan ....
+// aca esta como guardar el id del producto
 let url = window.location.href.split("/");
 let id = url[url.length - 1];
 

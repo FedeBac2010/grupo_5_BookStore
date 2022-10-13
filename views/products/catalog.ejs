@@ -21,7 +21,7 @@
         
         <div class="first-article">
             <% for(let index=0; index < books.length; index++) { %>
-              <article>
+              <article class="article">
             <a href ="./detalle-producto/<%= books[index].id %>">
             <h2 class="title"><%= books[index].title %></h2>
           <div class="image">  
@@ -57,7 +57,7 @@
 
             </div>
               <div>
-                <a href="/products/cart"><button class="button">Agregar al Carrito</button></a>
+                <a href=""><button id="addToCart" class="button">Agregar al Carrito</button></a>
               </div>
               <div class="admin">
           <!-- eliminar producto -->
@@ -84,5 +84,6 @@
     </main>
     <!-- Footer -->
     <%- include("../partials/footer") %>
+    <script src="/JS/addToCartFromCatalog.js"></script>
   </body>
 </html>

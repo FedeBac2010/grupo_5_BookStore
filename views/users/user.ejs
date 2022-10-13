@@ -32,9 +32,11 @@
           <div class="user-edit">
             <a class="button" href="./edit/<%= user.id  %>">Editar Usuario</a>
           </div>
+          <% if (locals.isLogged &&locals.userLogged.rol) { %>
           <div class="user-edit">
             <a class="button" href="./all-profiles">Administrar Usuarios</a>
           </div>
+          <% } %>
           <div class="user-edit">
             <a class="button" href="./logout">Logout</a>
           </div>

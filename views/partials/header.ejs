@@ -11,14 +11,16 @@
         </form>
         <!-- ICONOS -->
         <div class="icons">
-          
+          <a href="../products/cart" class="fas fa-shopping-cart"></a>
           <% if (locals.isLogged) { %>
-              <p> Hi <%= locals.userLogged.fullName %>!</p>
-              <a href="../users/profile" class="fa-solid fa-user"></a>
-              
-          <!-- no está funcionando del todo el if...-->
+              <a href="../users/profile">
+              <!--  <img src="/img/users/<%= locals.userLogged.avatar%>" width="40" style="border-radius:100%;"/>
+              -->
+                <p> Hi <%= locals.userLogged.fullName %>!</p>
+              </a>
+            
               <% } else { %> 
-              <a href="../products/cart" class="fas fa-shopping-cart"></a>
+              
               <a href="../users/login"id="login-btn" class="fas fa-user"></a>
             <% } %>
         </div>
