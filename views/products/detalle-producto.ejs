@@ -17,16 +17,17 @@
       <div class="card">
         
         <div class="imgBox">
-          <img src="/img/uploads/<%=books.image %>" />
+          <img id="imgBook" src="/img/uploads/<%=books.image %>" />
         </div>
         
         <div class="details">
           <div class="title">
             <h3>
               <%= books.title ?? " " %> <br />
-              
-              <small>Genero: <%= books.categories.name %> </small>
             </h3>
+
+              <small>Genero: <%= books.categories.name %> </small>
+            
           </div>
           <div class="autor">
             <span>Autor: <%= books.author %> </span>
@@ -38,9 +39,9 @@
           </div>
           <div class="buy">
             <div class="price">
-              <span><%= books.currency %> <%= books.price %> </span>
+               <%= books.currency %> <span id="bookPrice"><%= books.price %> </span>
             </div>
-            <a href="/products/cart"><button class="button">Agregar al Carrito</button></a>
+            <a href="/products/cart"><button id="btn-buy" class="button">Agregar al Carrito</button></a>
             </div>
             <div class="admin">
 
@@ -59,7 +60,8 @@
       </div>
   </main>
     <!-- FOOTER -->
-
+    
     <%- include("../partials/footer") %>
+    <script src="/JS/addProductToCart.js"></script>
   </body>
 </html>
