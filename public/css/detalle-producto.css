@@ -3,8 +3,6 @@
     margin: 0;
     padding: 0;
     font-family: 'Gentium Book Basic', serif;
-    text-transform: capitalize; /* Esto muestra un texto 
-    con la primera letra de cada palabra en mayúsculas. */
 }
 
 /* body {
@@ -28,16 +26,58 @@ body {
     margin-top: 10px;
   }
 
-div .icons {
-    display: none;
+/* ICONOS DE HEADER 1 */
+
+div .icons a { 
+    font-size: 1.0rem;
+    margin-left: 1rem;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
 }
+
+.icons div:hover,
+.icons a:hover {
+  color: #f5c36e;
+}
+
 .admin{
     display: flex;
     justify-content: space-around;
 }
+
+/* BOTON DE BSUQUEDA */
+
 .search-form {
-    display: none;
+    width: 30rem;
+    height: 3rem;
+    border: 2px solid black;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
 }
+
+.search-form input {
+    font-size: 1rem;
+    padding: 0 1.2rem;
+    height: 100%;
+    width: 90%;
+    text-transform: none;
+    border: none;
+}
+
+.search-form label {
+    font-size: 1.2rem;
+    padding-right: 0.5rem;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .search-form label:hover {
+    color: #f5c36e;
+  }
 
 .contenedor-total {
     display:flex;
@@ -48,9 +88,15 @@ div .icons {
     #f5c36e 50%, #f5c36e 100%); */
 }
 
+/* HEADER 1 */
+
 .header-container{
     background: #fff;
     padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.59);
 }
 
 .logo-bookstore{
@@ -83,9 +129,11 @@ div .icons {
     display: inline-block;
     font-size: 1.5rem;
     padding: 0.9rem;
-    font-size: 1.5rem;
     text-decoration: none;
-    /* visibility: hidden; */
+}
+
+.navbar a:hover{
+    border-bottom: 3px solid #2d3c4b;
 }
 
 /* BOTTOM NAVBAR */
@@ -97,7 +145,6 @@ div .icons {
     bottom: 0; left: 0; right: 0; 
     /* z-index: 1000; */
     display: none;
-    
 }
 
 .bottom-navbar a{
@@ -238,6 +285,7 @@ footer div p{
 
 footer div.links a{
     margin: 0 30px;
+    text-decoration: none;
 }
 
 footer div.links a i{
@@ -253,8 +301,23 @@ footer p:hover{
 /*  MOBILE */
 
 @media (max-width: 425px) {
+
+
     .header-container-2 {
         display: none;
+    }
+
+    .search-form {
+        border:none;
+        width: 20rem;
+    }
+
+    div .icons {
+        display: none;
+    }
+
+    .logo-bookstore img {
+        width: 100px;
     }
 
     .bottom-navbar {
@@ -263,6 +326,7 @@ footer p:hover{
         /* border: solid 3px black; */
         width: 100%;
         position: fixed;
+        z-index: 1000;
     }
 
     .bottom-navbar a{
@@ -274,7 +338,7 @@ footer p:hover{
     }
 
     .contenedor-total {
-        height: 600px; 
+        height: 700px; 
     }
 
     .card .imgBox {
@@ -290,6 +354,7 @@ footer p:hover{
 /* TABLET */
 
 @media (max-width: 768px) {
+
     
     footer {
         display: none;
@@ -299,14 +364,21 @@ footer p:hover{
         display: none;
     }
 
-    .header-container {
-        box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.59);
+
+    div .icons {
+        display: none;
+    }
+
+    .search-form {
+        border:none;
+        width: 30rem;
     }
 
      .bottom-navbar {
         display: flex;
         justify-content: space-between;
         position: fixed;
+        z-index: 1000;
     }
 
     .bottom-navbar a {

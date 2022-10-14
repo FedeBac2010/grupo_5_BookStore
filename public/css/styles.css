@@ -26,7 +26,6 @@ body{
     align-items: center;
     justify-content: space-between;
     box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.59);
-
 }
 
 .logo-bookstore{
@@ -74,7 +73,6 @@ body{
 
 .search-form label:hover{
     color: #f5c36e;
-
 }
 
 /* ICONS */
@@ -86,7 +84,6 @@ body{
     margin-top: 5px;
     color: black;
     cursor: pointer;
-    
 }
 
 .icons div:hover,
@@ -128,7 +125,6 @@ body{
     position: fixed;
     bottom: 0; left: 0; right: 0;
     z-index: 1000;
-    
 }
 
 .bottom-navbar a{
@@ -136,7 +132,6 @@ body{
     padding: 0.5rem 1rem;
     color: #fff;
     margin: 0 10px;
-    
 }
 
 .bottom-navbar a:hover{
@@ -273,11 +268,13 @@ footer p:hover{
 
 @media(min-width:425px){
 
-
-
 .search-form{
-        display:contents
+        display:contents;
     }
+
+div .icons {
+    display: none;
+}
 
 .header-container p{
     font-size: 12px;
@@ -309,6 +306,7 @@ footer{
     margin: 0 40px;
 }
 
+
 .main-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -332,6 +330,10 @@ footer{
 @media(min-width:1023px){
 
     .search-form{
+        display: block;
+    }
+
+    div .icons {
         display: block;
     }
 

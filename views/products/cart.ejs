@@ -6,19 +6,13 @@
     <title>Carrito</title>
 </head>
 <body>
-    <header>
-    <!-- LOGO -->
-    <div class="header-container">
-        <div class="logo-bookstore">
-            <a href="/"><img src="/img/logo.jpg" alt="Logo Book Store" /></a>
-        </div>
-    </div>
-    <!-- NAVEGACION -->
-    <div class="header-container-2">
-        <a href="./catalog"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-    </div>
-</header>
+    <!-- HEADER -->
 
+    <%- include("../partials/header") %>
+
+    <!--Barra de navegacion celular-->
+    <%- include("../partials/bottomNav.ejs") %>
+<main>
     <!-- CARRITO DE COMPRAS -->
     <div class="container">
         <h1>Shopping Cart</h1>
@@ -33,7 +27,10 @@
             </div>
         </div>
     </div>
-    
+</main> 
+
+<%- include("../partials/footer") %>
+
 </body>
 <script src="/JS/cartList.js"></script>
 </html>

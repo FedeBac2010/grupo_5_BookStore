@@ -16,10 +16,8 @@
 
     <!--CATALOGO DE PRODUCTOS-->
     <main>
-      <section>
-
-        
-        <div class="first-article">
+<section>    
+<div class="first-article">
             <% for(let index=0; index < books.length; index++) { %>
               <article class="article">
             <a href ="./detalle-producto/<%= books[index].id %>">
@@ -40,7 +38,7 @@
               
               <% } %>
             </a>
-          </div>
+</div>
             <!-- Logo de like (corazon) -->
             <% if (locals.isLogged) { %>
             <div class="logo-like barra">
@@ -59,7 +57,7 @@
               <div>
                 <a href=""><button id="addToCart" class="button">Agregar al Carrito</button></a>
               </div>
-              <div class="admin">
+<div class="admin">
           <!-- eliminar producto -->
               
               <% if (locals.isLogged &&locals.userLogged.rol) { %>
@@ -76,11 +74,10 @@
               class="button"
               >Editar</button></a>
               <% } %>
-          </div>
+</div>
         </article>
-        <% } %>     
-              </div>     
-      </section>
+        <% } %>        
+</section>
     </main>
     <!-- Footer -->
     <%- include("../partials/footer") %>

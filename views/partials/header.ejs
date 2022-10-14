@@ -11,9 +11,9 @@
         </form>
         <!-- ICONOS -->
         <div class="icons">
-          <a href="../products/cart" class="fas fa-shopping-cart"></a>
+          <a href="/products/cart" class="fas fa-shopping-cart"></a>
           <% if (locals.isLogged) { %>
-              <a href="../users/profile">
+              <a href="/users/profile">
               <!--  <img src="/img/users/<%= locals.userLogged.avatar%>" width="40" style="border-radius:100%;"/>
               -->
                 <p> Hi <%= locals.userLogged.fullName %>!</p>
@@ -29,7 +29,7 @@
     <div class="header-container-2">
       <nav class="navbar">
         <a href="/">Home</a>
-        <a href="../products/catalog">Catalogo</a>
+        <a href="/products/catalog">Catalogo</a>
         <a href="/contact">Contacto</a>
       </nav>
     </div>
