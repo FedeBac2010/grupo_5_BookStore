@@ -16,7 +16,7 @@ const usersApiController = {
                         id: user.id,
                         fullName: user.fullName,
                         userEmail: user.userEmail,
-                        image: "/img/users/" + user.image,
+                        image: "/img/users/" + user.avatar,
                         detail: "/api/users/" + user.id
                     }
                 })
@@ -38,7 +38,7 @@ const usersApiController = {
                         id: user.id,
                         fullName: user.fullName,
                         email: user.email,
-                        image: "/img/users/" + user.image,
+                        image: "/img/users/" + user.avatar,
                     }
             }
             res.json(respuesta)

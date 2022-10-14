@@ -15,13 +15,13 @@ const productsApiController = {
             let arrayCategorias = []
             for(let i=0; i<categories.length ; i++){
                 arrayCategorias.push({
-                    nombre: categories[i].dataValues.name,
+                    nombre: categories[i].dataValues.name, 
                     total: categories[i].dataValues.products.length
                 })
             }
 
-            let ebooks = products.filter(product => product.category_id == 1)
-            let fisicos = products.filter(product => product.category_id == 2)
+            let ebooks = products.filter(product => products.length/* product.category_id == 1 */)
+            let fisicos = products.filter(product => products.length/* product.category_id == 2 */)
           
             let respuesta = {
                 meta: {
@@ -32,7 +32,7 @@ const productsApiController = {
                     categoryNames: arrayCategorias,
                     countByCategory: [
                         {ebooks: ebooks.length},
-                        {fisicos: ebooks.length},
+                        /* {fisicos: ebooks.length}, */
                     ]
                 },
                 data: products.map(product => {
@@ -41,7 +41,7 @@ const productsApiController = {
                         title: product.title,
                         author: product.author,
                         description: product.description,
-                        image: "/img/products/" + product.image,
+                        image: "/img/uploads/" + product.image,
                         price: product.price,
                         currency: product.currency,
                         categories: {name:product.categories.name}, 
@@ -64,26 +64,29 @@ const productsApiController = {
             })
             .then(categories => {
         
-        db.Products.findByPk(req.params.id, {
-            include:['categories']
+        db.Products.findByPk(req.params.id, 
+            {
+                include:['categories']
         })
         .then(product=>{
             let respuesta = {
                 meta:{
                     status: 200,
-                    url: "/api/products/" + product.id
+                    url: "/api/products/:id" /* + product.id */
                 },
-                data: {
+                data: product
+                
+                /* {
                     id: product.id,
                     title: product.title,
                     author: product.author,
                     description: product.description,
-                    image: "/img/products/" + product.image,
+                    image: "/img/uploads/" + product.image,
                     price: product.price,
                     currency: product.currency,
                     categories: {name:product.categories.name}, 
                    
-                    }
+                    } */
                 }
             
             res.json(respuesta)
@@ -96,25 +99,25 @@ const productsApiController = {
         
     },
 
-    // ultimo: (req, res) => {
-    //     db.Products.findAll({order:[["id", "DESC"]], limit:1})
-    //     .then(function (product) {
-    //         product[0].setDataValue("endpoint", "/api/products/lastProduct/" + product.length)
+    lastProduct: (req, res) => {
+        db.Products.findAll({order:[["id", "DESC"]], limit:1})
+        .then(function (product) {
+            product[0].setDataValue("endpoint", "/api/products/lastProduct/" + product.length)
 
-    //         let apiResponse= {
-    //             meta: {
-    //                 status: 200,
-    //                 url:"/api/products/lastProduct",
-    //                 total: product.length
-    //             },
-    //             data: product
-    //         }
-    //         res.json(apiResponse)
-    //     })
-    //     .catch(function(error){
-    //         res.json({status:500})
-    //     })
-    // }
+            let apiResponse= {
+                meta: {
+                    status : 200,
+                    url:"/api/products/lastProduct",
+                    total: product.length
+                },
+                data: product
+            }
+            res.json(apiResponse)
+        })
+        .catch(function(error){
+            res.json({status:500})
+        })
+    }
 
 }
 
