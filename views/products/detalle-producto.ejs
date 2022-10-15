@@ -26,14 +26,16 @@
               <%= books.title ?? " " %> <br />
             </h3>
 
-              <small>Genero: <%= books.categories.name %> </small>
+            <div class="detalle-contenido">
+
+              <div class="genero"><b>Genero:</b> <%= books.categories.name %> </small>
             
           </div>
           <div class="autor">
-            <span>Autor: <%= books.author %> </span>
+            <b>Autor:</b> <%= books.author %> </span>
           </div>
           <div class="description">
-            <h4>Descripcion:</h4>
+            <b>Descripcion:</b>
             <br />
             <p><%= books.description %></p>
           </div>
@@ -41,6 +43,9 @@
             <div class="price">
                <%= books.currency %> <span id="bookPrice"><%= books.price %> </span>
             </div>
+
+          </div>
+          <div>
             <a href="/products/cart"><button id="btn-buy" class="button">Agregar al Carrito</button></a>
             </div>
             <div class="admin">

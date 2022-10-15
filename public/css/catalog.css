@@ -3,7 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Gentium Book Basic', serif;
+  font-family: "Gentium Book Basic", serif;
 }
 
 /* HEADER 1 */
@@ -66,7 +66,7 @@
 
 .icons div,
 .icons a {
-  font-size: 1.0rem;
+  font-size: 1rem;
   margin-left: 1rem;
   color: black;
   cursor: pointer;
@@ -106,13 +106,14 @@
   bottom: 0;
   left: 0;
   right: 0;
-  /* z-index: 1000; */
+  z-index: 1000;
 }
 
 .bottom-navbar a {
-  font-size: 2rem;
-  padding: 1rem 3rem;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
   color: #fff;
+  margin: 0 10px;
 }
 
 .bottom-navbar a:hover {
@@ -142,7 +143,6 @@ main {
 
 /* Secciones de los articulos */
 
-
 section div.first-article {
   display: flex;
   background-color: rgba(227, 227, 227, 0.812);
@@ -161,15 +161,14 @@ article {
 .image {
   display: inline-block;
   align-items: center;
-  width:250px;
-  height:300px;
-  
+  width: 250px;
+  height: 300px;
 }
 
 img {
   object-fit: cover;
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
   padding: 5%;
 }
 
@@ -178,10 +177,12 @@ article div.barra {
   position: relative;
 }
 
-
-.autor, .categoria, .descripcion, .precio {
+.autor,
+.categoria,
+.descripcion,
+.precio {
   font-size: 15px;
-  text-align: left;
+  /* text-align: left; */
   line-height: 18px;
   flex-grow: 0.3; /* Tambien se puede utilizar width con mismo porcentaje */
 }
@@ -193,10 +194,9 @@ h2.title {
   color: black;
 }
 
-.first-article a{
+.first-article a {
   text-decoration: none;
 }
-
 
 /* Precio y descuento guardado en un div y poniendo flexBox */
 .contenido-libro {
@@ -238,12 +238,12 @@ h2.title {
 /* FOOTER */
 
 footer {
-  margin-top: auto;
+  /* margin-top: auto; */
   background-color: #2d3c4b;
   padding: 1em 0;
   text-align: center;
   border-top: 3px solid black 2px;
-  /* display: none; */
+  display: none;
 }
 
 footer div.social {
@@ -253,7 +253,7 @@ footer div.social {
 }
 footer div p {
   font-size: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   color: #fff;
   text-align: center;
   font-weight: bold;
@@ -276,102 +276,99 @@ footer p:hover {
 
 /*MOBILE FIRST*/
 
-@media(min-width:425px){
+@media (min-width: 425px) {
+  .search-form {
+    display: contents;
+  }
 
-.first-article {
-  margin-bottom: 70px;
-}
-
-  .search-form{
-          display: contents;
-      }
-  
-  .header-container p{
-      font-size: 12px;
-     text-align: center;
+  div .icons {
+    display: contents;
   }
 
   .header-container {
-    justify-content: center;
-    width: 100%;
+    display: flex;
   }
-  
-  .fa-heart{
-      text-align: center;
-      margin-top: 5px;
-  }
-  
+
   div .icons {
     display: none;
   }
-  
-  
-  .main-container{
-    display: flex
+
+  .header-container p {
+    font-size: 12px;
+    text-align: center;
   }
 
-  .first-article{
+  .fa-heart {
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  .main-container {
+    display: flex;
+  }
+
+  .first-article {
     margin-top: 10px;
     flex-wrap: wrap;
   }
 
-  article{
+  article {
     width: 100%;
   }
-  
-  footer{
-      display: none;
-  }
+
+  .autor .precio{
+    text-align: center;
   }
 
-  div.bottom-navbar{
-    display: flex;
-    justify-content: space-around;
-  }
-
-  div.bottom-navbar a{
-    text-decoration: none;
-  }
-
-  .categoria {
+  footer {
     display: none;
   }
+}
 
-  .descripcion {
-    display: none;
-  }
+div.bottom-navbar {
+  display: flex;
+  justify-content: space-around;
+}
 
+div.bottom-navbar a {
+  text-decoration: none;
+}
+
+.categoria {
+  display: none;
+}
+
+.descripcion {
+  display: none;
+}
 
 /* TABLETS */
-@media(min-width:768px){
+@media (min-width: 768px) {
+  .bottom-navbar a {
+    margin: 0 40px;
+  }
 
-  .bottom-navbar a{
-      margin: 0 40px;
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
-  
-  .main-container{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-  }
-  
-  }
+}
 
 /*DESKTOP*/
-@media(min-width:1023px){
-
-  .search-form{
-      display: block;
+@media (min-width: 1023px) {
+  .search-form {
+    display: block;
   }
 
-  #search-btn{
-      display: none;
+  #search-btn {
+    display: none;
   }
-  
-  .navbar a:hover{
+
+  .navbar a:hover {
     border-bottom: 3px solid #2d3c4b;
   }
-  
-  .navbar a:hover{
+
+  .navbar a:hover {
     background: #f5c36e;
   }
 
@@ -384,31 +381,30 @@ footer p:hover {
     box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.59);
   }
 
-  
   div.icons {
     display: block;
   }
 
-  .header-container-2{
+  .header-container-2 {
     background-color: #f5c36e;
     display: block;
   }
 
-  div.bottom-navbar{
-      display: none;
+  div.bottom-navbar {
+    display: none;
   }
 
-  .first-article{
-  margin-top: 2%;
-  flex-wrap: nowrap;
-}
+  .first-article {
+    margin-top: 2%;
+    flex-wrap: nowrap;
+  }
 
-  .admin{
-  display: flex;
-  justify-content: space-around;
-}
+  .admin {
+    display: flex;
+    justify-content: space-around;
+  }
 
-  footer{
-  display: block;
-}
+  footer {
+    display: block;
+  }
 }

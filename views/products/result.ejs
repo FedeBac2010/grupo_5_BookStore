@@ -12,11 +12,11 @@
 
     <!--Barra de navegacion celular-->
     <%- include("../partials/bottomNav") %>
-<main>
-
-    <h2 class="res">Resultados de la búsqueda: <p class="resultado">"<%= search %>"</p></h2>
 
 
+    <div class="res"><b>Resultados de la búsqueda:</b> "<%= search %>"</div>
+
+    <main>
     <% for( book of books  ) {  %>
     <div class="contenedor-total">
        
@@ -26,23 +26,29 @@
           <a href="/products/detalle-producto/<%= book.id %> "></a> 
           <img src="/img/uploads/<%=book.image %>" />
         </div>
-        
         <div class="details">
           <div class="title">
             <h3>
               <%= book.title ?? " " %> <br />
             </h3>
-              </div>   
 
-            <div class="genero">                
-              <span> <b>Genero:</b> <%= book.categories.name %> </span>
+            <div class="detalle-contenido">
+
+              <div class="genero"><b>Genero:</b> <%= book.categories.name %> </small>
+            
           </div>
           <div class="autor">
-            <span><b>Autor:</b> <%= book.author %> </span>
+            <b>Autor:</b> <%= book.author %> </span>
           </div>
-   
-            <a href="/products/cart"> <buttom class="button">Agregar al Carrito</button></a>
+          
+
+          </div>
+          <div>
+            <a href="/products/cart"><button id="btn-buy" class="button">Agregar al Carrito</button></a>
             </div>
+        
+
+          
             <div class="admin">
             <form
               action="/products/<%= book.id %>?_method=DELETE"
