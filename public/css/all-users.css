@@ -48,6 +48,7 @@
     width: 90%;
     text-transform: none;
     border: none;
+    outline: none;
   }
   
   .search-form label {

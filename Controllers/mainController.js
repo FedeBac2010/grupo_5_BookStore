@@ -18,11 +18,14 @@ module.exports = {
          db.Products.findAll({
             include:[{association:"categories"}],
             where: {
-                title: {[Op.like]: "%" + req.query.search + "%"}
+                title: {[Op.like]: "%" + req.query.search + "%"},
+                
+
+             
             }
         }).then(books => {
             let search = req.query.search
-            if(search === "" ){
+            if(search === "" || books.title === {[Op.ne]: req.query.search}){
                 res.render('error-404',{styles:'styles.css'})
             }else{
 
