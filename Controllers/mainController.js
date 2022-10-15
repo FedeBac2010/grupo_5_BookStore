@@ -31,7 +31,7 @@ module.exports = {
                 books:books,
                 category:category,
             
-                styles:'detalle-producto.css'
+                styles:'result.css'
             })}
         })
     }

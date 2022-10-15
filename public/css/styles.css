@@ -272,6 +272,15 @@ footer p:hover{
         display:contents;
     }
 
+
+    div .icons{
+        display: contents;
+    }
+
+.header-container{
+    display: flex;
+}
+
 div .icons {
     display: none;
 }
