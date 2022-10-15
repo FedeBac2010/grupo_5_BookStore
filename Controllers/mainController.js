@@ -10,7 +10,7 @@ module.exports = {
         res.render("home",{styles:'styles.css'});
     },
     contact: (req, res)=>{
-        res.render("contact",{styles:'styles.css'});
+        res.render("contact",{styles:'contact.css'});
     },
     search: (req, res) => {
         let category = db.Category.findAll();
