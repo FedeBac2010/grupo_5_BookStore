@@ -134,8 +134,9 @@ h3 {
 
 /* TARJETA PRODUCTO */
 
+
+
 .card {
-  border: 1px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -160,8 +161,11 @@ h3 {
 }
 
 .card:hover .imgBox img {
-  transform: scale(1.05);
+  transform: scale(1.5);
+  transition: all 1s ease-in-out;
 }
+
+
 
 .card .imgBox img {
   width: 85%;
@@ -344,11 +348,33 @@ footer p:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
 
   .details{
+    font-size: 1rem;
     justify-content: center;
     width: 90%;
+  }
+
+  .genero {
+    margin-bottom: 10px;
+  }
+
+  .autor {
+    margin-bottom: 10px;
+  }
+
+  .desription {
+    margin-bottom: 10px;
+  }
+
+  div .description p {
+    margin-top: 10px;
+  }
+
+  .buy {
+    margin-top: 20px;
   }
 
   .autor .precio {
@@ -386,6 +412,15 @@ div.bottom-navbar a {
   .main-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .contenedor-total {
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -432,6 +467,16 @@ div.bottom-navbar a {
   .first-article {
     margin-top: 2%;
     flex-wrap: nowrap;
+  }
+
+  .contenedor-total {
+    height: 700px;
+    display: flex;
+    align-items: center;
+  }
+
+  .card {
+    width: 50%;
   }
 
   .admin {
