@@ -49,6 +49,7 @@
   width: 90%;
   text-transform: none;
   border: none;
+  outline: none;
 }
 
 .search-form label {
@@ -145,17 +146,18 @@ main {
 
 section div.first-article {
   display: flex;
-  background-color: rgba(227, 227, 227, 0.812);
+  /* background-color: rgba(227, 227, 227, 0.812); */
   /* flex-wrap: wrap; */
 }
 
 article {
-  border-top: solid 1px #ebebeb;
+  border: solid 0.5px rgb(140, 137, 137);
   padding: 30px 10px 50px;
   margin: 10px;
   background-color: #ffff;
   text-align: center;
   width: 40vw;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.474);
 }
 
 .image {
@@ -310,6 +312,8 @@ footer p:hover {
   .first-article {
     margin-top: 10px;
     flex-wrap: wrap;
+    margin-bottom: 50px;
+    justify-content: center;
   }
 
   article {
@@ -352,6 +356,18 @@ div.bottom-navbar a {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
+  section div.first-article {
+    width: 100%;
+    flex-direction: row;
+    margin-bottom: 50px;
+  }
+
+ article {
+   width: 300px;
+
+ }
+
 }
 
 /*DESKTOP*/
@@ -396,7 +412,8 @@ div.bottom-navbar a {
 
   .first-article {
     margin-top: 2%;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .admin {

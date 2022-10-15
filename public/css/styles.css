@@ -53,6 +53,7 @@ body{
     align-items: center;
     border-radius: 0.5rem;
     display: none;
+
 }
 
 .search-form input{
@@ -62,6 +63,7 @@ body{
     width: 90%;
     text-transform: none;
     border: none;
+    outline: none;
 }
 
 .search-form label{
