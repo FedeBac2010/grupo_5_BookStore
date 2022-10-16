@@ -43,10 +43,19 @@ let id = url[url.length - 1];
         localStorage.setItem("shoppingPrice", JSON.stringify(precioCarrito));
         // alert que indica que el producto se agrego.
         alert(`agregaste ${newProduct.title} al carrito`);
-      } else {
+      }
+   
+      else{
         //leemos el array desde localStorage ya con contenido.
         let shoppingList = JSON.parse(localStorage.shoppingList);
         let shoppingPrice = JSON.parse(localStorage.shoppingPrice);
+        let search =shoppingList.find((x)=> x.id === newProduct.id);
+        //Intento de hacer que lea si el producto esta repetido en el carrito 
+        if(search !== undefined) 
+       {       
+         alert(`El Producto ${newProduct.title} ya se encuentra en el carrito`);
+         return
+       } else {} 
         // pusheamos el nuevo producto
         shoppingList.push(newProduct);
         shoppingPrice.push(newProduct.price);
@@ -55,6 +64,7 @@ let id = url[url.length - 1];
         localStorage.setItem("shoppingPrice", JSON.stringify(shoppingPrice));
         //ejecutamos el alert de que se agrego el nuevo producto
         alert(`agregaste ${newProduct.title} al carrito`);
- }
+       }
+ 
   };
 });

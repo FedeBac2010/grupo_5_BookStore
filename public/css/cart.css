@@ -67,15 +67,30 @@ body{
 }
 
 /* ICONS */
-
+.icons{
+   display: flex;
+    flex-direction: row-reverse; 
+}
 .icons div,
 .icons a{
+    
     font-size: 1.0rem;
     margin-left:1.0rem ;
     margin-top: 5px;
     color: black;
     cursor: pointer;
     text-decoration: none;
+}
+.cartIcon{
+    position: relative;
+}
+
+.cartAmount{
+    position: absolute;
+    top: -10pt;
+    font-size: 13px;
+    padding: 3px;
+    border-radius: 3px;
 }
 
 .icons div:hover,

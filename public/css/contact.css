@@ -75,7 +75,10 @@ body{
 }
 
 /* ICONS */
-
+.icons{
+    display: flex;
+     flex-direction: row-reverse; 
+ }
 .icons div,
 .icons a{
     font-size: 1.0rem;
@@ -84,7 +87,21 @@ body{
     color: black;
     cursor: pointer;
 }
+.cartIcon{
+    position: relative;
+}
 
+.cartAmount{
+    position: absolute;
+    top: -10pt;
+    font-size: 13px;
+    padding: 3px;
+    border-radius: 3px;
+}
+.userIcon img{
+    border-radius:100%;
+    width: 40px;
+  }
 .icons div:hover,
 .icons a:hover{
     color: #f5c36e;
@@ -183,9 +200,9 @@ img{
     flex: 0.25;
     margin-left: 5px;
     margin-right: 5px;
-    margin-top: 30px;
+    
     padding: 20px;
-    height: 240px;
+    
     border: 1px solid silver;
     border-radius: 5px;
     background-color: #fff;
@@ -289,10 +306,13 @@ div .icons {
 }
   
 
-
 .main-container{
     margin-bottom: 150px;
     margin-top: 90px;
+}
+
+.contact-info{
+    margin-top: 30px;
 }
 
 footer{
@@ -314,11 +334,20 @@ footer{
     justify-content: center;
 }
 .main-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
 }
-
-
+.contact{
+    display: flex;
+    flex-direction: row;
+}
+.map{
+    margin: 0%;
+}
+.contact-info{
+    margin-top: 0px;
+}
 footer{
         display: none;
     }
@@ -348,7 +377,8 @@ footer{
         display: none;
     }
 
-    .main-container{
+    .contact{
+        flex-direction: row;
         margin-top: 30px;
     }
     
