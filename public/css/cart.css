@@ -3,12 +3,22 @@
     padding: 0;
     box-sizing: border-box;
     font-family:'Gentium Book Basic', serif;
-}
-body{
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23a3a3a3' fill-opacity='0.1'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
+    text-decoration: none;
+    text-transform: capitalize; /* Esto muestra un texto con la primera letra de cada palabra en mayúsculas. */
+    transition: all .2s linear;
 }
 
-/*  NAVBAR */
+/* BODY */
+
+body{
+    font-size: 12px;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23a3a3a3' fill-opacity='0.1'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
+
+}
+
+/* HEADER 1 */
+
 .header-container{
     background: #fff;
     padding: 1.5rem;
@@ -17,7 +27,6 @@ body{
     justify-content: space-between;
     box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.59);
 }
-
 
 .logo-bookstore{
     display: flex;
@@ -43,6 +52,8 @@ body{
     display: flex;
     align-items: center;
     border-radius: 0.5rem;
+    display: none;
+
 }
 
 .search-form input{
@@ -68,18 +79,16 @@ body{
 
 /* ICONS */
 .icons{
-   display: flex;
-    flex-direction: row-reverse; 
-}
+    display: flex;
+     flex-direction: row-reverse; 
+ }
 .icons div,
 .icons a{
-    
     font-size: 1.0rem;
     margin-left:1.0rem ;
     margin-top: 5px;
     color: black;
     cursor: pointer;
-    text-decoration: none;
 }
 .cartIcon{
     position: relative;
@@ -92,7 +101,11 @@ body{
     padding: 3px;
     border-radius: 3px;
 }
-
+.userIcon img{
+    border-radius:100%;
+    width: 40px;
+    border: 1px solid black;
+  }
 .icons div:hover,
 .icons a:hover{
     color: #f5c36e;
@@ -102,6 +115,7 @@ body{
 
 .header-container-2{
     background-color: #f5c36e;
+    display: none;
 }
 
 .navbar{
@@ -113,7 +127,6 @@ body{
     display: inline-block;
     padding: 0.9rem;
     font-size: 1.5rem;
-    text-decoration: none;
 }
 
 .navbar a:hover{
@@ -132,7 +145,6 @@ body{
     position: fixed;
     bottom: 0; left: 0; right: 0;
     z-index: 1000;
-    display: none;
 }
 
 .bottom-navbar a{
@@ -144,7 +156,14 @@ body{
 
 .bottom-navbar a:hover{
     background-color: #2d3c4b;
+
 }
+
+
+main{
+    width: 100vw;   
+}
+
 
 /* <!-- CARRITO DE COMPRAS --> */
 
@@ -155,11 +174,26 @@ body{
 
 .container h1{
     padding: 20px 0;
+    margin-left: 8px;
 }
 
+h3{
+    margin-left: 8px;
+}
+
+.cart-total{
+    
+    margin-top: 20px;
+   
+    padding: 0;
+
+}
+
+
 .cart{
-    display: flex;
+    justify-content: center;
     background-color: #fff;
+
 }
 
 .products{
@@ -255,6 +289,7 @@ body{
     height: 240px;
     border: 1px solid silver;
     border-radius: 5px;
+
 }
 
 .cart-total p{
@@ -319,8 +354,44 @@ footer p:hover{
 }
 
 
-@media (max-width: 425px){
+@media (min-width: 425px){
+    .search-form{
+        display:contents;
+    }
 
+
+    div .icons{
+        display: contents;
+    }
+
+.header-container{
+    display: flex;
+}
+
+div .icons {
+    display: none;
+}
+
+.header-container p{
+    font-size: 12px;
+   text-align: center
+}
+
+.fa-heart{
+    text-align: center;
+    margin-top: 5px;
+}
+  
+
+
+.main-container{
+    margin-bottom: 150px;
+    margin-top: 90px;
+}
+
+.cart{
+    margin-right: 20px;
+}
     .remove{
         display: none;
     }
@@ -340,49 +411,18 @@ footer p:hover{
         margin-bottom: 10px;
     }
 
-    .search-form {
-        border: none;
-    }
-
-    div .icons {
-        display: none;
-    }
-
-    .bottom-navbar{
-        display: flex;
-        justify-content: space-between;
-        background: #f5c36e;
-        position: absolute;
-        bottom: 0; left: 0; right: 0; 
-        z-index: 1000;
-    }
-    
-    .bottom-navbar a{
-        font-size: 1.5rem;
-        padding: 10px 10px;
-        margin: 0px 10px;
-        color: #fff;
-        text-decoration: none;
-    }
-    
-    .bottom-navbar a:hover{
-        background-color: #2d3c4b;
-    }
-
-
-
     footer {
         display: none;
     }
 }
-@media (max-width:768px){
+@media (min-width:768px){
+    
 
-    .header-container-2{
-        display: none;
-    }
+   
 
     .cart{
         flex-direction: column;
+        margin: 0;
     }
 
     .cart-total{
@@ -390,25 +430,7 @@ footer p:hover{
         margin-bottom: 20px;
     }
 
-    div .icons {
-        display: none;
-    }
-
-    .search-form {
-        border: none;
-    }
-
-    .bottom-navbar {
-        display: flex;
-        justify-content: space-between;
-        position: fixed;
-        z-index: 1000;
-    }
-
-    .bottom-navbar a {
-        text-decoration: none;
-    }
-
+    
     .container {
         margin-bottom: 40px;
     }
@@ -417,7 +439,26 @@ footer p:hover{
         display: none;
     }
 }
-@media (max-width:1220px){
+@media (min-width:1220px){
+    .search-form{
+        display: block;
+    }
+
+    div .icons {
+        display: block;
+    }
+
+    #search-btn{
+        display: none;
+    }
+    
+    .header-container-2{
+        display: block;
+    }
+
+    .bottom-navbar{
+        display: none;
+    }
 
     
 
