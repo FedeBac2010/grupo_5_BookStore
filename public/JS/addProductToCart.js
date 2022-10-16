@@ -25,6 +25,10 @@ let id = url[url.length - 1];
       image: productImage,
       id: id,
     };
+    let newBasket ={
+      id: id,
+      item: 1,
+    };
 
     // verificamos que el LocalStorage no tenga seteado nada.
     if (
@@ -34,13 +38,17 @@ let id = url[url.length - 1];
         //creamos un array vacio donde se van a empezar a almacenar los prods.
         let shoppingList = [];
         let precioCarrito = [];
+        let basket = [];
         //le agregamos el nuevo producto
         shoppingList.push(newProduct);
         precioCarrito.push(newProduct.price);
+        basket.push(newBasket);
         // seteamos el LS con el nuevo valor del array.
         localStorage.setItem("shoppingList", JSON.stringify(shoppingList));
         //seteamos el precio del primer producto agregado
         localStorage.setItem("shoppingPrice", JSON.stringify(precioCarrito));
+        //seteamos un producto en cantidad
+        localStorage.setItem("basket", JSON.stringify(basket));
         // alert que indica que el producto se agrego.
         alert(`agregaste ${newProduct.title} al carrito`);
       }
@@ -49,6 +57,7 @@ let id = url[url.length - 1];
         //leemos el array desde localStorage ya con contenido.
         let shoppingList = JSON.parse(localStorage.shoppingList);
         let shoppingPrice = JSON.parse(localStorage.shoppingPrice);
+        let basket = JSON.parse(localStorage.basket);
         let search =shoppingList.find((x)=> x.id === newProduct.id);
         //Intento de hacer que lea si el producto esta repetido en el carrito 
         if(search !== undefined) 
@@ -59,9 +68,11 @@ let id = url[url.length - 1];
         // pusheamos el nuevo producto
         shoppingList.push(newProduct);
         shoppingPrice.push(newProduct.price);
+        basket.push(newBasket);
         // volvemos a setear el LS con el nuevo array.
         localStorage.setItem("shoppingList", JSON.stringify(shoppingList));
         localStorage.setItem("shoppingPrice", JSON.stringify(shoppingPrice));
+        localStorage.setItem("basket", JSON.stringify(basket));
         //ejecutamos el alert de que se agrego el nuevo producto
         alert(`agregaste ${newProduct.title} al carrito`);
        }

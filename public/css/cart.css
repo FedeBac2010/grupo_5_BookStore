@@ -233,7 +233,8 @@ h3{
 
 .product-name,
 .product-price,
-.product-offer{
+.product-offer,
+.quantity-btn{
     margin-bottom: 20px;
 }
 
@@ -271,11 +272,27 @@ h3{
     border: 1px solid #3c9b96;
 }
 
-.product-quantity input{
+
+
+.quantity-btn{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-right: 30 px;
+}
+.product-quantity {
     width: 40px;
     padding: 5px;
     text-align: center;
 
+}
+.quantity-btn i {
+    margin: 5px;
+cursor: pointer;
+}
+
+.quantity-btn i:hover{
+    background-color: #f5c36e;
 }
 
 .product-remove i {
@@ -307,10 +324,43 @@ h3{
     background-color: #f5c36e;
     color: #fff;
     text-decoration: none;
+    margin-top: 20px;
 }
 
 .cart-total a:hover{
     background-color: #3c9b96;
+}
+
+.reset-cart{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 25px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;  
+}
+
+.reset-cart:hover{
+    background-color: #fff;
+    color: red;
+    font-weight: 600;
+    border: 1px solid red;
+}
+
+.cart-total button{
+    background-color: red;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+}
+.cart-total button:hover{
+    background-color: #fff;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    
 }
 
 
