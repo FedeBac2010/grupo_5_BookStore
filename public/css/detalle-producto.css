@@ -345,6 +345,13 @@ footer p:hover {
   .search-form {
     display: contents;
   }
+  #login-btn{
+    display: none;
+  }
+
+  .cartIcon{
+    display: none;
+}
 
   div .icons {
     display: contents;
@@ -471,7 +478,17 @@ div.bottom-navbar a {
   #search-btn {
     display: none;
   }
+  #login-btn{
+    display: block;
+  }
 
+  .cartIcon{
+    display: block;
+}
+.fa-user{
+  font-size: 25px;
+  color: black;
+}
   .navbar a:hover {
     border-bottom: 3px solid #2d3c4b;
   }

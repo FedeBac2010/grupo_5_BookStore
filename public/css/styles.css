@@ -295,7 +295,7 @@ footer p:hover{
 
     div .icons{
         display: contents;
-    }
+    } 
 
 .header-container{
     display: flex;
@@ -304,6 +304,15 @@ footer p:hover{
 div .icons {
     display: none;
 }
+
+#login-btn{
+  display: none;
+}
+
+.cartIcon{
+    display: none;
+}
+
 
 .header-container p{
     font-size: 12px;
@@ -335,6 +344,13 @@ footer{
     margin: 0 40px;
 }
 
+#login-btn{
+    display: none;
+}
+
+.cartIcon{
+    display: none;
+}
 
 .main-container{
     display: grid;
@@ -356,14 +372,31 @@ footer{
 
 /* DESKTOP */
 
-@media(min-width:1023px){
+@media(min-width:1024px){
 
     .search-form{
         display: block;
     }
 
+    #login-btn{
+        display: block;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
     div .icons {
         display: block;
+    }
+
+    .fa-user{
+        font-size: 25px;
+        color: black;
+    }
+
+    .cartIcon{
+        display: none;
     }
 
     #search-btn{

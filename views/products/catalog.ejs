@@ -59,7 +59,7 @@
 
             </div>
               <div>
-                <!-- <a href=""> --><button id="addToCart" class="button" data-id="<%= books[index].id%>">Agregar al Carrito</button><!-- </a> -->
+                <a href ="./detalle-producto/<%= books[index].id %>"><button id="addToCart" class="button" data-id="<%= books[index].id%>">Detalle del producto</button> </a> 
               </div>
 <div class="admin">
           <!-- eliminar producto -->
@@ -85,7 +85,6 @@
     </main>
     <!-- Footer -->
     <%- include("../partials/footer") %>
-    <script src="/JS/addToCartFromCatalog.js"></script>
     <script src="/JS/cartAmount.js"></script>
   </body>
 </html>

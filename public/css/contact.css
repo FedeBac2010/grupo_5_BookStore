@@ -297,7 +297,13 @@ footer p:hover{
 .search-form{
         display:contents;
     }
-
+    #login-btn{
+        display: none;
+      }
+    
+      .cartIcon{
+        display: none;
+    }
 
     div .icons{
         display: contents;
@@ -319,6 +325,9 @@ div .icons {
 .fa-heart{
     text-align: center;
     margin-top: 5px;
+}
+.cartIcon{
+    display: none;
 }
 
 main{
@@ -356,6 +365,13 @@ footer{
 
 .bottom-navbar a{
     margin: 0 40px;
+}
+#login-btn{
+    display: none;
+  }
+
+  .cartIcon{
+    display: none;
 }
 
 .mobileOnly{
@@ -395,6 +411,20 @@ footer{
     div .icons {
         display: block;
     }
+
+    #login-btn{
+        display: block;
+      }
+    
+      .cartIcon{
+        display: block;
+    }
+
+.fa-user{
+    font-size: 25px;
+    color: black;
+  }
+
 
     #search-btn{
         display: none;

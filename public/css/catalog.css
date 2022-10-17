@@ -183,6 +183,8 @@ main {
 
 section div.first-article {
   display: flex;
+  justify-content: center;
+  align-items: center;
   /* background-color: rgba(227, 227, 227, 0.812); */
   /* flex-wrap: wrap; */
 }
@@ -324,6 +326,14 @@ footer p:hover {
     display: contents;
   }
 
+  #login-btn{
+    display: none;
+  }
+
+  .cartIcon{
+    display: none;
+}
+
   .header-container {
     display: flex;
   }
@@ -388,6 +398,12 @@ div.bottom-navbar a {
   .bottom-navbar a {
     margin: 0 40px;
   }
+  .cartIcon{
+    display: none;
+}
+#login-btn{
+  display: none;
+}
 
   .main-container {
     display: grid;
@@ -409,6 +425,10 @@ div.bottom-navbar a {
 
 /*DESKTOP*/
 @media (min-width: 1023px) {
+  section{
+  display: flex;
+  justify-content: center;
+}
   .search-form {
     display: block;
   }
@@ -416,6 +436,18 @@ div.bottom-navbar a {
   #search-btn {
     display: none;
   }
+
+  #login-btn{
+    display: block;
+  }
+
+  .cartIcon{
+    display: block;
+}
+.fa-user{
+  font-size: 25px;
+  color: black;
+}
 
   .navbar a:hover {
     border-bottom: 3px solid #2d3c4b;

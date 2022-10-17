@@ -414,6 +414,13 @@ footer p:hover{
     div .icons{
         display: contents;
     }
+    #login-btn{
+        display: none;
+      }
+    
+      .cartIcon{
+        display: none;
+    }
 
 .header-container{
     display: flex;
@@ -438,13 +445,24 @@ div .icons {
 .main-container{
     margin-bottom: 150px;
     margin-top: 90px;
+    justify-content: center;
+    display: flex;
 }
+
 
 .cart{
     margin-right: 20px;
 }
+
+.cart-total{
+    margin-bottom: 50px
+}
     .remove{
         display: none;
+    }
+
+    .products{
+        margin-left: 20px;
     }
 
     .product{
@@ -468,7 +486,13 @@ div .icons {
 }
 @media (min-width:768px){
     
+#login-btn{
+    display: none;
+  }
 
+  .cartIcon{
+    display: none;
+}
    
 
     .cart{
@@ -478,7 +502,7 @@ div .icons {
 
     .cart-total{
         margin-left: 0;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
     }
 
     

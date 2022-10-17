@@ -10,13 +10,9 @@
           <!-- <label for="search-box"> <a href="/search" class="fas fa-search"></a></label> -->
         </form>
         <!-- ICONOS -->
-        <div class="icons">
-            <div class="cartIcon">
-            <a href="/products/cart" class="fas fa-shopping-cart">
-            <div class="cartAmount"id="cartAmount">0</div>
-           </a>
-            </div>
+
           <% if (locals.isLogged) { %>
+             <div class="icons">
             <div class="userIcon">
               <a href="/users/profile">
                 <img src="/img/users/<%= locals.userLogged.avatar%>" width="40" style="border-radius:100%;"/>
@@ -29,6 +25,11 @@
               <a href="/users/login"id="login-btn" class="fas fa-user"></a>
             <% } %>
           </div>
+          <div class="cartIcon">
+            <a href="/products/cart" class="fas fa-shopping-cart">
+            <div class="cartAmount"id="cartAmount">0</div>
+           </a>
+            </div>
         </div>
     </div>
       <!-- NAVEGACION -->

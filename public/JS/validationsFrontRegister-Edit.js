@@ -64,7 +64,7 @@ form.addEventListener('submit',(e)=>{
     if( phoneNumber.value == ''){
         errores.push('Debes completar el campo del Numero Telefonico');
     }else if(phoneNumber.value.length < 4){
-        errores.push('El campo de Numero de telenono debe ser superior a 4 numeros')
+        errores.push('El campo de Numero de telefono debe ser superior a 4 numeros')
     }
 
     

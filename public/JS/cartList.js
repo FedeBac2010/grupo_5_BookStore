@@ -117,7 +117,7 @@ window.addEventListener("load", (e) => {
 //funcionalidad limpiar Carrito despues de hacer la compra.
         const buy = document.querySelector("#buy");
 
-        resetCart.addEventListener("click", () => {
+        buy.addEventListener("click", () => {
             localStorage.removeItem("shoppingPrice");
             localStorage.removeItem("shoppingList");
             location.reload();
