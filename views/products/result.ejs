@@ -19,15 +19,16 @@
     <main>
     <% for( book of books  ) {  %>
     <div class="contenedor-total">
-       
+      <a href ="./detalle-producto/<%= book.id %>">
       <div class="card">
         
         <div class="imgBox">
-          <a href="/products/detalle-producto/<%= book.id %> "></a> 
+
           <img src="/img/uploads/<%=book.image %>" />
         </div>
         <div class="details">
           <div class="title">
+            <a href="/products/detalle-producto/<%= book.id %> ">
             <h3>
               <%= book.title ?? " " %> <br />
             </h3>
@@ -43,6 +44,7 @@
           
 
           </div>
+          </a>
           <div>
             <a href="/products/cart"><button id="btn-buy" class="button">Agregar al Carrito</button></a>
             </div>
