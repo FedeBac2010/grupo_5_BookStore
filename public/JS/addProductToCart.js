@@ -12,7 +12,7 @@ let id = url[url.length - 1];
   // funcion que se va a ejecutar al momento de hacer click en agregar Producto
   addProductButton.addEventListener("click", (e) => {
     // prevenimos que se recargue la pagina
-    e.preventDefault();
+    //e.preventDefault();
     //ejecutamos la funcion que contendra la logica de agregar un producto
     addProductToList();
   });
@@ -50,14 +50,17 @@ let id = url[url.length - 1];
         //leemos el array desde localStorage ya con contenido.
         let shoppingList = JSON.parse(localStorage.shoppingList);
         let shoppingPrice = JSON.parse(localStorage.shoppingPrice);
-        let search =shoppingList.findIndex((x)=> x.id == newProduct.id);
+
+
+        /* let search =shoppingList.findIndex((x)=> x.id == newProduct.id);
         //Intento de hacer que lea si el producto esta repetido en el carrito 
         if(search != -1) 
        {       
          
         alert(` ${newProduct.title} ya está en el carrito`);
          return
-       } else { 
+       } else {  */
+
         // pusheamos el nuevo producto
         shoppingList.push(newProduct);
         shoppingPrice.push(newProduct.price);
@@ -66,9 +69,9 @@ let id = url[url.length - 1];
         localStorage.setItem("shoppingList", JSON.stringify(shoppingList));
         localStorage.setItem("shoppingPrice", JSON.stringify(shoppingPrice));
         //ejecutamos el alert de que se agrego el nuevo producto
-        alert(`Agregaste ${newProduct.title} al carrito`);
+        alert(`Agregaste otro ${newProduct.title} al carrito`);
        };
-      };
+      //};
  
   };
 });

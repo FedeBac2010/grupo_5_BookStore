@@ -331,9 +331,9 @@ cursor: pointer;
     background-color: #3c9b96;
 }
 
-.reset-cart{
+#reset-cart{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 10px 25px;
     background-color: red;
     color: white;
@@ -341,7 +341,7 @@ cursor: pointer;
     border-radius: 5px;  
 }
 
-.reset-cart:hover{
+#reset-cart:hover{
     background-color: #fff;
     color: red;
     font-weight: 600;
@@ -360,9 +360,10 @@ cursor: pointer;
     color: red;
     font-weight: bold;
     cursor: pointer;
-    
 }
-
+.cart-total button i{
+    margin-right: 5 px;
+}
 
 /* Footer */
 

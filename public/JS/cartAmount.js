@@ -1,7 +1,6 @@
 window.addEventListener("load", (e) => {
 const cartAmount = document.querySelector(".cartAmount");
 
-
 cartAmount.innerText = productsInCart();
 
 });

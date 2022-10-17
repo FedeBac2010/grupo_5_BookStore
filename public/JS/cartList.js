@@ -16,7 +16,7 @@ window.addEventListener("load", (e) => {
     </p>
     <p>
         <span>Numero de items</span>
-        <span></span>
+        <span>0</span>
     </p>
     
     <a href="/products/catalog.ejs">Agregar Productos</a>
@@ -26,18 +26,26 @@ window.addEventListener("load", (e) => {
     // leemos el LS y si hay contenido...
     if (localStorage.getItem("shoppingList")) {
         const products = JSON.parse(localStorage.shoppingList);
-
+        
     // recorremos el array de productos y devolvemos la data
         products.forEach((product) => {
+    
     // creamos un div con los valores del producto
             productContainer.innerHTML += `
             <div class="product">
             <img src="${product.image}" alt="">  
             <div class="product-info">
         <h3 class="product-name">${product.title}</h3>
-        <h4 class="product-price">${product.price}</h4>
-        <p class="product-quantity">Cant: 
-        <input type="number" id="product-quantity" value="${product.item}" name="">
+                 
+        <div class="quantity-btn">
+           <p class="product-quantity">Cant: </p>
+           
+            <div id="${product.id}" class="quantity">${product.item}</div>
+            
+        </div>
+        
+       
+        <h3 class="total">Total $ ${product.price*product.item}</h4>
         <p class="product-remove">
             <i class="fa-solid fa-trash-can"></i>
             <button class='delete-btn' data-id='${product.id}'>Borrar</button>
@@ -48,17 +56,9 @@ window.addEventListener("load", (e) => {
         });
        
 // calculamos la cantidad de productos que se compran
-      /*   let calculation = () => {
-            let cartIcon = document.getElementById("cartAmount");
-            cartIcon.innerHTML = product.map((x) => x.item).reduce((x, y) => x + y, 0);
-          };
-          
-          calculation(); */
-
 
         // seleccionamos todos los botones del array de prods.
         const deleteProductButton = document.querySelectorAll(".delete-btn");
-
         // recorremos el querySelector all que devuelve un array
         deleteProductButton.forEach((button, i) => {
             
@@ -97,10 +97,10 @@ window.addEventListener("load", (e) => {
         <span></span>
     </p>
     
-    <i class="fa-solid fa-trash-can"></i>
-    <button id="reset-cart">Limpiar</button>
     
-    <a href="">Proceder al Checkout</a>
+    <button id="reset-cart"><i class="fa-solid fa-trash-can"></i>Limpiar</button>
+    
+    <a id="buy" href="">Proceder al Checkout</a>
 
     
     `;
@@ -112,8 +112,19 @@ window.addEventListener("load", (e) => {
             localStorage.removeItem("shoppingPrice");
             localStorage.removeItem("shoppingList");
             location.reload();
+
         });
-    }
+//funcionalidad limpiar Carrito despues de hacer la compra.
+        const buy = document.querySelector("#buy");
+
+        resetCart.addEventListener("click", () => {
+            localStorage.removeItem("shoppingPrice");
+            localStorage.removeItem("shoppingList");
+            location.reload();
+            alert(`Muchas gracias por su compra`);
 });
+    }
+    
+        
 
-
+});
