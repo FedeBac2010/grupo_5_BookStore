@@ -46,13 +46,13 @@ body{
 .search-form{
   width: 30rem;
   height: 3rem;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   overflow: hidden;
   background: #fff;
   display: flex;
   align-items: center;
   border-radius: 0.5rem;
-  display: none;
+  /* display: none; */
 
 }
 
@@ -79,7 +79,7 @@ body{
 
 /* ICONS */
 .icons{
-  display: flex;
+  display: none;
    flex-direction: row-reverse; 
 }
 .icons div,
@@ -177,6 +177,7 @@ body{
 .contenedor {
   /* border: solid 5px blue; */
   display: flex;
+  flex-direction: column;
   justify-content: left;
   align-items: left;
 }
@@ -255,6 +256,7 @@ footer {
   width: 100vw;
   position: absolute;
   bottom: 0;
+  display: none;
 }
 
 footer div.social{
@@ -319,21 +321,25 @@ margin-top: 5px;
 }
 
   
-  .contenedor {
+.contenedor {
     /* border: red solid 3px; */
     flex-direction: column;
   }
 
-  footer {
+footer {
     display: none;
   }
 
-  .bottom-navbar {
+.bottom-navbar {
     position: fixed;
     bottom: 0;
   }
 
-  .all-buttons {
+div.info-user p {
+  margin-bottom: 20px;
+}
+
+.all-buttons {
     /* border: red 3px solid; */
     margin-bottom: 40px;
     flex-direction: column;
@@ -352,6 +358,15 @@ margin-top: 5px;
       display: grid;
       grid-template-columns: 1fr 1fr;
   }
+
+  .contenedor {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .img-box {
+    width: 50%;
+  }
   
   .card{
       height: 85%;
@@ -359,6 +374,10 @@ margin-top: 5px;
   
   .card:hover{
       transform: translateY(-20px);
+  }
+
+  div.info-user p {
+    margin-bottom: 30px;
   }
 
   .all-buttons {
@@ -417,55 +436,78 @@ footer p:hover{
       flex-direction: row;
     }
 
-      .search-form{
+    .search-form{
           display: block;
+          border: black 2px solid
       }
 
-        div .icons {
+    div .icons {
         display: block;
     }
   
-      #search-btn{
+    #search-btn{
           display: none;
       }
       
-      .header-container-2{
+    .header-container-2{
           display: block;
       }
   
-      .bottom-navbar{
+    .bottom-navbar{
           display: none;
       }
+
+    div.icons {
+        display: flex;
+      }
   
-      .main-container{
+    .main-container{
           margin-top: 30px;
       }
   
-      .main-container div h2{
+    .main-container div h2{
           display: inline;
           font-weight: bold;
           font-size: 30px;
           background: none;
           border: none;
           }
+
+    .img-box {
+      width: 30%;
+    }
+
+    .contenedor {
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+    div.info-user {
+      width: 50%;
+    }
   
-      .card h2{
+    .card h2{
           color: white;
           font-weight: bold;
           font-size: 30px;
           text-align: left;    
       }
   
-      .card:hover{
+    .card:hover{
           transform: translateY(-20px);
           filter: none;
       }
 
-      .all-buttons {
-        flex-direction: column;
+    div.info-user p {
+        margin-bottom: 30px;
+      }
+
+
+    .all-buttons {
+        flex-direction: row;
       }
   
-  footer{
+    footer{
       display: block;
       
   }
