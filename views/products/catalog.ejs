@@ -34,6 +34,7 @@
             />
             <% } else{ %>
               <img
+              id="imgBook"
                 src="/img/uploads/<%=books[index].image %>"
                 alt=""
                 class="barra"
@@ -54,11 +55,11 @@
               <p class="autor"> <b>Autor:</b> <%= books[index].author%> </p>
               <p class="categoria"><b>Genero: </b> <%= books[index].categories.name %> </p>
               <p class="descripcion"><b>Descripcion:</b> <%= books[index].description %> </p>
-              <p class="precio"><b>Precio:</b> <%= books[index].currency %>  <%= books[index].price %> </p>
+              <p class="precio"><b>Precio:</b> <%= books[index].currency %> <span id="bookPrice">  <%= books[index].price %> </span></p>
 
             </div>
               <div>
-                <a href=""><button id="addToCart" class="button">Agregar al Carrito</button></a>
+                <!-- <a href=""> --><button id="addToCart" class="button" data-id="<%= books[index].id%>">Agregar al Carrito</button><!-- </a> -->
               </div>
 <div class="admin">
           <!-- eliminar producto -->
@@ -85,5 +86,6 @@
     <!-- Footer -->
     <%- include("../partials/footer") %>
     <script src="/JS/addToCartFromCatalog.js"></script>
+    <script src="/JS/cartAmount.js"></script>
   </body>
 </html>
