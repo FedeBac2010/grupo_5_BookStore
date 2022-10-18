@@ -432,8 +432,13 @@
     }
   
     div.icons {
-      display: block;
+      display: flex;
+      flex-direction: row;
     }
+  
+    .cartIcon{
+      display: flex;
+  }
   
     .header-container-2 {
       background-color: #f5c36e;

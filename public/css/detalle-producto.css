@@ -482,9 +482,7 @@ div.bottom-navbar a {
     display: block;
   }
 
-  .cartIcon{
-    display: block;
-}
+
 .fa-user{
   font-size: 25px;
   color: black;
@@ -507,8 +505,13 @@ div.bottom-navbar a {
   }
 
   div.icons {
-    display: block;
+    display: flex;
+    flex-direction: row;
   }
+
+  .cartIcon{
+    display: flex;
+}
 
   .header-container-2 {
     background-color: #f5c36e;

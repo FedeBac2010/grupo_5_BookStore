@@ -386,19 +386,21 @@ footer{
         text-decoration: none;
     }
 
-    div .icons {
-        display: block;
-    }
 
     .fa-user{
         font-size: 25px;
         color: black;
     }
 
-    .cartIcon{
-        display: none;
+    div.icons {
+        display: flex;
+        flex-direction: row;
+      }
+    
+      .cartIcon{
+        display: flex;
     }
-
+    
     #search-btn{
         display: none;
     }

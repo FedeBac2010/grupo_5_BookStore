@@ -457,10 +457,15 @@ footer p:hover{
           display: none;
       }
 
-    div.icons {
+      div.icons {
         display: flex;
+        flex-direction: row;
       }
-  
+    
+      .cartIcon{
+        display: flex;
+    }
+    
     .main-container{
           margin-top: 30px;
       }

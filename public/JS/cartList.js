@@ -19,7 +19,7 @@ window.addEventListener("load", (e) => {
         <span>0</span>
     </p>
     
-    <a href="/products/catalog.ejs">Agregar Productos</a>
+    <a href="../../products/catalog">Agregar Productos</a>
     `;
     }
 
@@ -85,7 +85,14 @@ window.addEventListener("load", (e) => {
         const price = JSON.parse(localStorage.shoppingPrice);
 
         const sumWithInitial = price.reduce((previousValue, currentValue) => previousValue + currentValue, initialValue);
+        const cartTotal = productsInCart();
+        
+        function productsInCart(){
+            return localStorage.shoppingList ? JSON.parse(localStorage.shoppingList).length : 0
+        }
 
+        console.log(cartTotal);
+       
         console.log(sumWithInitial);
         totalPriceContainer.innerHTML += `
         <p>
@@ -94,7 +101,7 @@ window.addEventListener("load", (e) => {
     </p>
     <p>
         <span>Numero de items</span>
-        <span></span>
+        <span>${cartTotal}</span>
     </p>
     
     

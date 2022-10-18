@@ -43,7 +43,7 @@ let id = url[url.length - 1];
         //seteamos el precio del primer producto agregado
         localStorage.setItem("shoppingPrice", JSON.stringify(precioCarrito));
         // alert que indica que el producto se agrego.
-        alert(`Agregaste ${newProduct.title} al carrito`);
+        alert(`Nuevo libro: ${newProduct.title} agregado al carrito`);
       }
    
       else{
@@ -69,7 +69,7 @@ let id = url[url.length - 1];
         localStorage.setItem("shoppingList", JSON.stringify(shoppingList));
         localStorage.setItem("shoppingPrice", JSON.stringify(shoppingPrice));
         //ejecutamos el alert de que se agrego el nuevo producto
-        alert(`Agregaste otro ${newProduct.title} al carrito`);
+        alert(`Agregaste un nuevo libro: ${newProduct.title} al carrito`);
        };
       //};
  

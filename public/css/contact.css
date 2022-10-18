@@ -433,7 +433,15 @@ footer{
     .header-container-2{
         display: block;
     }
-
+    div.icons {
+        display: flex;
+        flex-direction: row;
+      }
+    
+      .cartIcon{
+        display: flex;
+    }
+    
     .bottom-navbar{
         display: none;
     }
