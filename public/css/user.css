@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-family:'Gentium Book Basic', serif;
   text-decoration: none;
-  text-transform: capitalize; /* Esto muestra un texto con la primera letra de cada palabra en mayúsculas. */
+  /* text-transform: capitalize; */ /* Esto muestra un texto con la primera letra de cada palabra en mayúsculas. */
   transition: all .2s linear;
 }
 
@@ -191,9 +191,9 @@ body{
 }
 
 .img-box img {
-  border-radius: 50rem;
-  width: 350px;
-  height: 350px;
+  border-radius: 50%;
+  width: 250px;
+  height: 300px;
 }
 
 .info-user {
