@@ -2,7 +2,9 @@
     <div class="bottom-navbar">
     <a href="/" class="fas fa-home"></a>
     <a href="/contact" class="fa-solid fa-square-phone"></a>
+    <% if (locals.isLogged) { %>
     <a href="/products/cart" class="fa-solid fa-cart-shopping"></a>
+    <% } %>
     <a href="/users/profile" class="fa-solid fa-user"></a>   
 </div>
     </nav>

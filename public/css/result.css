@@ -397,7 +397,9 @@
     .bottom-navbar a {
       margin: 0 40px;
     }
-  
+    div .icons {
+      display: none;
+    }
     .main-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
