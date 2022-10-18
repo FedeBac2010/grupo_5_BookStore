@@ -179,7 +179,7 @@ h3 {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 380px;
+  height: 500%;
   background-color: #fff;
   box-shadow: 0px 15px 45px rgba(0, 0, 0, 0.25);
   overflow: hidden;
@@ -535,7 +535,10 @@ div.bottom-navbar a {
   }
 
   .card {
+  
     width: 50%;
+    height: 450px;
+   
   }
 
   .admin {
