@@ -440,10 +440,6 @@ footer p:hover{
           display: block;
           border: black 2px solid
       }
-
-    div .icons {
-        display: block;
-    }
   
     #search-btn{
           display: none;

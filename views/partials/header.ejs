@@ -12,25 +12,25 @@
         <!-- ICONOS -->
 
           <% if (locals.isLogged) { %>
-             <div class="icons">
-            <div class="userIcon">
-              <a href="/users/profile">
-                <img src="/img/users/<%= locals.userLogged.avatar%>" width="40" style="border-radius:100%;"/>
-              
-                <p> Hi <%= locals.userLogged.fullName %>!</p>
-              </a>
-            
-              <% } else { %> 
-              
-              <a href="/users/login"id="login-btn" class="fas fa-user"></a>
-            <% } %>
-          </div>
-          <div class="cartIcon">
-            <a href="/products/cart" class="fas fa-shopping-cart">
-            <div class="cartAmount"id="cartAmount">0</div>
-           </a>
-            </div>
-        </div>
+              <div class="icons">
+                  <div class="cartIcon">
+                    <a href="/products/cart" class="fas fa-shopping-cart">
+                      <div class="cartAmount"id="cartAmount">0</div>
+                    </a>
+                  </div>
+                  <div class="userIcon">
+                    <a href="/users/profile">
+                      <img src="/img/users/<%= locals.userLogged.avatar%>" width="40" style="border-radius:100%;"/>          
+                      <p> Hi <%= locals.userLogged.fullName %>!</p>
+                    </a>
+                  
+          <% } else { %> 
+                    
+                    <a href="/users/login"id="login-btn" class="fas fa-user"></a>
+          <% } %>
+                </div>
+          
+              </div>
     </div>
       <!-- NAVEGACION -->
     <div class="header-container-2">
