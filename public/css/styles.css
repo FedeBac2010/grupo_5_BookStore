@@ -396,7 +396,7 @@ footer{
     }
 
     .cartIcon{
-        display: none;
+        display: block;
     }
 
     #search-btn{

@@ -485,6 +485,9 @@ div .icons {
     }
 }
 @media (min-width:768px){
+    .bottom-navbar a{
+        margin: 0 40px;
+    }
     
 #login-btn{
     display: none;

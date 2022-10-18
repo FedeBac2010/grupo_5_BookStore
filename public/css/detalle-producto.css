@@ -393,6 +393,7 @@ footer p:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+
     
   }
 
@@ -400,7 +401,10 @@ footer p:hover {
     font-size: 1rem;
     justify-content: center;
     width: 90%;
+    
   }
+
+
 
   .genero {
     margin-bottom: 10px;
